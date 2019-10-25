@@ -56,7 +56,7 @@ export class DashboardComponent implements OnInit {
     { menuId: 18, menuName: 'FAQ', parentId: 7 },
     { menuId: 19, menuName: 'Architecture', parentId: 7 },
     { menuId: 20, menuName: 'Jun’16 to Dec’19 Revenue', parentId: 8 },
-    { menuId: 21, menuName: 'Pending Payment', parentId: 8 }
+    { menuId: 21, menuName: 'Pending Payments', parentId: 8 }
   ];
 
   constructor() { }
