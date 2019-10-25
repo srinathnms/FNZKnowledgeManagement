@@ -1,15 +1,29 @@
-.example-button {
-  margin: 10% auto;
-  min-height: 400px;
-  min-width: 400px;
-  max-width: 600px;
-  margin-top:1%;
-  margin-left: 300px;
-  border-radius: 30%;
-  font-size: 40px;
+.mat-chip-menu {
+    border-radius: 50px;    
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 200px;
+    padding: 7px 16px;
+  text-align: center;
+    border: 1px solid #B7B8BB;
+    background-color: white;
 }
 
-::ng-deep .tooltip {
-  background-color: black !important;
-  font-size: 20px !important;
+.mat-chip-list-wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 100px!important;
+}
+
+.mat-chip-sub-menu {
+  margin: 15px !important;
+  max-width: 500px;
+  background-color: #6c5495;
+  font-size: 15px;
+}
+
+.border-test{
+border-radius: 0px;
 }
