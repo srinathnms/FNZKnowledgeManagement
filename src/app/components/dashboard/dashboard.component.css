@@ -1,12 +1,12 @@
 .mat-chip-menu {
-    border-radius: 50px;    
+    border-radius: 50px;
     min-width: 200px;
     max-width: 200px;
     min-height: 200px;
-    padding: 7px 16px;
-  text-align: center;
+    text-align: center;
     border: 1px solid #B7B8BB;
     background-color: white;
+    justify-content: center;
 }
 
 .mat-chip-list-wrapper {
@@ -18,12 +18,12 @@
 }
 
 .mat-chip-sub-menu {
-  margin: 15px !important;
-  max-width: 500px;
-  background-color: #6c5495;
-  font-size: 15px;
+    margin: 15px !important;
+    max-width: 500px;
+    background-color: #6c5495;
+    font-size: 15px;
 }
 
-.border-test{
-border-radius: 0px;
+.border-test {
+    border-radius: 0px;
 }
