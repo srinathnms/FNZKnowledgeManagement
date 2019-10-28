@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
 
 import { IDashboardMenu } from '../../model/dashboard';
+import { DashboardService } from '../../service/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -38,7 +40,7 @@ export class DashboardComponent implements OnInit {
   selectedMenuId: number;
   selectedSubMenuId: number;
   dashboardMainMenus: IDashboardMenu[];
-  dashboardMenus: IDashboardMenu[] = [
+  dashboardMenus: IDashboardMenu[]  = [
     { menuId: 1, menuName: 'Onboarding', parentId: 0 },
     { menuId: 2, menuName: 'About FNZ', parentId: 0 },
     { menuId: 3, menuName: 'Development Cognizant Scope and Delivery', parentId: 0 },
@@ -61,6 +63,13 @@ export class DashboardComponent implements OnInit {
     { menuId: 20, menuName: 'Jun’16 to Dec’19 Revenue', parentId: 8 },
     { menuId: 21, menuName: 'Pending Payments', parentId: 8 }
   ];
+
+  constructor(private dashboardService: DashboardService) {
+    // this.dashboardService.get()
+    //   .subscribe((data: IDashboardMenu[]) => {
+    //     this.dashboardMenus = data;
+    //   });
+  }
 
   ngOnInit(): void {
     this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === 0);

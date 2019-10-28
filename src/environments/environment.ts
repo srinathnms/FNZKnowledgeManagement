@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  BASE_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement'
+  BASE_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement',
+  API_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_api/web/lists'
 };
 
 /*
