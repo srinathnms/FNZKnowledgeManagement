@@ -8,7 +8,11 @@ import {
   MatMenuModule,
   MatListModule,
   MatChipsModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatSidenavModule,
 } from '@angular/material';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +26,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NgxDocViewerModule,
     MatTooltipModule,
     MatButtonModule,
     MatGridListModule,
@@ -29,6 +34,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatMenuModule,
     MatListModule,
     MatChipsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

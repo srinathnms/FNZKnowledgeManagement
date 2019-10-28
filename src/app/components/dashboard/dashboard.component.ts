@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, transition, style, animate, animateChild, query, stagger, state } from '@angular/animations';
+import { trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
+
 import { IDashboardMenu } from '../../model/dashboard';
 
 @Component({
@@ -32,8 +33,10 @@ import { IDashboardMenu } from '../../model/dashboard';
 })
 
 export class DashboardComponent implements OnInit {
-  selectedMenuId;
-  selectedSubMenuId;
+  documentPath = 'https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.docx';
+  viewer = 'office';
+  selectedMenuId: number;
+  selectedSubMenuId: number;
   dashboardMainMenus: IDashboardMenu[];
   dashboardMenus: IDashboardMenu[] = [
     { menuId: 1, menuName: 'Onboarding', parentId: 0 },
@@ -59,25 +62,25 @@ export class DashboardComponent implements OnInit {
     { menuId: 21, menuName: 'Pending Payments', parentId: 8 }
   ];
 
-  constructor() { }
-
-  ngOnInit() {
-    this.dashboardMainMenus = this.dashboardMenus.filter(c => c.parentId === 0);
+  ngOnInit(): void {
+    this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === 0);
   }
 
-  onMenuClick(dashboardMenu: IDashboardMenu) {
+  onMenuClick(dashboardMenu: IDashboardMenu): void {
     if (this.selectedMenuId === dashboardMenu.menuId) {
-      this.selectedMenuId = '';
+      this.selectedMenuId = null;
+      this.selectedSubMenuId = null;
       return;
     }
     this.selectedMenuId = dashboardMenu.menuId;
   }
 
-  onSubMenuClick(dashboardSubMenu: IDashboardMenu) {
+  onSubMenuClick(dashboardSubMenu: IDashboardMenu): void {
     this.selectedSubMenuId = dashboardSubMenu.menuId;
   }
 
-  getSubMenus(dashboardMenu: IDashboardMenu) {
-    return this.dashboardMenus.filter(c => c.parentId === dashboardMenu.menuId);
+  getSubMenus(dashboardMenu: IDashboardMenu): IDashboardMenu[] {
+    const subMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === dashboardMenu.menuId);
+    return subMenus;
   }
 }
