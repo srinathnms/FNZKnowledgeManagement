@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { LoaderService } from './service/loader.service';
-import { LoaderInterceptor } from './shared/loader.interceptor.service';
+import { LoaderInterceptor } from './shared/loader.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardService } from '../app/service/dashboard.service';
 
@@ -48,8 +48,8 @@ import { DashboardService } from '../app/service/dashboard.service';
     MatProgressSpinnerModule,
   ],
   providers: [
-    LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    LoaderService,
     DashboardService
   ],
   bootstrap: [AppComponent]

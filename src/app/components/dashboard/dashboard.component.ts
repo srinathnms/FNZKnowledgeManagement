@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
   selectedMenuId: number;
   selectedSubMenuId: number;
   dashboardMainMenus: IDashboardMenu[];
-  dashboardMenus: IDashboardMenu[]  = [
+  dashboardMenus: IDashboardMenu[] = [
     { menuId: 1, menuName: 'Onboarding', parentId: 0 },
     { menuId: 2, menuName: 'About FNZ', parentId: 0 },
     { menuId: 3, menuName: 'Development Cognizant Scope and Delivery', parentId: 0 },
