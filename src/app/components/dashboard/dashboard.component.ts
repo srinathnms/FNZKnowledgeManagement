@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { IDashboardMenu } from '../../model/dashboard';
+import { IModalDialog } from '../../model/modal-dialog';
 import { DashboardService } from '../../service/dashboard.service';
+import { ModalComponent } from '../../shared/modal/modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -35,8 +38,6 @@ import { DashboardService } from '../../service/dashboard.service';
 })
 
 export class DashboardComponent implements OnInit {
-  documentPath = 'https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.docx';
-  viewer = 'office';
   selectedMenuId: number;
   selectedSubMenuId: number;
   dashboardMainMenus: IDashboardMenu[];
@@ -64,7 +65,7 @@ export class DashboardComponent implements OnInit {
     { menuId: 21, menuName: 'Pending Payments', parentId: 8 }
   ];
 
-  constructor(private dashboardService: DashboardService) {
+  constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
     // this.dashboardService.get()
     //   .subscribe((data: IDashboardMenu[]) => {
     //     this.dashboardMenus = data;
@@ -86,10 +87,29 @@ export class DashboardComponent implements OnInit {
 
   onSubMenuClick(dashboardSubMenu: IDashboardMenu): void {
     this.selectedSubMenuId = dashboardSubMenu.menuId;
+    const modalDialogData = {
+      header: "Test",
+      content: "Test content",
+      footer: "Close",
+      document: { documentPath: "https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.docx", viewer: 'google' }
+    } as IModalDialog
+    this.openDialog(modalDialogData);
   }
 
   getSubMenus(dashboardMenu: IDashboardMenu): IDashboardMenu[] {
     const subMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === dashboardMenu.menuId);
     return subMenus;
+  }
+
+  openDialog(modalDialogData: IModalDialog): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      height: '80%',
+      width: '80%',
+      data: modalDialogData
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.selectedSubMenuId = null;
+    });
   }
 }

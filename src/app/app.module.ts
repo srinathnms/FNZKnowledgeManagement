@@ -13,6 +13,8 @@ import {
   MatIconModule,
   MatSidenavModule,
   MatProgressSpinnerModule,
+  MatDialogModule,
+  MatFormFieldModule,
 } from '@angular/material';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,12 +25,14 @@ import { LoaderService } from './service/loader.service';
 import { LoaderInterceptor } from './service/loader.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardService } from '../app/service/dashboard.service';
+import { ModalComponent } from './shared/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoaderComponent,
     DashboardComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,12 +50,17 @@ import { DashboardService } from '../app/service/dashboard.service';
     MatIconModule,
     MatSidenavModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
+    MatFormFieldModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     LoaderService,
     DashboardService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ModalComponent
+  ],
 })
 export class AppModule { }
