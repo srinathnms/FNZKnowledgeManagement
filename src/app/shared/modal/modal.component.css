@@ -5,3 +5,21 @@
 .close-icon{
     float: right;
 }
+
+.mat-chip-menu {
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 200px;
+    text-align: center;
+    border: 1px solid #B7B8BB;
+    background-color: white;
+    justify-content: center;
+}
+
+.mat-chip-list-wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 100px!important;
+}

@@ -1,8 +1,10 @@
 import {IDocument} from './document';
+import {IDashboardMenu} from './dashboard';
 
 export interface IModalDialog {
     header: string,
-    content: any,
+    content: IDashboardMenu[] | IDocument,
     footer: string,
-    document?: IDocument
+    // menuList: IDashboardMenu[],
+    // document?: IDocument
 }

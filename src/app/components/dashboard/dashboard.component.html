@@ -1,5 +1,5 @@
 <mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of dashboardMainMenus" aria-label="Color selection">
-    <mat-chip class="mat-chip-menu" (click)="onMenuClick(dashboardMenu)">
+    <mat-chip class="mat-chip-menu border-test" (click)="onMenuClick(dashboardMenu)">
         <strong>{{dashboardMenu.menuName}}</strong>
     </mat-chip>
     <div @list *ngIf="dashboardMenu.menuId === selectedMenuId">

@@ -88,10 +88,11 @@ export class DashboardComponent implements OnInit {
   onSubMenuClick(dashboardSubMenu: IDashboardMenu): void {
     this.selectedSubMenuId = dashboardSubMenu.menuId;
     const modalDialogData = {
-      header: "Test",
-      content: "Test content",
+      header: dashboardSubMenu.menuName,
+      content: this.dashboardMainMenus,
       footer: "Close",
-      document: { documentPath: "https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.docx", viewer: 'google' }
+      // menuList: this.dashboardMainMenus,
+      // document: { documentPath: "https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.docx", viewer: 'google' }
     } as IModalDialog
     this.openDialog(modalDialogData);
   }

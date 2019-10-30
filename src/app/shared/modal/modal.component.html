@@ -4,12 +4,18 @@
 <h1 mat-dialog-title class="title">{{data.header}}</h1>
 <mat-divider></mat-divider>
 <div mat-dialog-content>
-  <p>{{data.content}}</p>
-  <ngx-doc-viewer [url]="data.document.documentPath" [viewer]="data.document.viewer" style="width:100%;height:80vh;"></ngx-doc-viewer>
+  <div *ngIf="data.content.length > 0">
+    <mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of data.content" aria-label="Color selection">
+      <mat-chip class="mat-chip-menu border-test">
+        <strong>{{dashboardMenu.menuName}}</strong>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <ngx-doc-viewer *ngIf="data.content.documentPath" [url]="data.document.documentPath" [viewer]="data.document.viewer" style="width:100%;height:80vh;"></ngx-doc-viewer>
 </div>
 <div mat-dialog-actions align="center">
   <button mat-button [mat-dialog-close]="true" cdkFocusInitial>{{data.footer}}</button>
-  <div *ngIf="data.document">
+  <div *ngIf="data.document && data.document.documentPath">
     <form method="get" action="data.document.documentPath">
       <button type="submit" mat-button>Download</button>
     </form>
