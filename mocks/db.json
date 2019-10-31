@@ -1,0 +1,109 @@
+{
+  "FNZ_Management_Dashboard_Menu": [
+    {
+      "id": 1,
+      "menuName": "Onboarding",
+      "parentId": 0
+    },
+    {
+      "id": 2,
+      "menuName": "About FNZ",
+      "parentId": 0
+    },
+    {
+      "id": 3,
+      "menuName": "Development Cognizant Scope and Delivery",
+      "parentId": 0
+    },
+    {
+      "id": 4,
+      "menuName": "UK Insurance and Wealth Management",
+      "parentId": 0
+    },
+    {
+      "id": 5,
+      "menuName": "Testing Cognizant Scope and Delivery",
+      "parentId": 0
+    },
+    {
+      "id": 6,
+      "menuName": "Governance",
+      "parentId": 0
+    },
+    {
+      "id": 7,
+      "menuName": "Technical Documents",
+      "parentId": 0
+    },
+    {
+      "id": 8,
+      "menuName": "Commercials",
+      "parentId": 0
+    },
+    {
+      "id": 9,
+      "menuName": "Workforce Joining Formality",
+      "parentId": 1
+    },
+    {
+      "id": 10,
+      "menuName": "Machine Setup",
+      "parentId": 1
+    },
+    {
+      "id": 11,
+      "menuName": "Training plan",
+      "parentId": 1
+    },
+    {
+      "id": 12,
+      "menuName": "Development",
+      "parentId": 3
+    },
+    {
+      "id": 13,
+      "menuName": "Projects/Logo supported",
+      "parentId": 3
+    },
+    {
+      "id": 14,
+      "menuName": "Scope",
+      "parentId": 3
+    },
+    {
+      "id": 15,
+      "menuName": "UK Insurance",
+      "parentId": 4
+    },
+    {
+      "id": 16,
+      "menuName": "Brain shark Videos",
+      "parentId": 4
+    },
+    {
+      "id": 17,
+      "menuName": "Delivery Model",
+      "parentId": 6
+    },
+    {
+      "id": 18,
+      "menuName": "FAQ",
+      "parentId": 7
+    },
+    {
+      "id": 19,
+      "menuName": "Architecture",
+      "parentId": 7
+    },
+    {
+      "id": 20,
+      "menuName": "Jun’16 to Dec’19 Revenue",
+      "parentId": 8
+    },
+    {
+      "id": 21,
+      "menuName": "Pending Payments",
+      "parentId": 8
+    }
+  ]
+}

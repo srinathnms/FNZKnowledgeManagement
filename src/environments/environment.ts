@@ -5,10 +5,10 @@
 export const environment = {
   production: false,
   BASE_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement',
-  API_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_api/web/lists'
+  API_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_api/'
 };
 
-/*
+/*web/lists
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
  *

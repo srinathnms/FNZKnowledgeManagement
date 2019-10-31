@@ -1,19 +1,26 @@
-<mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of dashboardMainMenus" aria-label="Color selection">
-    <mat-chip class="mat-chip-menu border-test" (click)="onMenuClick(dashboardMenu)">
-        <strong>{{dashboardMenu.menuName}}</strong>
-    </mat-chip>
-    <div @list *ngIf="dashboardMenu.menuId === selectedMenuId">
-        <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection" *ngIf="getSubMenus(dashboardMenu).length === 0">
-            <mat-chip @items class="border-test mat-chip-sub-menu">
-                No list has been added
+<div class="example-list">
+    <mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of dashboardMainMenus" aria-label="Color selection">
+        <div matBadge="X" matBadgeColor="warn" (click)="onMenuRemove(dashboardMenu)">
+            <mat-chip class="mat-chip-menu border-test" (click)="onMenuClick(dashboardMenu)">
+                <strong>{{dashboardMenu.menuName}}</strong>
             </mat-chip>
-        </mat-chip-list>
-        <div *ngIf="getSubMenus(dashboardMenu).length > 0">
-            <mat-chip-list class="mat-chip-list-stacked" *ngFor="let dashboardSubMenu of getSubMenus(dashboardMenu)" aria-label="Color selection">
-                <mat-chip (click)="onSubMenuClick(dashboardSubMenu)" [selected]="dashboardSubMenu.menuId === selectedSubMenuId" @items class="border-test mat-chip-sub-menu">
-                    {{dashboardSubMenu.menuName}}
+        </div>
+        <div @list *ngIf="dashboardMenu.id === selectedMenuId">
+            <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection" *ngIf="getSubMenus(dashboardMenu).length === 0">
+                <mat-chip @items class="border-test mat-chip-sub-menu">
+                    No list has been added
                 </mat-chip>
             </mat-chip-list>
+            <div *ngIf="getSubMenus(dashboardMenu).length > 0">
+                <mat-chip-list class="mat-chip-list-stacked" *ngFor="let dashboardSubMenu of getSubMenus(dashboardMenu)" aria-label="Color selection">
+                    <mat-chip (click)="onSubMenuClick(dashboardSubMenu)" [selected]="dashboardSubMenu.id === selectedSubMenuId" @items class="border-test mat-chip-sub-menu">
+                        {{dashboardSubMenu.menuName}}
+                    </mat-chip>
+                </mat-chip-list>
+            </div>
         </div>
-    </div>
-</mat-chip-list>
+    </mat-chip-list>
+    <mat-chip class="mat-chip-add-menu border-test mat-chip-list-wrapper" (click)="onMenuAdd()">
+        <mat-icon aria-hidden="false" aria-label="add icon">add</mat-icon>
+    </mat-chip>
+</div>

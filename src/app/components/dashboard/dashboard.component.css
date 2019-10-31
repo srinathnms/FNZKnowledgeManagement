@@ -8,6 +8,15 @@
     justify-content: center;
 }
 
+.mat-chip-add-menu {
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    border: 3px dotted #B7B8BB;
+    background-color: white;
+    justify-content: center;
+}
+
 .mat-chip-list-wrapper {
     display: inline-flex;
     flex-direction: row;

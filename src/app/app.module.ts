@@ -15,7 +15,9 @@ import {
   MatProgressSpinnerModule,
   MatDialogModule,
   MatFormFieldModule,
+  MatBadgeModule,
 } from '@angular/material';
+// import { DragDropModule } from '@angular/cdk';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -52,6 +54,8 @@ import { ModalComponent } from './shared/modal/modal.component';
     MatProgressSpinnerModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatBadgeModule,
+    // DragDropModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },

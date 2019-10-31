@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+// import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 import { IDashboardMenu } from '../../model/dashboard';
 import { IModalDialog } from '../../model/modal-dialog';
@@ -41,52 +42,34 @@ export class DashboardComponent implements OnInit {
   selectedMenuId: number;
   selectedSubMenuId: number;
   dashboardMainMenus: IDashboardMenu[];
-  dashboardMenus: IDashboardMenu[] = [
-    { menuId: 1, menuName: 'Onboarding', parentId: 0 },
-    { menuId: 2, menuName: 'About FNZ', parentId: 0 },
-    { menuId: 3, menuName: 'Development Cognizant Scope and Delivery', parentId: 0 },
-    { menuId: 4, menuName: 'UK Insurance and Wealth Management', parentId: 0 },
-    { menuId: 5, menuName: 'Testing Cognizant Scope and Delivery', parentId: 0 },
-    { menuId: 6, menuName: 'Governance', parentId: 0 },
-    { menuId: 7, menuName: 'Technical Documents', parentId: 0 },
-    { menuId: 8, menuName: 'Commercials', parentId: 0 },
-    { menuId: 9, menuName: 'Workforce Joining Formality', parentId: 1 },
-    { menuId: 10, menuName: 'Machine Setup', parentId: 1 },
-    { menuId: 11, menuName: 'Training plan', parentId: 1 },
-    { menuId: 12, menuName: 'Development', parentId: 3 },
-    { menuId: 13, menuName: 'Projects/Logo supported', parentId: 3 },
-    { menuId: 14, menuName: 'Scope', parentId: 3 },
-    { menuId: 15, menuName: 'UK Insurance', parentId: 4 },
-    { menuId: 16, menuName: 'Brain shark Videos', parentId: 4 },
-    { menuId: 17, menuName: 'Delivery Model', parentId: 6 },
-    { menuId: 18, menuName: 'FAQ', parentId: 7 },
-    { menuId: 19, menuName: 'Architecture', parentId: 7 },
-    { menuId: 20, menuName: 'Jun’16 to Dec’19 Revenue', parentId: 8 },
-    { menuId: 21, menuName: 'Pending Payments', parentId: 8 }
-  ];
+  dashboardMenus: IDashboardMenu[];
 
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
-    // this.dashboardService.get()
-    //   .subscribe((data: IDashboardMenu[]) => {
-    //     this.dashboardMenus = data;
-    //   });
+    this.dashboardService.get()
+      .subscribe((data: IDashboardMenu[]) => {
+        this.dashboardMenus = data;
+        this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === 0);
+      });
   }
 
   ngOnInit(): void {
-    this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === 0);
   }
 
+  // drop(event: CdkDragDrop<string[]>) {
+  //   moveItemInArray(this.dashboardMainMenus, event.previousIndex, event.currentIndex);
+  // }
+
   onMenuClick(dashboardMenu: IDashboardMenu): void {
-    if (this.selectedMenuId === dashboardMenu.menuId) {
+    if (this.selectedMenuId === dashboardMenu.id) {
       this.selectedMenuId = null;
       this.selectedSubMenuId = null;
       return;
     }
-    this.selectedMenuId = dashboardMenu.menuId;
+    this.selectedMenuId = dashboardMenu.id;
   }
 
   onSubMenuClick(dashboardSubMenu: IDashboardMenu): void {
-    this.selectedSubMenuId = dashboardSubMenu.menuId;
+    this.selectedSubMenuId = dashboardSubMenu.id;
     const modalDialogData = {
       header: dashboardSubMenu.menuName,
       content: this.dashboardMainMenus,
@@ -98,7 +81,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getSubMenus(dashboardMenu: IDashboardMenu): IDashboardMenu[] {
-    const subMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === dashboardMenu.menuId);
+    const subMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === dashboardMenu.id);
     return subMenus;
   }
 
@@ -112,5 +95,14 @@ export class DashboardComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.selectedSubMenuId = null;
     });
+  }
+
+  onMenuAdd(): void {
+    const menu = { menuName: 'Test', parentId: 0 } as IDashboardMenu;
+    this.dashboardService.post(menu).subscribe();
+  }
+
+  onMenuRemove(dashboardMenu: IDashboardMenu) {
+    this.dashboardService.delete(dashboardMenu.id).subscribe();
   }
 }
