@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 // import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
-import { IDashboardMenu } from '../../model/dashboard';
-import { IModalDialog } from '../../model/modal-dialog';
-import { DashboardService } from '../../service/dashboard.service';
-import { ModalComponent } from '../../shared/modal/modal.component';
+import { IDashboardMenu } from 'src/app/model/dashboard';
+import { IModalDialog } from 'src/app/model/modal-dialog';
+import { DashboardService } from './dashboard.service';
+import { ModalComponent } from 'src/app/core/modal/modal.component';
 
 @Component({
   selector: 'app-dashboard',

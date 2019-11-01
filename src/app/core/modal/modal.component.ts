@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { IModalDialog } from '../../model/modal-dialog';
-import { IDashboardMenu } from '../../model/dashboard';
+import { IModalDialog } from 'src/app/model/modal-dialog';
+import { IDashboardMenu } from 'src/app/model/dashboard';
 
 @Component({
   selector: 'app-modal',
