@@ -1,8 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-
 import { IModalDialog } from 'src/app/model/modal-dialog';
-import { IDashboardMenu } from 'src/app/model/dashboard';
 
 @Component({
   selector: 'app-modal',
@@ -10,6 +8,7 @@ import { IDashboardMenu } from 'src/app/model/dashboard';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
+  private canShowDocument: boolean;
   constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: IModalDialog) {
   }
 

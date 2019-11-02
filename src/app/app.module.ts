@@ -17,27 +17,25 @@ import {
   MatFormFieldModule,
   MatBadgeModule,
 } from '@angular/material';
-// import { DragDropModule } from '@angular/cdk';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { AuthInterceptor } from 'src/app/service/auth.service';
-import { DashboardComponent } from 'src/app/components/dashboard/dashboard.component';
-import { DashboardService } from 'src/app/components/dashboard/dashboard.service';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthInterceptor } from 'src/app/services/auth-interceptor.service';
 import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { SpinnerComponent } from 'src/app/core/spinner/spinner.component';
-import { SpinnerService } from 'src/app/core/spinner/spinner.service';
+import { HeaderComponent } from 'src/app/core/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpinnerComponent,
-    DashboardComponent,
     ModalComponent,
-    SpinnerComponent,
+    HeaderComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -56,12 +54,10 @@ import { SpinnerService } from 'src/app/core/spinner/spinner.service';
     MatDialogModule,
     MatFormFieldModule,
     MatBadgeModule,
-    // DragDropModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    SpinnerService,
-    DashboardService
+    AuthInterceptor
   ],
   bootstrap: [AppComponent],
   entryComponents: [

@@ -13,21 +13,27 @@ export class AuthGuard implements CanActivate {
     async getUserContext(): Promise<IUserClaims> {
         const userClaims = await this.authService.getUserContext().toPromise();
         if (userClaims) {
-            localStorage.setItem('currentUser', JSON.stringify(userClaims));
+            localStorage.setItem('currentUser', JSON.stringify(userClaims.FormDigestValue));
         }
         return userClaims;
     }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let isUserLoggedIn: boolean;
-
-        this.getUserContext().then(x => isUserLoggedIn = !!x);
+        const userClaims = this.authService.currentUser;
+        if (userClaims) {
+            isUserLoggedIn = !!userClaims;
+        } else {
+            this.getUserContext().then(x => isUserLoggedIn = !!x)
+                .catch((error: any) => console.log('auth error' + error));
+        }
+        this.getUserContext().then(x => isUserLoggedIn = !!x)
+            .catch((error: any) => console.log('auth error' + error));
         if (isUserLoggedIn) {
             // authorised so return true
             return true;
         }
         // not logged in so redirect to login page with the return url
-        this.router.navigate(['/dashboard'], { queryParams: { returnUrl: state.url } });
         return false;
     }
 }

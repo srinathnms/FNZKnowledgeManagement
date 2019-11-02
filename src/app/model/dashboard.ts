@@ -1,5 +1,5 @@
 export interface IDashboardMenu {
-    id: number,
-    menuName: string,
-    parentId: number
+    Id: number;
+    MenuName: string;
+    ParentId: number;
 }

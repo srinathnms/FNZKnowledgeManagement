@@ -14,23 +14,22 @@ export class AuthInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let currentUser: IUserClaims;
         this.authService.currentUser.subscribe((userClaim: IUserClaims) => currentUser = userClaim);
+        const headers: HttpHeaders = new HttpHeaders().set('Accept', 'application/json;odata=nometadata');
         if (currentUser && currentUser.FormDigestValue) {
-            const headers: HttpHeaders = new HttpHeaders();
-            headers.append('Accept', 'application/json;odata=nometadata');
-            headers.append('Content-type', 'application/json;odata=verbose');
-            headers.append('X-RequestDigest', currentUser.FormDigestValue);
-            request = request.clone({ headers });
-            this.incrementRequest();
-            return next.handle(request).pipe(map((event: HttpEvent<any>) => {
-                if (event instanceof HttpResponse) {
-                    this.decrementRequest();
-                }
-                return event;
-            }), catchError((error: HttpErrorResponse) => {
-                this.decrementRequest();
-                return throwError(error);
-            }));
+            headers.append('Content-type', 'application/json;odata=verbose')
+                .append('X-RequestDigest', currentUser.FormDigestValue);
         }
+        request = request.clone({ headers });
+        this.incrementRequest();
+        return next.handle(request).pipe(map((event: HttpEvent<any>) => {
+            if (event instanceof HttpResponse) {
+                this.decrementRequest();
+            }
+            return event;
+        }), catchError((error: HttpErrorResponse) => {
+            this.decrementRequest();
+            return throwError(error);
+        }));
     }
 
     private incrementRequest(): void {

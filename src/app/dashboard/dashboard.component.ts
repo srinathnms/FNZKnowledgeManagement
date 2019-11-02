@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
-import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-// import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 import { IDashboardMenu } from 'src/app/model/dashboard';
 import { IModalDialog } from 'src/app/model/modal-dialog';
 import { DashboardService } from './dashboard.service';
 import { ModalComponent } from 'src/app/core/modal/modal.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -48,40 +47,37 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.get()
       .subscribe((data: IDashboardMenu[]) => {
         this.dashboardMenus = data;
-        this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === 0);
+        this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === 0);
       });
   }
 
   ngOnInit(): void {
   }
 
-  // drop(event: CdkDragDrop<string[]>) {
-  //   moveItemInArray(this.dashboardMainMenus, event.previousIndex, event.currentIndex);
-  // }
-
   onMenuClick(dashboardMenu: IDashboardMenu): void {
-    if (this.selectedMenuId === dashboardMenu.id) {
+    if (this.selectedMenuId === dashboardMenu.Id) {
       this.selectedMenuId = null;
       this.selectedSubMenuId = null;
       return;
     }
-    this.selectedMenuId = dashboardMenu.id;
+    this.selectedMenuId = dashboardMenu.Id;
   }
 
   onSubMenuClick(dashboardSubMenu: IDashboardMenu): void {
-    this.selectedSubMenuId = dashboardSubMenu.id;
+    this.selectedSubMenuId = dashboardSubMenu.Id;
     const modalDialogData = {
-      header: dashboardSubMenu.menuName,
-      content: this.dashboardMainMenus,
-      footer: "Close",
-      // menuList: this.dashboardMainMenus,
-      // document: { documentPath: "https://file-examples.com/wp-content/uploads/2017/02/file-sample_100kB.docx", viewer: 'google' }
-    } as IModalDialog
+      header: dashboardSubMenu.MenuName,
+      content: {
+        documentPath: `${environment.BASE_URL}/Shared/Documents/DashboardContent.pptx`,
+        viewer: 'google'
+      },
+      footer: 'Close',
+    } as IModalDialog;
     this.openDialog(modalDialogData);
   }
 
   getSubMenus(dashboardMenu: IDashboardMenu): IDashboardMenu[] {
-    const subMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.parentId === dashboardMenu.id);
+    const subMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardMenu.Id);
     return subMenus;
   }
 
@@ -98,11 +94,11 @@ export class DashboardComponent implements OnInit {
   }
 
   onMenuAdd(): void {
-    const menu = { menuName: 'Test', parentId: 0 } as IDashboardMenu;
-    this.dashboardService.post(menu).subscribe();
+    const menu = { MenuName: 'Test', ParentId: 0 } as IDashboardMenu;
+    // this.dashboardService.post(menu).subscribe();
   }
 
   onMenuRemove(dashboardMenu: IDashboardMenu) {
-    this.dashboardService.delete(dashboardMenu.id).subscribe();
+    // this.dashboardService.delete(dashboardMenu.id).subscribe();
   }
 }

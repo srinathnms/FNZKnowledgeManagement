@@ -24,15 +24,15 @@ export class AuthService {
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
+      console.error('An error occurred:', error && error.error && error.error.message);
     } else {
       console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
+        `Backend returned code ${error && error.status}, ` +
+        `body was: ${error && error.error}`);
     }
     return throwError(
       'Something bad happened; please try again later.');
-  };
+  }
 
   public getUserContext(): Observable<IUserClaims> {
     const headers: HttpHeaders = new HttpHeaders();
@@ -41,7 +41,7 @@ export class AuthService {
       headers: headers,
     };
 
-    return this.http.post<any>(environment.API_URL + 'contextinfo', options).pipe(
+    return this.http.post(environment.API_URL + '/contextinfo', options).pipe(
       map((data: IUserClaims) => data),
       retry(3),
       catchError(this.handleError)
