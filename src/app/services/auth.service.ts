@@ -36,7 +36,7 @@ export class AuthService {
 
   public getUserContext(): Observable<IUserClaims> {
     const headers: HttpHeaders = new HttpHeaders();
-    headers.append('Accept', 'application/json;odata=nometadata');
+    headers.append('Accept', 'application/json;odata=verbose');
     const options = {
       headers: headers,
     };

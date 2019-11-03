@@ -19,13 +19,14 @@ import {
 } from '@angular/material';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthInterceptor } from 'src/app/services/auth-interceptor.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthInterceptor } from 'src/app/services/auth-interceptor.service';
 import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { SpinnerComponent } from 'src/app/core/spinner/spinner.component';
 import { HeaderComponent } from 'src/app/core/header/header.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HeaderComponent } from 'src/app/core/header/header.component';
     HeaderComponent
   ],
   imports: [
+    // CoreModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -55,13 +57,16 @@ import { HeaderComponent } from 'src/app/core/header/header.component';
     MatFormFieldModule,
     MatBadgeModule,
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    AuthInterceptor
-  ],
   bootstrap: [AppComponent],
   entryComponents: [
     ModalComponent
   ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+  ]
 })
 export class AppModule { }

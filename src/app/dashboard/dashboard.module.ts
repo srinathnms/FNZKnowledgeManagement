@@ -1,5 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 import {
     MatTooltipModule,
     MatButtonModule,
@@ -48,6 +50,10 @@ const routers: Routes = [
     ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA
-    ]
+    ],
+    providers: [
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
+        // Other providers suppressed
+      ],
 })
 export class DashboardModule { }

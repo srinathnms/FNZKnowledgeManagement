@@ -18,14 +18,7 @@ export class DashboardService extends BaseService {
     }
 
     get(): Observable<IDashboardMenu[]> {
-        const headers: HttpHeaders = new HttpHeaders();
-        headers.append('Accept', 'application/json;odata=nometadata');
-        headers.append('Content-type', 'application/json;odata=verbose');
-        headers.append('X-RequestDigest', this.formDigestValue);
-        const options = {
-            headers: headers,
-        };
-        return this.http.get<IDashboardMenu[]>(environment.API_URL + '/lists/GetByTitle(\'FNZ_Management_Dashboard_Menu\')/items', options)
+        return this.http.get<IDashboardMenu[]>(environment.API_URL + '/lists/GetByTitle(\'DashboardMenus\')/items')
             .pipe(
                 map((dashboardMenus: any) => dashboardMenus.value),
                 retry(3),
@@ -42,12 +35,42 @@ export class DashboardService extends BaseService {
             );
     }
 
-    // put(dashboardMenu: IDashboardMenu): Observable<IDashboardMenu[]> {
-    //     return this.http.put<IDashboardMenu[]>(this.mockDbUrl, dashboardMenu).pipe(
-    //         retry(3),
-    //         catchError(this.handleError)
-    //     );
-    // }
+    public getItemTypeForListName(name) {
+        return 'SP.Data.' + name.charAt(0).toUpperCase() + name.slice(1) + 'ListItem';
+    }
+
+    put(dashboardMenu: IDashboardMenu): Observable<IDashboardMenu[]> {
+        const listName = 'DashboardMenus';
+        const itemType = this.getItemTypeForListName(listName);
+        const formDigestValue = localStorage.getItem('currentUser');
+        const item = {
+            '__metadata': { 'type': 'SP.Data.DashboardMenusListItem' },
+            'MenuName': dashboardMenu.MenuName,
+            'ParentId': 1
+        };
+        debugger;
+        const httpHeaders = new HttpHeaders({
+            'Content-Type': 'application/json;charset=UTF-8;odata=verbose',
+            'Cache-Control': 'no-cache',
+            'Accept': 'application/json;odata=verbose',
+            'X-HTTP-Method': 'POST',
+            'If-Match': '*',
+            'X-RequestDigest': formDigestValue
+        });
+
+        const options = {
+            headers: httpHeaders,
+        };
+
+        const siteUrl = 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_api/lists/getbytitle(\'' +
+            listName + '\')/items';
+        return this.http.post<IDashboardMenu[]>
+            (siteUrl, JSON.stringify(item), options)
+            .pipe(
+                retry(3),
+                catchError(this.handleError)
+            );
+    }
 
     // post(dashboardMenu: IDashboardMenu): Observable<IDashboardMenu[]> {
     //     return this.http.post<IDashboardMenu[]>(this.mockDbUrl, dashboardMenu).pipe(
