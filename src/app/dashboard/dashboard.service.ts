@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { IDashboardMenu } from 'src/app/model/dashboard';
+import { IJoiningFormalityMenu } from 'src/app/model/joiningFormalityMenu';
 import { BaseService } from '../services/base.service';
 import { AuthService } from '../services/auth.service';
 
@@ -18,7 +19,7 @@ export class DashboardService extends BaseService {
     }
 
     get(): Observable<IDashboardMenu[]> {
-        return this.http.get<IDashboardMenu[]>(environment.API_URL + '/lists/GetByTitle(\'DashboardMenus\')/items')
+        return this.http.get<IDashboardMenu[]>(environment.API_URL + '/lists/GetByTitle(\'FNZ_Management_Dashboard_Menu\')/items')
             .pipe(
                 map((dashboardMenus: any) => dashboardMenus.value),
                 retry(3),
@@ -26,6 +27,7 @@ export class DashboardService extends BaseService {
             );
     }
 
+    //Dummy data to work in local : Should be deleted once ready to deploy
     getFromMock(): Observable<IDashboardMenu[]> {
         return this.http.get<IDashboardMenu[]>('http://localhost:3000/FNZ_Management_Dashboard_Menu')
             .pipe(
@@ -72,20 +74,26 @@ export class DashboardService extends BaseService {
             );
     }
 
-    // post(dashboardMenu: IDashboardMenu): Observable<IDashboardMenu[]> {
-    //     return this.http.post<IDashboardMenu[]>(this.mockDbUrl, dashboardMenu).pipe(
-    //         retry(3),
-    //         catchError(this.handleError)
-    //     );
-    // }
+    //Get work-force-joining-menu-items
+    getJoiningFormalityMenus(): Observable<IJoiningFormalityMenu[]> {
 
-    // delete(menuId: number): Observable<never> {
-    //     return this.http.delete(`${this.mockDbUrl}/${menuId}`).pipe(
-    //         map((never: never) => never),
-    //         retry(3),
-    //         catchError(this.handleError)
-    //     );
-    // }
+        return this.http.get<IJoiningFormalityMenu[]>(environment.API_URL + '/lists/GetByTitle(\'Workforce_Joining_Formality_Menu\')/items')
+            .pipe(
+                map((menus: any) => menus.value),
+                retry(3),
+                catchError(this.handleError)
+            );
+    }
+
+    //Dummy data to work in local : Should be deleted once ready to deploy
+    getFromMockJoiingFormalityMenus(): Observable<IJoiningFormalityMenu[]> {
+        return this.http.get<IJoiningFormalityMenu[]>("http://localhost:3000/Work_Force_Joining_Formality_Menu")
+            .pipe(
+                map((menus: any) => menus),
+                retry(3),
+                catchError(this.handleError)
+            );
+    }
 
     private handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {

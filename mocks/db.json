@@ -104,5 +104,46 @@
             "MenuName": "Pending Payments",
             "ParentId": 8
         }
+    ],
+    "Work_Force_Joining_Formality_Menu": [
+      {
+        "id": 1,
+        "title": "Developers and Testers Joining FNZ",
+        "image_source": "https://image.flaticon.com/icons/png/512/3/3901.png"
+      },
+      {
+        "id": 2,
+        "title": "Request them to sign the FNZ IT Policy",
+        "image_source": "https://image.flaticon.com/icons/png/512/3/3901.png",
+        "contents": "Check with FNZ to get the latest version of IT policy. Just sign and share the signed page alone to FNZ HR.",
+        "document_url": "https://insurance.cognizant.com/uksbu/fnz/Shared%20Documents/Training/00%20-%20Onboarding/FNZ%20Onboarding%20Reference%20Document.docx"
+      },
+      {
+        "id": 3,
+        "title": "Initiate the request to create VM ",
+        "image_source": "https://image.flaticon.com/icons/png/512/3/3901.png",
+        "contents": "Get the FNZ HR PoC and share the developers and Testers list to them. Most likely will take 2/ 3 weeks to get the VMs.",
+        "document_url": "https://insurance.cognizant.com/uksbu/fnz/Shared%20Documents/Training/00%20-%20Onboarding/FNZ%20Onboarding%20Reference%20Document.docx"
+      },
+      {
+        "id": 4,
+        "title": "Verify whether all the software’s are available  in the VMs",
+        "image_source": "https://image.flaticon.com/icons/png/512/3/3901.png",
+        "contents": "The VM configuration will vary between Developer and Tester.",
+        "document_url": "https://insurance.cognizant.com/uksbu/fnz/Shared%20Documents/Training/00%20-%20Onboarding/FNZ%20Onboarding%20Reference%20Document.docx"
+      },
+      {
+        "id": 5,
+        "title": "Reach the Respective Project specific PMs to get missing access",
+        "image_source": "https://image.flaticon.com/icons/png/512/3/3901.png",
+        "contents": "Consolidate the missing details for every developers and Testing. FNZ PM will reach their infra team via Infra JIRA to resolve those issues",
+        "document_url": "abc.cccc"
+      },
+      {
+        "id": 6,
+        "title": "Now ready to commence the Great work",
+        "image_source": "https://image.flaticon.com/icons/png/512/3/3901.png",
+        "contents": "Follow the direction from the FNZ PM and align to their delivery accordingly"
+      }
     ]
 }

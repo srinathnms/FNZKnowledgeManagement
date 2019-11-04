@@ -1,17 +1,39 @@
 <button mat-icon-button class="close-icon">
-  <mat-icon  (click)="onClose()" aria-hidden="false" aria-label="close icon">close</mat-icon>
-  </button>
+    <mat-icon (click)="onClose()" aria-hidden="false" aria-label="close icon">close</mat-icon>
+</button>
 <h1 mat-dialog-title class="title">{{data.header}}</h1>
 <mat-divider></mat-divider>
 <div mat-dialog-content>
     <div *ngIf="data.content.length > 0">
-        <mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of data.content" aria-label="Color selection">
-            <mat-chip class="mat-chip-menu border-test">
-                <strong>{{dashboardMenu.MenuName}}</strong>
-            </mat-chip>
-        </mat-chip-list>
+        <div class="tiles-container">
+            <mat-card class="tiles-card" *ngFor="let menu of data.content">
+                <mat-card-header>
+                    <mat-card-title class="tiles-title">
+                        <h4>{{menu?.Title}}</h4>
+                    </mat-card-title>
+                    <img class="tiles-image" *ngIf="menu?.ImageSource" mat-card-avatar mat-card-md-image
+                        [src]="menu?.ImageSource" [alt]="menu?.Title">
+                </mat-card-header>
+                <mat-card-content>
+                    <p class="tiles-content">
+                        {{menu?.Contents}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div *ngIf="menu && menu.DocumentUrl">
+                        <form method="get" action="menu.DocumentUrl">
+                            <button type="submit" mat-button>Download</button>
+                        </form>
+                    </div>
+                    <i class='fas fa-print' id="download-Document" mat-button
+                        (click)="onDownloadSampleDocument(menu.DocumentUrl)" *ngIf="menu && menu.DocumentUrl"
+                        title="Download sample document"></i>
+                </mat-card-actions>
+            </mat-card>
+        </div>
     </div>
-    <ngx-doc-viewer *ngIf="data.content && data.content.documentPath" [url]="data.content && data.content.documentPath" [viewer]="data.content && data.content.viewer" style="width:100%;height:80vh;"></ngx-doc-viewer>
+    <ngx-doc-viewer *ngIf="data.content && data.content.documentPath" [url]="data.content && data.content.documentPath"
+        [viewer]="data.content && data.content.viewer" style="width:100%;height:80vh;"></ngx-doc-viewer>
 </div>
 <div mat-dialog-actions align="center">
     <button mat-button [mat-dialog-close]="true" cdkFocusInitial>{{data.footer}}</button>

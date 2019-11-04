@@ -7,6 +7,8 @@ import { IModalDialog } from 'src/app/model/modal-dialog';
 import { DashboardService } from './dashboard.service';
 import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { environment } from 'src/environments/environment';
+import { IJoiningFormalityMenu } from '../model/JoiningFormalityMenu';
+import { IDocument } from '../model/document';
 
 @Component({
   selector: 'app-dashboard',
@@ -64,21 +66,36 @@ export class DashboardComponent implements OnInit {
   }
 
   onSubMenuClick(dashboardSubMenu: IDashboardMenu): void {
+    if (dashboardSubMenu.MenuName == "Workforce Joining Formality") {
+      this.getJoiningFormalityMenus(dashboardSubMenu.MenuName);
+      return;
+    }
     this.selectedSubMenuId = dashboardSubMenu.Id;
-    const modalDialogData = {
-      header: dashboardSubMenu.MenuName,
-      content: {
-        documentPath: `${environment.BASE_URL}/Shared/Documents/DashboardContent.pptx`,
-        viewer: 'google'
-      },
-      footer: 'Close',
-    } as IModalDialog;
-    this.openDialog(modalDialogData);
+    this.updateModalDialogDataModel(dashboardSubMenu.MenuName, {
+      documentPath: `${environment.BASE_URL}/Shared/Documents/DashboardContent.pptx`,
+      viewer: 'google'
+    });
+  }
+
+  public getJoiningFormalityMenus(heading: string): void {
+    this.dashboardService.getJoiningFormalityMenus()
+      .subscribe((data: IJoiningFormalityMenu[]) => {
+        this.updateModalDialogDataModel(heading, data);
+      });
   }
 
   getSubMenus(dashboardMenu: IDashboardMenu): IDashboardMenu[] {
     const subMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardMenu.Id);
     return subMenus;
+  }
+
+  updateModalDialogDataModel(heading: string, data: IJoiningFormalityMenu[] | IDocument): void {
+    const modalDialogData = {
+      header: heading,
+      content: data,
+      footer: 'Close',
+    } as IModalDialog;
+    this.openDialog(modalDialogData);
   }
 
   openDialog(modalDialogData: IModalDialog): void {
