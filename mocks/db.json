@@ -1,5 +1,5 @@
 {
-    "FNZ_Management_Dashboard_Menu": [{
+    "DashboardMenus": [{
             "Id": 1,
             "MenuName": "Onboarding",
             "ParentId": 0

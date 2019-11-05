@@ -1,8 +1,8 @@
 import {IDocument} from './document';
-import {IJoiningFormalityMenu} from './JoiningFormalityMenu';
+import {IDashboardMenu} from './dashboard';
 
 export interface IModalDialog {
     header: string;
-    content: IJoiningFormalityMenu[] | IDocument;
+    content: IDashboardMenu[] | IDocument;
     footer: string;
 }

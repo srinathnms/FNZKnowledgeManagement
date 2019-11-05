@@ -1,4 +1,4 @@
 export interface IDocument {
-    documentPath: string,
-    viewer: string
+    documentPath: string;
+    viewer: string;
 }

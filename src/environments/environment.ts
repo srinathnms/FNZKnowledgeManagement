@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   BASE_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ',
-  API_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_api'
+  API_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_api',
+  DOC_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_layouts/15/Doc.aspx'
 };
 
 /*web/lists
