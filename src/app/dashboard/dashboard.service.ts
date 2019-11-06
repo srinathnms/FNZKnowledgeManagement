@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { IDashboardMenu } from 'src/app/model/dashboard';
-import { IJoiningFormalityMenu } from 'src/app/model/joiningFormalityMenu';
 import { BaseService } from '../services/base.service';
 import { AuthService } from '../services/auth.service';
 
@@ -18,8 +17,12 @@ export class DashboardService extends BaseService {
         super(authService);
     }
 
-    get(): Observable<IDashboardMenu[]> {
-        return this.http.get<IDashboardMenu[]>(environment.API_URL + '/lists/GetByTitle(\'FNZ_Management_Dashboard_Menu\')/items')
+    get(listName: string, query?: string): Observable<IDashboardMenu[]> {
+        let url = `${environment.API_URL}/lists/GetByTitle(\'${listName}\')/items`;
+        if (query) {
+            url = `${url}?${query}`;
+        }
+        return this.http.get<IDashboardMenu[]>(url)
             .pipe(
                 map((dashboardMenus: any) => dashboardMenus.value),
                 retry(3),
@@ -28,8 +31,8 @@ export class DashboardService extends BaseService {
     }
 
     //Dummy data to work in local : Should be deleted once ready to deploy
-    getFromMock(): Observable<IDashboardMenu[]> {
-        return this.http.get<IDashboardMenu[]>('http://localhost:3000/FNZ_Management_Dashboard_Menu')
+    getFromMock(listName: string): Observable<IDashboardMenu[]> {
+        return this.http.get<IDashboardMenu[]>(`http://localhost:3000/${listName}`)
             .pipe(
                 map((dashboardMenus: any) => dashboardMenus),
                 retry(3),
@@ -50,7 +53,6 @@ export class DashboardService extends BaseService {
             'MenuName': dashboardMenu.MenuName,
             'ParentId': 1
         };
-        debugger;
         const httpHeaders = new HttpHeaders({
             'Content-Type': 'application/json;charset=UTF-8;odata=verbose',
             'Cache-Control': 'no-cache',
@@ -69,27 +71,6 @@ export class DashboardService extends BaseService {
         return this.http.post<IDashboardMenu[]>
             (siteUrl, JSON.stringify(item), options)
             .pipe(
-                retry(3),
-                catchError(this.handleError)
-            );
-    }
-
-    //Get work-force-joining-menu-items
-    getJoiningFormalityMenus(): Observable<IJoiningFormalityMenu[]> {
-
-        return this.http.get<IJoiningFormalityMenu[]>(environment.API_URL + '/lists/GetByTitle(\'Workforce_Joining_Formality_Menu\')/items')
-            .pipe(
-                map((menus: any) => menus.value),
-                retry(3),
-                catchError(this.handleError)
-            );
-    }
-
-    //Dummy data to work in local : Should be deleted once ready to deploy
-    getFromMockJoiingFormalityMenus(): Observable<IJoiningFormalityMenu[]> {
-        return this.http.get<IJoiningFormalityMenu[]>("http://localhost:3000/Work_Force_Joining_Formality_Menu")
-            .pipe(
-                map((menus: any) => menus),
                 retry(3),
                 catchError(this.handleError)
             );
