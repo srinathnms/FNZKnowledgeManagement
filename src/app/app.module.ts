@@ -20,6 +20,7 @@ import {
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptor } from 'src/app/services/auth-interceptor.service';
+import { SafePipe } from 'src/app/core/safePipe/safe.pipe';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -33,7 +34,8 @@ import { CoreModule } from './core/core.module';
     AppComponent,
     SpinnerComponent,
     ModalComponent,
-    HeaderComponent
+    HeaderComponent,
+    SafePipe
   ],
   imports: [
     // CoreModule,

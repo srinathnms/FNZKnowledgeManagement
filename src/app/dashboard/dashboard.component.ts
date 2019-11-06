@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit {
   docUrl: string;
 
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
-    this.dashboardService.getFromMock('DashboardMenus')
+    this.dashboardService.get('DashboardMenus')
       .subscribe((data: IDashboardMenu[]) => {
         this.dashboardMenus = data;
         this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === 0);
@@ -67,13 +67,23 @@ export class DashboardComponent implements OnInit {
 
   onSubMenuClick(dashboardSubMenu: IDashboardMenu): void {
     this.selectedSubMenuId = dashboardSubMenu.Id;
-    const content = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardSubMenu.Id);
-    // const content = { documentPath: `${environment.DOC_URL}?sourcedoc=%7B${documentId}%7D&file=${documentName}`, viewer: 'office' }
     const modalDialogData = {
       header: dashboardSubMenu.MenuName,
-      content: content,
       footer: 'Close',
     } as IModalDialog;
+    const hasAttachment = dashboardSubMenu.Attachments;
+    if (hasAttachment) {
+      const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
+      this.dashboardService.getAttachment('DashboardMenus', attachmentQuery)
+        .subscribe((document: IDocument) => {
+          modalDialogData.content = {
+            ServerRelativeUrl: `${environment.SHARE_POINT_URL}${document.ServerRelativeUrl}?web=1`
+          } as IDocument;
+          this.openDialog(modalDialogData);
+        });
+      return;
+    }
+    modalDialogData.content = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardSubMenu.Id);
     this.openDialog(modalDialogData);
   }
 

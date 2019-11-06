@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { IDashboardMenu } from 'src/app/model/dashboard';
 import { BaseService } from '../services/base.service';
 import { AuthService } from '../services/auth.service';
+import { IDocument } from '../model/document';
 
 @Injectable({
     providedIn: 'root'
@@ -20,11 +21,21 @@ export class DashboardService extends BaseService {
     get(listName: string, query?: string): Observable<IDashboardMenu[]> {
         let url = `${environment.API_URL}/lists/GetByTitle(\'${listName}\')/items`;
         if (query) {
-            url = `${url}?${query}`;
+            url = `${environment.API_URL}/lists/GetByTitle(\'${listName}\')/items${query}`;
         }
         return this.http.get<IDashboardMenu[]>(url)
             .pipe(
                 map((dashboardMenus: any) => dashboardMenus.value),
+                retry(3),
+                catchError(this.handleError)
+            );
+    }
+
+    getAttachment(listName: string, query?: string): Observable<IDocument> {
+        const url = `${environment.API_URL}/lists/GetByTitle(\'${listName}\')/items${query}`;
+        return this.http.get<IDocument>(url)
+            .pipe(
+                map((attachment: any) => attachment.value[0]),
                 retry(3),
                 catchError(this.handleError)
             );
