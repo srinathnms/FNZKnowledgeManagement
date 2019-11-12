@@ -34,6 +34,18 @@ import { IDocument } from '../model/document';
         animate('1s cubic-bezier(.8,-0.6,0.2,1.5)',
           style({ transform: 'scale(0.5)', opacity: 0, height: '0px', margin: '0px' }))
       ]),
+    ]),
+    trigger('listAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [style({ opacity: 0 }), stagger('0.20s', animate('0.20s ease-out', style({ opacity: 1 })))],
+          { optional: true }
+        ),
+        query(':leave',
+          animate('200ms', style({ opacity: 0 })),
+          { optional: true }
+        )
+      ])
     ])
   ]
 })

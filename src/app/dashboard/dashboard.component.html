@@ -1,7 +1,7 @@
-<div class="example-list">
+<div class="example-list" [@listAnimation]="dashboardMainMenus.length">
     <mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of dashboardMainMenus; odd as isOdd; even as isEven" aria-label="Color selection">
         <mat-card class="mat-chip-menu border-test" (click)="onMenuClick(dashboardMenu)">
-            <img mat-card-image src="src/people.png" [class.odd]="isOdd" [class.even]="isEven">
+            <img mat-card-image src="people.png" [class.odd]="isOdd" [class.even]="isEven">
             <mat-card-footer>
                 <strong>{{dashboardMenu.MenuName}}</strong>
             </mat-card-footer>
