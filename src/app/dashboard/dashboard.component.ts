@@ -59,14 +59,20 @@ export class DashboardComponent implements OnInit {
   onMenuClick(dashboardMenu: IDashboardMenu): void {
     if (this.selectedMenuId === dashboardMenu.Id) {
       this.selectedMenuId = null;
-      this.selectedSubMenuId = null;
       return;
     }
     this.selectedMenuId = dashboardMenu.Id;
   }
 
-  onSubMenuClick(dashboardSubMenu: IDashboardMenu): void {
+  onSubMenuHover(dashboardSubMenu: IDashboardMenu): void {
+    if (this.selectedSubMenuId === dashboardSubMenu.Id) {
+      this.selectedSubMenuId = null;
+      return;
+    }
     this.selectedSubMenuId = dashboardSubMenu.Id;
+  }
+
+  onSubMenuClick(dashboardSubMenu: IDashboardMenu): void {
     const modalDialogData = {
       header: dashboardSubMenu.MenuName,
       footer: 'Close',
@@ -94,8 +100,9 @@ export class DashboardComponent implements OnInit {
 
   openDialog(modalDialogData: IModalDialog): void {
     const dialogRef = this.dialog.open(ModalComponent, {
-      height: '80%',
-      width: '80%',
+      height: '90%',
+      width: '90%',
+      minHeight: '600px',
       data: modalDialogData
     });
 

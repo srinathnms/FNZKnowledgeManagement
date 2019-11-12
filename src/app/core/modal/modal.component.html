@@ -11,8 +11,7 @@
                     <mat-card-title class="tiles-title">
                         <h4>{{menu?.MenuName}}</h4>
                     </mat-card-title>
-                    <img class="tiles-image" *ngIf="menu?.ImageSource" mat-card-avatar mat-card-md-image
-                        [src]="menu?.ImageSource" [alt]="menu?.Title">
+                    <img class="tiles-image" *ngIf="menu?.ImageSource" mat-card-avatar mat-card-md-image [src]="menu?.ImageSource" [alt]="menu?.Title">
                 </mat-card-header>
                 <mat-card-content>
                     <p class="tiles-content">
@@ -25,19 +24,19 @@
                             <button type="submit" mat-button>Download</button>
                         </form>
                     </div>
-                    <i class='fas fa-print' id="download-Document" mat-button
-                        (click)="onDownloadSampleDocument(menu.DocumentUrl)" *ngIf="menu && menu.DocumentUrl"
-                        title="Download sample document"></i>
+                    <i class='fas fa-print' id="download-Document" mat-button (click)="onDownloadSampleDocument(menu.DocumentUrl)" *ngIf="menu && menu.DocumentUrl" title="Download sample document"></i>
                 </mat-card-actions>
             </mat-card>
         </div>
     </div>
-    <embed *ngIf="data.content.ServerRelativeUrl" [src]="data.content.ServerRelativeUrl | safe" width="100%" height="600px">
+    <embed *ngIf="data.content.ServerRelativeUrl" class="embed-content" [src]="data.content.ServerRelativeUrl | safe" width="100%" height="600px">
+
+    <!-- <ngx-doc-viewer [url]="data.content.ServerRelativeUrl | safe" viewer="google" style="width:100%;height:80vh;"></ngx-doc-viewer> -->
 </div>
 <div mat-dialog-actions align="center">
     <button mat-button [mat-dialog-close]="true" cdkFocusInitial>{{data.footer}}</button>
-    <div *ngIf="documentUrl">
-        <form method="get" action="documentUrl">
+    <div *ngIf="data.content.ServerRelativeUrl">
+        <form method="get" action="{{data.content.ServerRelativeUrl | safe}}">
             <button type="submit" mat-button>Download</button>
         </form>
     </div>

@@ -28,6 +28,7 @@
     "ngx-document-view": "^1.0.1",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.5.3",
+    "xlsx": "^0.15.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

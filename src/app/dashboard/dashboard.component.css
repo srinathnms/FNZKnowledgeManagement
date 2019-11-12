@@ -1,11 +1,23 @@
 .mat-chip-menu {
-    min-width: 200px;
-    max-width: 200px;
-    min-height: 200px;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 250px;
+    max-height: 250px;
     text-align: center;
     border: 1px solid #B7B8BB;
-    background-color: white;
     justify-content: center;
+}
+
+.mat-card-image {
+    max-height: 230px;
+}
+
+.odd {
+    background-color: #f4633a;
+}
+
+.even {
+    background-color: #ff8f1c;
 }
 
 .mat-chip-add-menu {
@@ -22,7 +34,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    margin: 100px!important;
+    margin: 70px!important;
+    /*Below css is added since placing matcard inside matlist shows blue line*/
+    outline: none !important;
+    outline-style: none !important;
 }
 
 .mat-chip-sub-menu {
