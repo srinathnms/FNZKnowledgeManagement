@@ -1,0 +1,21 @@
+<div>
+    <h2>{{selectedYearfilterValue}} - {{graphTypeLabel}}</h2>
+    <canvas baseChart width="80" height="80" [datasets]="lineChartData" [labels]="lineChartLabels"
+        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType">
+    </canvas>
+</div>
+<div>
+    <p>Show data by: </p>
+    <select id="dropdown" [(ngModel)]='selectedYearfilterValue' (ngModelChange)="getYearSpecificGraphData($event)">
+        <option value="Yearly">Yearly</option>
+        <option value=2016>2016</option>
+        <option value=2017>2017</option>
+        <option value=2018>2018</option>
+        <option value=2019>2019</option>
+    </select>
+</div>
+<div class="btn-group">
+    <button value="Overall" (click)='showGraph($event)'>Overall</button>
+    <button value="Billable roles" (click)='showGraph($event)'>Billable roles</button>
+    <button value="Buffer" (click)='showGraph($event)'>Buffer</button>
+</div>

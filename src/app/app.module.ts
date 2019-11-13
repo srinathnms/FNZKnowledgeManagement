@@ -28,6 +28,9 @@ import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { SpinnerComponent } from 'src/app/core/spinner/spinner.component';
 import { HeaderComponent } from 'src/app/core/header/header.component';
 import { CoreModule } from './core/core.module';
+import { TeamViewComponent } from 'src/app/about/team-view/team-view.component';
+import { ChartsModule } from 'ng2-charts';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,9 +38,12 @@ import { CoreModule } from './core/core.module';
     SpinnerComponent,
     ModalComponent,
     HeaderComponent,
-    SafePipe
+    SafePipe,
+    TeamViewComponent
   ],
   imports: [
+    ChartsModule,
+    FormsModule,
     // CoreModule,
     AppRoutingModule,
     BrowserModule,
@@ -61,7 +67,7 @@ import { CoreModule } from './core/core.module';
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    ModalComponent
+    ModalComponent,TeamViewComponent
   ],
   providers: [
     {

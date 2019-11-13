@@ -8,6 +8,10 @@ import { DashboardService } from './dashboard.service';
 import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { environment } from 'src/environments/environment';
 import { IDocument } from '../model/document';
+import { ReturnStatement } from '@angular/compiler';
+import { TeamViewComponent } from 'src/app/about/team-view/team-view.component';
+import * as XLSX from 'xlsx';
+import { ITeamViewGraphData } from '../model/teamViewGraphData';
 
 @Component({
   selector: 'app-dashboard',
@@ -44,13 +48,14 @@ export class DashboardComponent implements OnInit {
   dashboardMainMenus: IDashboardMenu[];
   dashboardMenus: IDashboardMenu[];
   docUrl: string;
-
+  graphData: ITeamViewGraphData;
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
     this.dashboardService.get('DashboardMenus')
       .subscribe((data: IDashboardMenu[]) => {
         this.dashboardMenus = data;
         this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === 0);
       });
+    this.getGraphData();
   }
 
   ngOnInit(): void {
@@ -70,6 +75,7 @@ export class DashboardComponent implements OnInit {
     const modalDialogData = {
       header: dashboardSubMenu.MenuName,
       footer: 'Close',
+      isGraphData: dashboardSubMenu.HasGraphData
     } as IModalDialog;
     const hasAttachment = dashboardSubMenu.Attachments;
     if (hasAttachment) {
@@ -81,6 +87,11 @@ export class DashboardComponent implements OnInit {
           } as IDocument;
           this.openDialog(modalDialogData);
         });
+      return;
+    }
+    if (dashboardSubMenu.HasGraphData) {
+      modalDialogData.content = this.graphData as ITeamViewGraphData;
+      this.openDialog(modalDialogData);
       return;
     }
     modalDialogData.content = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardSubMenu.Id);
@@ -110,5 +121,23 @@ export class DashboardComponent implements OnInit {
 
   onMenuRemove(dashboardMenu: IDashboardMenu) {
     // this.dashboardService.delete(dashboardMenu.id).subscribe();
+  }
+
+  getGraphData(): any {
+    let workBook = null;
+    let jsonData = null;
+    const reader = new FileReader();
+    const file = 'src/assets/FnzTeamView.xlsx';
+    reader.onload = (e) => {
+      const data = reader.result;
+      workBook = XLSX.read(data, { type: 'array' });
+      jsonData = workBook.SheetNames.reduce((initial, name) => {
+        const sheet = workBook.Sheets[name];
+        initial[name] = XLSX.utils.sheet_to_json(sheet);
+        return initial;
+      }, {});
+      this.graphData = jsonData;
+    }
+    fetch(file).then(r => r.blob()).then(blob => reader.readAsArrayBuffer(blob))
   }
 }
