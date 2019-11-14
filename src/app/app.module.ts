@@ -16,6 +16,7 @@ import {
   MatDialogModule,
   MatFormFieldModule,
   MatBadgeModule,
+  MatExpansionModule
 } from '@angular/material';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +29,8 @@ import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { SpinnerComponent } from 'src/app/core/spinner/spinner.component';
 import { HeaderComponent } from 'src/app/core/header/header.component';
 import { CoreModule } from './core/core.module';
-import { TeamViewComponent } from 'src/app/about/team-view/team-view.component';
+import { TeamViewComponent } from 'src/app/dashboard/cognizant-journey/team-view/team-view.component';
+import { FaqComponent } from 'src/app/dashboard/technical-info/faq/faq.component';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 
@@ -39,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     ModalComponent,
     HeaderComponent,
     SafePipe,
-    TeamViewComponent
+    TeamViewComponent,
+    FaqComponent
   ],
   imports: [
     ChartsModule,
@@ -64,10 +67,12 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatFormFieldModule,
     MatBadgeModule,
+    MatExpansionModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    ModalComponent,TeamViewComponent
+    ModalComponent,
+    TeamViewComponent
   ],
   providers: [
     {

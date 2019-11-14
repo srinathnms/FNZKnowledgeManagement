@@ -4,14 +4,14 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 
 import { IDashboardMenu } from 'src/app/model/dashboard';
 import { IModalDialog } from 'src/app/model/modal-dialog';
-import { DashboardService } from './dashboard.service';
+import { DashboardService } from '../dashboard.service';
 import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { environment } from 'src/environments/environment';
-import { IDocument } from '../model/document';
+import { IDocument } from '../../model/document';
 import { ReturnStatement } from '@angular/compiler';
-import { TeamViewComponent } from 'src/app/about/team-view/team-view.component';
+import { TeamViewComponent } from 'src/app/dashboard/cognizant-journey/team-view/team-view.component';
 import * as XLSX from 'xlsx';
-import { ITeamViewGraphData } from '../model/teamViewGraphData';
+import { ITeamViewGraphData } from '../../model/teamViewGraphData';
 
 @Component({
   selector: 'app-dashboard',
@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
   docUrl: string;
   graphData: ITeamViewGraphData;
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
-    this.dashboardService.get('DashboardMenus')
+    this.dashboardService.getFromMock('DashboardMenus')
       .subscribe((data: IDashboardMenu[]) => {
         this.dashboardMenus = data;
         this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === 0);

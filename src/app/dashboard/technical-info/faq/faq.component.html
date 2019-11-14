@@ -1,0 +1,18 @@
+<mat-accordion *ngFor="let faq of faqList">
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle="true">
+        <mat-expansion-panel-header>
+            <mat-panel-description>
+                <mat-icon *ngIf="!panelOpenState">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState">remove</mat-icon>
+            </mat-panel-description>
+            <mat-panel-description>
+                {{faq.Title}}
+            </mat-panel-description>
+            <mat-panel-description>
+                {{faq.Description}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>{{faq.Solution}}</p>
+        <a [href]="faq.AttachmentUrl">{{faq.AttachmentName}}</a>
+    </mat-expansion-panel>
+</mat-accordion>

@@ -17,9 +17,10 @@ import {
     MatDialogModule,
     MatFormFieldModule,
     MatBadgeModule,
+    MatExpansionModule,
 } from '@angular/material';
 
-import { DashboardComponent } from './dashboard.component';
+import { DashboardComponent } from './index/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routers: Routes = [
@@ -46,6 +47,7 @@ const routers: Routes = [
         MatDialogModule,
         MatFormFieldModule,
         MatBadgeModule,
+        MatExpansionModule,
         RouterModule.forChild(routers)
     ],
     schemas: [

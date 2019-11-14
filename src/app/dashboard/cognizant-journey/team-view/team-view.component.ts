@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ChartDataSets, ChartOptions, Chart } from "chart.js";
 import { Color, Label } from "ng2-charts";
-import { ITeamViewGraphData } from '../../model/teamViewGraphData';
-import { IGraphData } from '../../model/graphData';
-import { AssociateRoles } from '../../model/enum/associateRoles';
-import { Month } from '../../model/enum/month';
-import { YearOptions } from '../../model/enum/yearOptions';
+import { ITeamViewGraphData } from '../../../model/teamViewGraphData';
+import { IGraphData } from '../../../model/graphData';
+import { AssociateRoles } from '../../../model/enum/associateRoles';
+import { Month } from '../../../model/enum/month';
+import { YearOptions } from '../../../model/enum/yearOptions';
 
 @Component({
   selector: "team-view",

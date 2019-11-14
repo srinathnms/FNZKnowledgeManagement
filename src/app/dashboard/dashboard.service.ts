@@ -18,14 +18,14 @@ export class DashboardService extends BaseService {
         super(authService);
     }
 
-    get(listName: string, query?: string): Observable<IDashboardMenu[]> {
+    get(listName: string, query?: string): Observable<any> {
         let url = `${environment.API_URL}/lists/GetByTitle(\'${listName}\')/items`;
         if (query) {
             url = `${environment.API_URL}/lists/GetByTitle(\'${listName}\')/items${query}`;
         }
-        return this.http.get<IDashboardMenu[]>(url)
+        return this.http.get<any>(url)
             .pipe(
-                map((dashboardMenus: any) => dashboardMenus.value),
+                map((result: any) => result.value),
                 retry(3),
                 catchError(this.handleError)
             );
