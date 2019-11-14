@@ -3,7 +3,12 @@ p {
     vertical-align: top;
     line-height: 28px;
   }
-   
+  
+.graph-container{
+min-width:400px;
+min-height:400px;
+} 
+
 .btn-group button {
     background-color: #9a88a0;
     color: rgb(15, 11, 11); 
@@ -12,7 +17,6 @@ p {
     float: left;
   }
   
-  /* Clear floats (clearfix hack) */
   .btn-group:after {
     content: "";
     clear: both;
@@ -20,11 +24,11 @@ p {
   }
   
   .btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
+    border-right: none; 
   }
   
   /* Add a background color on hover */
   .btn-group button:hover {
-    background-color: #9a88a0;
+    background-color: #4c424e;
   }
   
