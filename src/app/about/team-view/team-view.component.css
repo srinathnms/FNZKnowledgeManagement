@@ -31,4 +31,8 @@ min-height:400px;
   .btn-group button:hover {
     background-color: #4c424e;
   }
+
+  .btn-group button:focus {
+    background-color: #4c424e;
+  }
   
