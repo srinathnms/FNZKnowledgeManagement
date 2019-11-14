@@ -21,7 +21,9 @@
                         "assets": [
                             "src/favicon.ico",
                             "src/fnz_logo.png",
+                            "src/cts_logo.png",
                             "src/people.png",
+                            "src/FNZ_Cog_Journey.jpg",
                             "src/assets"
                         ],
                         "styles": [{
@@ -82,7 +84,9 @@
                         "assets": [
                             "src/favicon.ico",
                             "src/fnz_logo.png",
+                            "src/cts_logo.png",
                             "src/people.png",
+                            "src/FNZ_Cog_Journey.jpg",
                             "src/assets"
                         ]
                     }

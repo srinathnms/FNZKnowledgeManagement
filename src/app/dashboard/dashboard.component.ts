@@ -93,22 +93,22 @@ export class DashboardComponent implements OnInit {
     const modalDialogData = {
       header: dashboardSubMenu.MenuName,
       footer: 'Close',
-      isGraphData: dashboardSubMenu.HasGraphData
     } as IModalDialog;
-    const hasAttachment = dashboardSubMenu.Attachments;
-    if (hasAttachment) {
+    if (dashboardSubMenu.MenuContentType === 'Document') {
       const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
       this.dashboardService.getAttachment('DashboardMenus', attachmentQuery)
         .subscribe((document: IDocument) => {
           modalDialogData.content = {
             ServerRelativeUrl: `${environment.SHARE_POINT_URL}${document.ServerRelativeUrl}?web=1`
           } as IDocument;
+          modalDialogData.menuContentType = 'Document';
           this.openDialog(modalDialogData);
         });
       return;
     }
-    if (dashboardSubMenu.HasGraphData) {
+    if (dashboardSubMenu.MenuContentType === 'Graph') {
       modalDialogData.content = this.graphData as ITeamViewGraphData;
+      modalDialogData.menuContentType = 'Graph';
       this.openDialog(modalDialogData);
       return;
     }
@@ -146,17 +146,20 @@ export class DashboardComponent implements OnInit {
     let workBook = null;
     let jsonData = null;
     const reader = new FileReader();
-    const file = 'src/assets/FnzTeamView.xlsx';
-    reader.onload = (e) => {
-      const data = reader.result;
-      workBook = XLSX.read(data, { type: 'array' });
-      jsonData = workBook.SheetNames.reduce((initial, name) => {
-        const sheet = workBook.Sheets[name];
-        initial[name] = XLSX.utils.sheet_to_json(sheet);
-        return initial;
-      }, {});
-      this.graphData = jsonData;
-    }
-    fetch(file).then(r => r.blob()).then(blob => reader.readAsArrayBuffer(blob))
+    const file = 'assets/FnzTeamView.xlsx';
+    this.dashboardService.getTeamView(file).subscribe(c => {
+      const blob = new Blob([c], {type: 'application/json'});
+      reader.readAsArrayBuffer(blob);
+      reader.onload = (e) => {
+        const data = reader.result;
+        workBook = XLSX.read(data, { type: 'array' });
+        jsonData = workBook.SheetNames.reduce((initial, name) => {
+          const sheet = workBook.Sheets[name];
+          initial[name] = XLSX.utils.sheet_to_json(sheet);
+          return initial;
+        }, {});
+        this.graphData = jsonData;
+      };
+    });
   }
 }

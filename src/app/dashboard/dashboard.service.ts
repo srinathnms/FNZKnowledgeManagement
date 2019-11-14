@@ -43,6 +43,14 @@ export class DashboardService extends BaseService {
             );
     }
 
+    getTeamView(file: string): Observable<any> {
+        return this.http.get<any>(file, { responseType: 'blob' as 'json' })
+            .pipe(
+                retry(3),
+                catchError(this.handleError)
+            );
+    }
+
     //Dummy data to work in local : Should be deleted once ready to deploy
     getFromMock(listName: string): Observable<IDashboardMenu[]> {
         return this.http.get<IDashboardMenu[]>(`http://localhost:3000/${listName}`)

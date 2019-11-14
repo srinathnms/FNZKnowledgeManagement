@@ -1,3 +1,5 @@
+import { IBackgroundImage } from './backgroundImage';
+
 export interface IDashboardMenu {
     Id: number;
     MenuName: string;
@@ -6,5 +8,6 @@ export interface IDashboardMenu {
     ImageSource: string;
     Contents?: string;
     DocumentUrl?: string;
-    HasGraphData?: boolean;
+    MenuContentType?: string;
+    BackgroundImage?: IBackgroundImage;
 }

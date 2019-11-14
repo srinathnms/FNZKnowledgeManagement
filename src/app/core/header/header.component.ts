@@ -7,6 +7,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  title = 'FNZ Management';
+  title = 'Welcome to FNZ Knowledge Repository';
   baseUrl = environment.BASE_URL;
 }

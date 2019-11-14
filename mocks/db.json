@@ -1,14 +1,15 @@
 {
-    "DashboardMenus": [
-        {
+    "DashboardMenus": [{
             "Id": 1,
             "MenuName": "Onboarding",
-            "ParentId": 0
+            "ParentId": 0,
+            "BackgroundImage": { "Description": "FNZCognizantJourney", "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/FNZCognizantJourney.jpg" }
         },
         {
             "Id": 2,
             "MenuName": "About FNZ",
-            "ParentId": 0
+            "ParentId": 0,
+            "BackgroundImage": { "Description": "FNZCognizantJourney", "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Onboarding.jpg" }
         },
         {
             "Id": 3,
@@ -109,11 +110,10 @@
             "Id": 22,
             "MenuName": "Team View",
             "ParentId": 1,
-            "HasGraphData": true
+            "MenuContentType": "Graph"
         }
     ],
-    "Work_Force_Joining_Formality_Menu": [
-        {
+    "Work_Force_Joining_Formality_Menu": [{
             "ID": 1,
             "Title": "Developers and Testers Joining FNZ",
             "ImageSource": "src/assets/Picture1.jpg"

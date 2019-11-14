@@ -6,5 +6,5 @@ export interface IModalDialog {
     header: string;
     content: IDashboardMenu[] | IDocument | ITeamViewGraphData;
     footer: string;
-    isGraphData?: boolean;
+    menuContentType: string;
 }

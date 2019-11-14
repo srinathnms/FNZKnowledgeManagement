@@ -9,7 +9,12 @@ import { IDocument } from 'src/app/model/document';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
-  constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: IModalDialog) {}
+  isDocument: boolean;
+  isGraph: boolean;
+  constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: IModalDialog) {
+      this.isDocument =  data.menuContentType === 'Document';
+      this.isGraph = data.menuContentType === 'Graph';
+  }
 
   onClose(): void {
     this.dialogRef.close();

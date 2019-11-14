@@ -1,12 +1,9 @@
 .title {
-    float: left;
+    flex: 1 1 auto;
+    text-align: center;
 }
 
 .header-logo {
     max-width: 25%;
     height: 64px;
-}
-
-.example-spacer {
-    flex: 1 1 auto;
 }

@@ -1,10 +1,10 @@
 <div class="example-list" [@listAnimation]="dashboardMainMenus && dashboardMainMenus.length">
     <mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of dashboardMainMenus; odd as isOdd; even as isEven" aria-label="Color selection">
         <mat-card class="mat-chip-menu border-test" (click)="onMenuClick(dashboardMenu)">
-            <img mat-card-image src="people.png" [class.odd]="isOdd" [class.even]="isEven">
-            <mat-card-footer>
+            <img mat-card-image [src]="dashboardMenu.BackgroundImage && dashboardMenu.BackgroundImage.Url" [alt]="dashboardMenu.BackgroundImage && dashboardMenu.BackgroundImage.Description" [class.odd]="isOdd" [class.even]="isEven">
+            <!-- <mat-card-footer>
                 <strong>{{dashboardMenu.MenuName}}</strong>
-            </mat-card-footer>
+            </mat-card-footer> -->
         </mat-card>
         <div @list *ngIf="dashboardMenu.Id === selectedMenuId">
             <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection" *ngIf="getSubMenus(dashboardMenu).length === 0">
@@ -14,8 +14,8 @@
             </mat-chip-list>
             <div *ngIf="getSubMenus(dashboardMenu).length > 0">
                 <mat-chip-list class="mat-chip-list-stacked" *ngFor="let dashboardSubMenu of getSubMenus(dashboardMenu)" aria-label="Color selection">
-                    <mat-chip (click)="onSubMenuClick(dashboardSubMenu)" (mouseover)="onSubMenuHover(dashboardSubMenu)" [selected]="dashboardSubMenu.Id === selectedSubMenuId" @items class="border-test mat-chip-sub-menu">
-                        {{dashboardSubMenu.MenuName}}
+                    <mat-chip (click)="onSubMenuClick(dashboardSubMenu)" (mouseover)="onSubMenuHover(dashboardSubMenu)" @items class="border-test mat-chip-sub-menu zoom">
+                        <strong>{{dashboardSubMenu.MenuName}}</strong>
                     </mat-chip>
                 </mat-chip-list>
             </div>
