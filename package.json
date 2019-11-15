@@ -28,6 +28,7 @@
         "excel": "^1.0.1",
         "font-awesome": "^4.7.0",
         "ng2-charts": "^2.2.5",
+        "ng2-pdf-viewer": "^6.0.2",
         "ngx-doc-viewer": "^0.1.22",
         "ngx-document-view": "^1.0.1",
         "rxjs": "^6.2.2",

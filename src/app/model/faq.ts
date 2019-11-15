@@ -6,4 +6,5 @@ export interface IFaq {
     Attachments: boolean;
     AttachmentName: string;
     AttachmentUrl: string;
+    IsSelected: boolean;
 }

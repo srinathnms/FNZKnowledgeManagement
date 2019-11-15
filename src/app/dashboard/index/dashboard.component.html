@@ -1,7 +1,7 @@
 <div class="example-list" [@listAnimation]="dashboardMainMenus && dashboardMainMenus.length">
     <mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of dashboardMainMenus" aria-label="Color selection">
         <mat-card class="mat-chip-menu border-test" (click)="onMenuClick(dashboardMenu)">
-            <img mat-card-image [src]="dashboardMenu.BackgroundImage && dashboardMenu.BackgroundImage.Url" [alt]="dashboardMenu.BackgroundImage && dashboardMenu.BackgroundImage.Description">
+            <img mat-card-image class="img-zoom" [src]="dashboardMenu.BackgroundImage && dashboardMenu.BackgroundImage.Url" [alt]="dashboardMenu.BackgroundImage && dashboardMenu.BackgroundImage.Description">
             <!-- <mat-card-footer>
                 <strong>{{dashboardMenu.MenuName}}</strong>
             </mat-card-footer> -->
@@ -24,4 +24,5 @@
     <!-- <mat-chip class="mat-chip-add-menu border-test mat-chip-list-wrapper" (click)="onMenuAdd()">
         <mat-icon aria-hidden="false" aria-label="add icon">add</mat-icon>
     </mat-chip> -->
+    <!-- <pdf-viewer src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/Shared%20Documents/FNZ_Cognizant_Engagement.pdf" [render-text]="true" style="display: block;"></pdf-viewer> -->
 </div>

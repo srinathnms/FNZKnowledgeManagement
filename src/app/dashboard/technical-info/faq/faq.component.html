@@ -1,9 +1,9 @@
-<mat-accordion *ngFor="let faq of faqList">
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle="true">
+<!-- <mat-accordion >
+    <mat-expansion-panel (click)="onFaqSelection(faq)" *ngFor="let faq of faqList" (opened)="faq !== selectedFaq" (closed)="faq === selectedFaq" hideToggle="true">
         <mat-expansion-panel-header>
             <mat-panel-description>
-                <mat-icon *ngIf="!panelOpenState">add</mat-icon>
-                <mat-icon *ngIf="panelOpenState">remove</mat-icon>
+                <mat-icon *ngIf="faq !== selectedFaq">add</mat-icon>
+                <mat-icon *ngIf="faq === selectedFaq">remove</mat-icon>
             </mat-panel-description>
             <mat-panel-description>
                 {{faq.Title}}
@@ -12,7 +12,25 @@
                 {{faq.Description}}
             </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>{{faq.Solution}}</p>
-        <a [href]="faq.AttachmentUrl">{{faq.AttachmentName}}</a>
+        <p *ngIf="faq !== selectedFaq">{{faq.Solution}}</p>
+        <a *ngIf="faq && faq.Attachments" [href]="faq && faq.AttachmentUrl">{{faq && faq.AttachmentName}}</a>
+    </mat-expansion-panel>
+</mat-accordion> -->
+
+<mat-accordion>
+    <mat-expansion-panel (click)="onFaqSelection(t)" *ngFor="let faq of test" (opened)="faq !== selectedFaq" (closed)="faq === selectedFaq" hideToggle="true">
+        <mat-expansion-panel-header>
+            <mat-panel-description>
+                <mat-icon *ngIf="selectedFaq !== faq">add</mat-icon>
+                <mat-icon *ngIf="electedFaq === faq">remove</mat-icon>
+            </mat-panel-description>
+            <mat-panel-description>
+                {{faq.Title}}
+            </mat-panel-description>
+            <mat-panel-description>
+                {{faq.Description}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p *ngIf="faq !== selectedFaq">{{faq.Solution}}</p>
     </mat-expansion-panel>
 </mat-accordion>

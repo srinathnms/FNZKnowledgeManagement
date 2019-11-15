@@ -19,6 +19,7 @@ import {
     MatBadgeModule,
     MatExpansionModule,
 } from '@angular/material';
+// import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { DashboardComponent } from './index/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -48,6 +49,7 @@ const routers: Routes = [
         MatFormFieldModule,
         MatBadgeModule,
         MatExpansionModule,
+        // PdfViewerModule,
         RouterModule.forChild(routers)
     ],
     schemas: [

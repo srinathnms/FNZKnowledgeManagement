@@ -61,6 +61,7 @@ export class DashboardComponent implements OnInit {
   dashboardMenus: IDashboardMenu[];
   docUrl: string;
   graphData: ITeamViewGraphData;
+  pdfSrc = '/assets/FNZSharepointcontent.pdf';
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
     this.dashboardService.getFromMock('DashboardMenus')
       .subscribe((data: IDashboardMenu[]) => {
