@@ -1,7 +1,7 @@
 <button mat-icon-button class="close-icon">
     <mat-icon (click)="onClose()" aria-hidden="false" aria-label="close icon">close</mat-icon>
 </button>
-<h1 mat-dialog-title class="title">{{data.header}}</h1>
+<h1 mat-dialog-title cdkFocusInitial class="title">{{data.header}}</h1>
 <mat-divider></mat-divider>
 <div mat-dialog-content>
     <div *ngIf="data.content && data.content.length > 0">
@@ -31,11 +31,10 @@
     </div>
     <embed *ngIf="data.content && data.content.ServerRelativeUrl && isDocument" class="embed-content" [src]="data.content && data.content.ServerRelativeUrl | safe" width="100%" height="600px">
     <team-view *ngIf="data.content && data.menuContentType && isGraph" [graphData]="data.content"></team-view>
-    <app-faq></app-faq>
     <!-- <ngx-doc-viewer [url]="data.content.ServerRelativeUrl | safe" viewer="google" style="width:100%;height:80vh;"></ngx-doc-viewer> -->
 </div>
 <div mat-dialog-actions align="center">
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>{{data.footer}}</button>
+    <button mat-button [mat-dialog-close]="true">{{data.footer}}</button>
     <div *ngIf="data.content && data.content.ServerRelativeUrl">
         <form method="get" action="{{data.content && data.content.ServerRelativeUrl | safe}}">
             <button type="submit" mat-button>Download</button>

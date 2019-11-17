@@ -14,7 +14,7 @@
             </mat-chip-list>
             <div *ngIf="getSubMenus(dashboardMenu).length > 0">
                 <mat-chip-list class="mat-chip-list-stacked" *ngFor="let dashboardSubMenu of getSubMenus(dashboardMenu)" aria-label="Color selection">
-                    <mat-chip (click)="onSubMenuClick(dashboardSubMenu)" (mouseover)="onSubMenuHover(dashboardSubMenu)" @items class="border-test mat-chip-sub-menu zoom">
+                    <mat-chip (click)="onSubMenuClick(dashboardSubMenu)" (mouseover)="onSubMenuHover(dashboardSubMenu)" @items class="border-test mat-chip-sub-menu">
                         <strong>{{dashboardSubMenu.MenuName}}</strong>
                     </mat-chip>
                 </mat-chip-list>

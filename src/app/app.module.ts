@@ -16,7 +16,8 @@ import {
   MatDialogModule,
   MatFormFieldModule,
   MatBadgeModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatProgressBarModule
 } from '@angular/material';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -67,7 +68,8 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatFormFieldModule,
     MatBadgeModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatProgressBarModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [
