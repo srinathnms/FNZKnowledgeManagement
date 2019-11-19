@@ -12,6 +12,7 @@ import { ReturnStatement } from '@angular/compiler';
 import { TeamViewComponent } from 'src/app/dashboard/cognizant-journey/team-view/team-view.component';
 import * as XLSX from 'xlsx';
 import { ITeamViewGraphData } from '../../model/teamViewGraphData';
+import { IFinance } from 'src/app/model/finance';
 
 @Component({
   selector: 'app-dashboard',
@@ -55,6 +56,8 @@ import { ITeamViewGraphData } from '../../model/teamViewGraphData';
 })
 
 export class DashboardComponent implements OnInit {
+  finance: IFinance[];
+  graphContent: Highcharts.SeriesOptionsType[];
   selectedMenuId: number;
   selectedSubMenuId: number;
   dashboardMainMenus: IDashboardMenu[];
@@ -108,9 +111,33 @@ export class DashboardComponent implements OnInit {
       return;
     }
     if (dashboardSubMenu.MenuContentType === 'Graph') {
-      modalDialogData.content = this.graphData as ITeamViewGraphData;
-      modalDialogData.menuContentType = 'Graph';
-      this.openDialog(modalDialogData);
+      this.dashboardService.get('ChartContents', `?$filter=Year eq ${2016}`)
+        .subscribe((data: IFinance[]) => {
+          this.finance = data;
+          debugger;
+          const revenue = this.finance && this.finance.map((finance: IFinance) => finance.Revenue) as Highcharts.SeriesXrangeDataOptions[];
+          const customerProfitability = this.finance && this.finance.map(
+            (finance: IFinance) => finance.CustomerProfitability) as Highcharts.SeriesXrangeDataOptions[];
+          modalDialogData.content = [{
+            name: 'Revenue',
+            type: 'column',
+            yAxis: 1,
+            data: revenue,
+            tooltip: {
+              valueSuffix: ' $'
+            }
+          }, {
+            name: 'CP',
+            type: 'spline',
+            data: customerProfitability,
+            tooltip: {
+              valueSuffix: ' %'
+            }
+          }];
+          modalDialogData.menuContentType = 'Graph';
+          this.openDialog(modalDialogData);
+          return;
+        });
       return;
     }
     modalDialogData.content = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardSubMenu.Id);
@@ -149,7 +176,7 @@ export class DashboardComponent implements OnInit {
     const reader = new FileReader();
     const file = 'assets/FnzTeamView.xlsx';
     this.dashboardService.getTeamView(file).subscribe(c => {
-      const blob = new Blob([c], {type: 'application/json'});
+      const blob = new Blob([c], { type: 'application/json' });
       reader.readAsArrayBuffer(blob);
       reader.onload = (e) => {
         const data = reader.result;

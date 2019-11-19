@@ -27,6 +27,8 @@
         "core-js": "^2.5.4",
         "excel": "^1.0.1",
         "font-awesome": "^4.7.0",
+        "highcharts": "^7.2.1",
+        "highcharts-angular": "^2.4.0",
         "ng2-charts": "^2.2.5",
         "ng2-pdf-viewer": "^6.0.2",
         "ngx-doc-viewer": "^0.1.22",

@@ -16,6 +16,7 @@
 .img-zoom:hover {
     transform: scale(1.3);
     transform-origin: 50% 50%;
+    opacity: 0.5;
 }
 
 .mat-card-image {

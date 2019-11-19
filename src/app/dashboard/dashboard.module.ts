@@ -20,9 +20,11 @@ import {
     MatExpansionModule,
 } from '@angular/material';
 // import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 import { DashboardComponent } from './index/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
+import { RevenueComponent } from './governance/revenue/revenue.component';
 
 const routers: Routes = [
     { path: '', component: DashboardComponent }
@@ -30,9 +32,11 @@ const routers: Routes = [
 
 @NgModule({
     declarations: [
-        DashboardComponent
+        DashboardComponent,
+        RevenueComponent,
     ],
     imports: [
+        HighchartsChartModule,
         CommonModule,
         MatTooltipModule,
         MatButtonModule,
@@ -52,6 +56,8 @@ const routers: Routes = [
         // PdfViewerModule,
         RouterModule.forChild(routers)
     ],
+    entryComponents: [
+      ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA
     ],
