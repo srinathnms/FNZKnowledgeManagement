@@ -1,6 +1,6 @@
 export interface IFinance {
     Id: number;
-    Year: number;
+    Year: string;
     Month: string;
     Revenue: string;
     CustomerProfitability: string;

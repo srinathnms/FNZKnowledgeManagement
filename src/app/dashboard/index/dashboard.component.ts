@@ -111,32 +111,12 @@ export class DashboardComponent implements OnInit {
       return;
     }
     if (dashboardSubMenu.MenuContentType === 'Graph') {
-      this.dashboardService.get('ChartContents', `?$filter=Year eq ${2016}`)
+      // const query = `?$filter=Year eq ${2016}`;
+      this.dashboardService.get('ChartContents')
         .subscribe((data: IFinance[]) => {
-          this.finance = data;
-          debugger;
-          const revenue = this.finance && this.finance.map((finance: IFinance) => finance.Revenue) as Highcharts.SeriesXrangeDataOptions[];
-          const customerProfitability = this.finance && this.finance.map(
-            (finance: IFinance) => finance.CustomerProfitability) as Highcharts.SeriesXrangeDataOptions[];
-          modalDialogData.content = [{
-            name: 'Revenue',
-            type: 'column',
-            yAxis: 1,
-            data: revenue,
-            tooltip: {
-              valueSuffix: ' $'
-            }
-          }, {
-            name: 'CP',
-            type: 'spline',
-            data: customerProfitability,
-            tooltip: {
-              valueSuffix: ' %'
-            }
-          }];
+          modalDialogData.content = data;
           modalDialogData.menuContentType = 'Graph';
           this.openDialog(modalDialogData);
-          return;
         });
       return;
     }

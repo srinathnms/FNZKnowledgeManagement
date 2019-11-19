@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { IFinance } from 'src/app/model/finance';
+import { YearOptions } from 'src/app/model/enum/yearOptions';
 
 @Component({
   selector: 'app-graph',
@@ -10,19 +12,21 @@ export class GraphComponent implements OnInit {
   Highcharts: typeof Highcharts;
   chartOptions: Highcharts.Options;
   @Input()
-  graphData: Highcharts.SeriesOptionsType[];
+  graphData: IFinance[];
+  yearOptions = ['2016', '2017', '2018', '2019'];
+  yearOption = this.yearOptions[0];
   constructor() {
+
   }
 
   ngOnInit() {
-    debugger;
     this.Highcharts = Highcharts;
     this.chartOptions = {
       chart: {
         zoomType: 'xy'
       },
       title: {
-        text: 'FNZ Revenue'
+        text: ''
       },
       subtitle: {
         text: ''
@@ -40,7 +44,7 @@ export class GraphComponent implements OnInit {
           }
         },
         title: {
-          text: 'CP',
+          text: 'CP (%)',
           style: {
             color: Highcharts.getOptions().colors[1]
           }
@@ -48,7 +52,7 @@ export class GraphComponent implements OnInit {
         opposite: true
       }, { // Secondary yAxis
         title: {
-          text: 'Revenue',
+          text: 'Revenue ($)',
           style: {
             color: Highcharts.getOptions().colors[0]
           }
@@ -65,21 +69,49 @@ export class GraphComponent implements OnInit {
       },
       legend: {
         layout: 'vertical',
-        align: 'left',
-        x: 120,
+        align: 'right',
+        // x: 120,
         verticalAlign: 'top',
-        y: 100,
+        // y: 100,
         floating: true,
         backgroundColor:
           Highcharts.defaultOptions.legend.backgroundColor || // theme
           'rgba(255,255,255,0.25)'
       },
-      series: this.graphData
+      series: this.getGraphSeries(this.yearOption)
     };
   }
 
-  onYearChange(event): void {
-    const data = this.graphData && this.graphData.filter(c => c.mapData === event.target.value);
-    this.graphData = data;
+  onYearChange(year: string): void {
+    this.yearOption = year;
+    const series: Highcharts.Options = { series: this.getGraphSeries(year) };
+    this.Highcharts.charts[0].update(series);
+  }
+
+  getGraphSeries(year: string): Highcharts.SeriesOptionsType[] {
+    const data = this.graphData && this.graphData.filter(c => c.Year === year);
+    const revenue = data && data.map((finance: IFinance) => finance.Revenue) as Highcharts.SeriesXrangeDataOptions[];
+    const customerProfitability = data && data.map(
+      (finance: IFinance) => finance.CustomerProfitability) as Highcharts.SeriesXrangeDataOptions[];
+    const graphSeries = [
+      {
+        name: 'Revenue ($)',
+        type: 'column',
+        yAxis: 1,
+        data: revenue,
+        tooltip: {
+          valueSuffix: ' $'
+        }
+      },
+      {
+        name: 'CP (%)',
+        type: 'spline',
+        data: customerProfitability,
+        tooltip: {
+          valueSuffix: ' %'
+        }
+      }] as Highcharts.SeriesOptionsType[];
+
+    return graphSeries;
   }
 }

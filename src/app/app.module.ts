@@ -17,7 +17,8 @@ import {
   MatFormFieldModule,
   MatBadgeModule,
   MatExpansionModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatSelectModule
 } from '@angular/material';
 // import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -75,7 +76,8 @@ import { GraphComponent } from 'src/app/core/graph/graph.component';
     MatFormFieldModule,
     MatBadgeModule,
     MatExpansionModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSelectModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [

@@ -5,7 +5,7 @@ import { IFinance } from './finance';
 
 export interface IModalDialog {
     header: string;
-    content: IDashboardMenu[] | IDocument | ITeamViewGraphData | any;
+    content: IDashboardMenu[] | IDocument | ITeamViewGraphData | IFinance[];
     footer: string;
     menuContentType: string;
 }
