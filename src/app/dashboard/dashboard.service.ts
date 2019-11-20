@@ -43,6 +43,11 @@ export class DashboardService extends BaseService {
             );
     }
 
+    getDocument(link: string): any {
+        return this.http.get<any>('https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/Shared%20Documents/FNZ_Cognizant_Engagement.pdf',
+            { responseType: 'arraybuffer' as 'json' });
+    }
+
     getTeamView(file: string): Observable<any> {
         return this.http.get<any>(file, { responseType: 'blob' as 'json' })
             .pipe(

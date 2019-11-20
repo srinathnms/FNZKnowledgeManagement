@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
+import { trigger, transition, style, animate, animateChild, query, stagger, state } from '@angular/animations';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { IDashboardMenu } from 'src/app/model/dashboard';
@@ -51,14 +51,25 @@ import { IFinance } from 'src/app/model/finance';
           { optional: true }
         )
       ])
+    ]),
+    trigger('flipState', [
+      state('active', style({
+        transform: 'rotateY(179deg)'
+      })),
+      state('inactive', style({
+        transform: 'rotateY(0)'
+      })),
+      transition('active => inactive', animate('500ms ease-out')),
+      transition('inactive => active', animate('500ms ease-in'))
     ])
   ]
 })
 
 export class DashboardComponent implements OnInit {
   finance: IFinance[];
+  flip = 'inactive';
   graphContent: Highcharts.SeriesOptionsType[];
-  selectedMenuId: number;
+  selectedMenu: IDashboardMenu;
   selectedSubMenuId: number;
   dashboardMainMenus: IDashboardMenu[];
   dashboardMenus: IDashboardMenu[];
@@ -66,9 +77,10 @@ export class DashboardComponent implements OnInit {
   graphData: ITeamViewGraphData;
   pdfSrc = '/assets/FNZSharepointcontent.pdf';
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
-    this.dashboardService.get('DashboardMenus')
+    this.dashboardService.getFromMock('DashboardMenus')
       .subscribe((data: IDashboardMenu[]) => {
         this.dashboardMenus = data;
+        this.dashboardMenus.forEach(c => { c.Flip = 'inactive'; });
         this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === 0);
       });
     this.getGraphData();
@@ -78,11 +90,13 @@ export class DashboardComponent implements OnInit {
   }
 
   onMenuClick(dashboardMenu: IDashboardMenu): void {
-    if (this.selectedMenuId === dashboardMenu.Id) {
-      this.selectedMenuId = null;
-      return;
-    }
-    this.selectedMenuId = dashboardMenu.Id;
+    this.selectedMenu = dashboardMenu;
+    this.toggleFlip(dashboardMenu);
+  }
+
+  toggleFlip(dashboardMenu: IDashboardMenu) {
+    const selectedMenu = this.dashboardMenus.filter(c => c.Id === dashboardMenu.Id)[0];
+    selectedMenu.Flip = (dashboardMenu.Flip === 'inactive') ? 'active' : 'inactive';
   }
 
   onSubMenuHover(dashboardSubMenu: IDashboardMenu): void {
@@ -98,6 +112,16 @@ export class DashboardComponent implements OnInit {
       header: dashboardSubMenu.MenuName,
       footer: 'Close',
     } as IModalDialog;
+    this.dashboardService.getDocument('').subscribe((c) => {
+      debugger;
+      const document = c;
+      const file = new Blob([c], { type: 'application/pdf' });
+      modalDialogData.content = {
+        ServerRelativeUrl: URL.createObjectURL(file)
+      } as IDocument;
+      modalDialogData.menuContentType = 'Document';
+      this.openDialog(modalDialogData);
+    });
     if (dashboardSubMenu.MenuContentType === 'Document') {
       const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
       this.dashboardService.getAttachment('DashboardMenus', attachmentQuery)
