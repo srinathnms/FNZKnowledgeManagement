@@ -10,4 +10,5 @@ export interface IDashboardMenu {
     DocumentUrl?: string;
     MenuContentType?: string;
     BackgroundImage?: IBackgroundImage;
+    Flip?: string;
 }
