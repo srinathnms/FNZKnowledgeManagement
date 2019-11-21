@@ -1,11 +1,9 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { ChartDataSets, ChartOptions, Chart } from "chart.js";
-import { Color, Label } from "ng2-charts";
-import { ITeamViewGraphData } from '../../../model/teamViewGraphData';
-import { IGraphData } from '../../../model/graphData';
 import { AssociateRoles } from '../../../model/enum/associateRoles';
 import { Month } from '../../../model/enum/month';
 import { YearOptions } from '../../../model/enum/yearOptions';
+import * as Highcharts from 'highcharts';
+import { IFinance } from 'src/app/model/finance'
 
 @Component({
   selector: "team-view",
@@ -13,153 +11,196 @@ import { YearOptions } from '../../../model/enum/yearOptions';
   styleUrls: ["./team-view.component.css"]
 })
 export class TeamViewComponent implements OnInit {
-  @Input() graphData: ITeamViewGraphData;
-  onsiteOverAllData: IGraphData[];
-  offshoreOverAllData: IGraphData[];
-  onsiteBillableAssociateData: IGraphData[];
-  offshoreBillableAssociateData: IGraphData[];
-  selectedYearfilterValue: YearOptions;
-  graphTypeLabel: string;
-  monthlyChartLabels: Label[] = Object.keys(Month);
-  yearlyChartLabels: Label[];
-  lineChartOptions: ChartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      yAxes: [{
-        display: true,
-        ticks: {
-          suggestedMin: 0,
-          suggestedMax: 100,
-          beginAtZero: true
-        }
-      }]
-    },
-    animation: {
-      onComplete: function () {
-        const chartInstance = this.chart,
-          ctx = chartInstance.ctx;
-        ctx.textAlign = 'center';
-        ctx.fillStyle = "rgba(0, 0, 0, 1)";
-        ctx.textBaseline = 'bottom';
-        this.data.datasets.forEach(function (dataset, i) {
-          const meta = chartInstance.controller.getDatasetMeta(i);
-          meta.data.forEach(function (bar, index) {
-            const data = dataset.data[index];
-            if (data > 0) {
-              ctx.fillText(data, bar._model.x, bar._model.y - 5);
-            }
-          });
-        });
-      }
-    }
-  };
-  lineChartColors: Color[] = [
-    {
-      borderColor: "black",
-      backgroundColor: "rgba(100,0,0,0.5)"
-    }
-  ];
-  lineChartLegend = false;
-  lineChartType = "";
-  lineChartData: ChartDataSets[];
-  lineChartLabels: Label[];
+  @Input() graphData: IFinance[];
+  Highcharts: typeof Highcharts;
+  chartOptions: Highcharts.Options;
+  yearOptions = ['Yearly', '2016', '2017', '2018', '2019'];
+  yearOption = this.yearOptions[0];
+  graphType: string;
+  monthlyChartLabels: string[] = Object.keys(Month);
+  yearlyChartLabels: string[] = ['2016', '2017', '2018', '2019'];
+  graphLabels: string[] = this.yearlyChartLabels;
   constructor() { }
 
   ngOnInit() {
-    this.graphTypeLabel = AssociateRoles.Overall;
-    this.yearlyChartLabels = this.getYearlyChartLabels();
-    this.setOnsiteAndOffshoreAssociateData();
-    this.setDefaultGraphValue();
-  }
+    this.graphType = AssociateRoles.Overall;
+    this.Highcharts = Highcharts;
+    this.chartOptions = {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: ''
+      },
+      subtitle: {
+        text: ''
+      },
+      xAxis: [{
+        categories: this.yearlyChartLabels,
+        crosshair: true
+      }],
+      yAxis: [{
 
-  setDefaultGraphValue(): void {
-    this.lineChartLegend = this.graphTypeLabel != AssociateRoles.Buffer;
-    this.selectedYearfilterValue = YearOptions.Yearly;
-    this.lineChartType = 'bar';
-    this.setGraphData();
-  }
-
-  showGraph(e): void {
-    this.graphTypeLabel = e.target.value;
-    this.setDefaultGraphValue();
-  }
-
-  getYearSpecificGraphData(value): void {
-    this.selectedYearfilterValue = value;
-    this.setGraphData()
-  }
-
-  setGraphData(): void {
-    switch (this.graphTypeLabel) {
-      case AssociateRoles.BillableRoles:
-        {
-          this.lineChartData = this.getAssociateCountData(this.onsiteBillableAssociateData, this.offshoreBillableAssociateData);
+        title: {
+          text: 'Number of associates',
+          style: {
+            color: Highcharts.getOptions().colors[1]
+          }
+        },
+        opposite: true
+      }],
+      tooltip: {
+        shared: true
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        floating: true,
+        backgroundColor:
+          Highcharts.defaultOptions.legend.backgroundColor || // theme
+          'rgba(255,255,255,0.25)'
+      },
+      plotOptions: {
+        column: {
+          dataLabels: {
+            enabled: true,
+            crop: false,
+            overflow: 'none'
+          }
         }
-        break;
-      case AssociateRoles.Buffer:
-        {
-          this.lineChartData = this.getAssociateCountData(this.graphData.Buffer);
-        }
-        break;
-      default:
-        this.lineChartData = this.getAssociateCountData(this.onsiteOverAllData, this.offshoreOverAllData);
-    }
+      },
+      series: this.getGraphSeries(this.yearOption, this.graphType) as Highcharts.SeriesOptionsType[]
+    };
+  }
+  updateGraph(): void {
+    const series: Highcharts.Options = { legend: { enabled: this.shouldDisplayLegend() }, series: this.getGraphSeries(this.yearOption, this.graphType) as Highcharts.SeriesOptionsType[], xAxis: { categories: this.graphLabels } };
+    this.Highcharts.charts[0].update(series);
   }
 
-  getAssociateCountData(onsiteData: IGraphData[], offshoreData?: IGraphData[]): ChartDataSets[] {
-    switch (this.graphTypeLabel) {
-      case AssociateRoles.BillableRoles:
+  onYearChange(year: string): void {
+    this.yearOption = year;
+    this.updateGraph();
+  }
+
+  onTeamViewTypeChange(e): void {
+    this.graphType = e.target.value;
+    this.updateGraph();
+  }
+
+  getGraphSeries(yearOption: string, graphType: string): Highcharts.SeriesOptionsType[] {
+    let onsiteData: number[] = [];
+    let offshoreData: number[] = [];
+    let bufferData: number[] = [];
+    this.graphLabels = this.monthlyChartLabels;
+    switch (graphType) {
       case AssociateRoles.Overall: {
-        if (this.selectedYearfilterValue == YearOptions.Yearly) {
-          this.lineChartLabels = this.yearlyChartLabels;
-          return ([
-            { data: [this.getMaximumValue(YearOptions.Year_2016, onsiteData), this.getMaximumValue(YearOptions.Year_2017, onsiteData), this.getMaximumValue(YearOptions.Year_2018, onsiteData), this.getMaximumValue(YearOptions.Year_2019, onsiteData)], label: 'Onsite' },
-            { data: [this.getMaximumValue(2016, offshoreData), this.getMaximumValue(2017, offshoreData), this.getMaximumValue(2018, offshoreData), this.getMaximumValue(2019, offshoreData)], label: 'Offshore' }
-          ]);
+        if (yearOption == YearOptions.Yearly) {
+          return this.getYearlyData(AssociateRoles.Overall);
         }
-        this.lineChartLabels = this.monthlyChartLabels;
+        this.graphLabels = this.monthlyChartLabels;
+        onsiteData = this.graphData.filter(x => x.Year == yearOption).map(y => y.TotalOnsite);
+        offshoreData = this.graphData.filter(x => x.Year == yearOption).map(y => y.TotalOffshore);
         return ([
-          { data: this.isArrayNotNullOrEmpty(onsiteData) && onsiteData.filter(x => x.Year == this.selectedYearfilterValue).map(y => y.Count), label: 'Onsite' },
-          { data: this.isArrayNotNullOrEmpty(offshoreData) && offshoreData.filter(x => x.Year == this.selectedYearfilterValue).map(y => y.Count), label: 'Offshore' }
-        ]);
+          {
+            name: "Onsite",
+            data: onsiteData
+          },
+          {
+            name: "Offshore",
+            data: offshoreData
+          }
+        ]) as Highcharts.SeriesOptionsType[];
       }
-      case AssociateRoles.Buffer:
-        if (this.selectedYearfilterValue == YearOptions.Yearly) {
-          this.lineChartLabels = this.yearlyChartLabels;
-          return ([
-            { data: [this.getMaximumValue(YearOptions.Year_2016, this.graphData.Buffer), this.getMaximumValue(YearOptions.Year_2017, this.graphData.Buffer), this.getMaximumValue(YearOptions.Year_2018, this.graphData.Buffer), this.getMaximumValue(YearOptions.Year_2019, this.graphData.Buffer)] }
-          ]);
+      case AssociateRoles.BillableRoles: {
+        if (yearOption == YearOptions.Yearly) {
+          return this.getYearlyData(AssociateRoles.BillableRoles);
         }
-        this.lineChartLabels = this.monthlyChartLabels;
+        onsiteData = this.graphData.filter(x => x.Year == yearOption).map(y => y.BilledOnsite);
+        offshoreData = this.graphData.filter(x => x.Year == yearOption).map(y => y.BilledOffshore);
         return ([
-          { data: this.isArrayNotNullOrEmpty(this.graphData.Buffer) && this.graphData.Buffer.filter(x => x.Year == this.selectedYearfilterValue).map(y => y.Count) }
-        ]);
-      default:
-        return;
+          {
+            name: "Onsite",
+            data: onsiteData
+          },
+          {
+            name: "Offshore",
+            data: offshoreData
+          }
+        ]) as Highcharts.SeriesOptionsType[];
+      }
+      case AssociateRoles.Buffer: {
+        if (this.yearOption == YearOptions.Yearly) {
+          return this.getYearlyData(AssociateRoles.Buffer);
+        }
+        bufferData = this.graphData.filter(x => x.Year == yearOption).map(y => y.Buffer);
+        return ([
+          {
+            name: "Buffer",
+            data: bufferData
+          },
+          {
+
+            data: []
+          }
+        ]) as Highcharts.SeriesOptionsType[];
+      }
     }
   }
 
-  getMaximumValue(year: number, data: IGraphData[]): number {
-    if (this.isArrayNotNullOrEmpty(data)) {
-      return Math.max(...data.filter(x => x.Year == year).map(y => y.Count));
+  getYearlyData(type: AssociateRoles): Highcharts.SeriesOptionsType[] {
+    this.graphLabels = this.yearlyChartLabels;
+    if (type == AssociateRoles.Buffer) {
+      return (
+        [{
+          name: "Buffer",
+          data: [this.getYearlyMaximumValue(YearOptions.Year_2016, false), this.getYearlyMaximumValue(YearOptions.Year_2017, false), this.getYearlyMaximumValue(YearOptions.Year_2018, false), this.getYearlyMaximumValue(YearOptions.Year_2019, false)]
+        },
+        {
+
+          data: []
+        }]
+      ) as Highcharts.SeriesOptionsType[];
+    }
+    return ([
+      {
+        name: "Onsite",
+        data: [this.getYearlyMaximumValue(YearOptions.Year_2016, true), this.getYearlyMaximumValue(YearOptions.Year_2017, true), this.getYearlyMaximumValue(YearOptions.Year_2018, true), this.getYearlyMaximumValue(YearOptions.Year_2019, true)]
+      },
+      {
+        name: "Offshore",
+        data: [this.getYearlyMaximumValue(YearOptions.Year_2016, false), this.getYearlyMaximumValue(YearOptions.Year_2017, false), this.getYearlyMaximumValue(YearOptions.Year_2018, false), this.getYearlyMaximumValue(YearOptions.Year_2019, false)]
+      }
+    ]) as Highcharts.SeriesOptionsType[];
+  }
+
+  getYearlyMaximumValue(yearOption: YearOptions, isOnsiteData: boolean): number {
+    let data = this.graphData.filter(x => x.Year == yearOption);
+    let values: number[] = [];
+    switch (this.graphType) {
+      case AssociateRoles.Overall:
+        {
+          values = isOnsiteData ? data.map(x => x.TotalOnsite) : data.map(x => x.TotalOffshore);
+          return this.getMaximumValue(values);
+        }
+      case AssociateRoles.BillableRoles:
+        {
+          values = isOnsiteData ? data.map(x => x.BilledOnsite) : data.map(x => x.BilledOffshore);
+          return this.getMaximumValue(values);
+        }
+      case AssociateRoles.Buffer:
+        {
+          values = data.map(x => x.Buffer);
+          return this.getMaximumValue(values);
+        }
     }
   }
 
-  setOnsiteAndOffshoreAssociateData(): void {
-    this.onsiteBillableAssociateData = this.graphData.BilledOnsite;
-    this.onsiteOverAllData = this.graphData.TotalOnsite;
-    this.offshoreBillableAssociateData = this.graphData.BilledOffshore;
-    this.offshoreOverAllData = this.graphData.TotalOffshore;
+  getMaximumValue(data: number[]): number {
+    return Math.max(...data);
   }
 
-  getYearlyChartLabels(): string[] {
-    const yearLabels: number[] = this.graphData.TotalOffshore.map(x => x.Year);
-    const uniqueLabels: number[] = Array.from(new Set(yearLabels.map((item: any) => item)));
-    return uniqueLabels.map(String);
-  }
-
-  isArrayNotNullOrEmpty(array: any[]): boolean {
-    return array && array.length > 0;
+  shouldDisplayLegend(): boolean {
+    return this.graphType != AssociateRoles.Buffer;
   }
 }

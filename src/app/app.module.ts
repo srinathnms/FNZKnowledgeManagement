@@ -35,7 +35,6 @@ import { HeaderComponent } from 'src/app/core/header/header.component';
 import { CoreModule } from './core/core.module';
 import { TeamViewComponent } from 'src/app/dashboard/cognizant-journey/team-view/team-view.component';
 import { FaqComponent } from 'src/app/dashboard/technical-info/faq/faq.component';
-import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { GraphComponent } from 'src/app/core/graph/graph.component';
 
@@ -49,9 +48,8 @@ import { GraphComponent } from 'src/app/core/graph/graph.component';
     TeamViewComponent,
     FaqComponent,
     GraphComponent
-    ],
+  ],
   imports: [
-    ChartsModule,
     // PdfViewerModule,
     FormsModule,
     // CoreModule,

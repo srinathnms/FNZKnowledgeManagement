@@ -9,9 +9,6 @@ import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { environment } from 'src/environments/environment';
 import { IDocument } from '../../model/document';
 import { ReturnStatement } from '@angular/compiler';
-import { TeamViewComponent } from 'src/app/dashboard/cognizant-journey/team-view/team-view.component';
-import * as XLSX from 'xlsx';
-import { ITeamViewGraphData } from '../../model/teamViewGraphData';
 import { IFinance } from 'src/app/model/finance';
 
 @Component({
@@ -74,7 +71,6 @@ export class DashboardComponent implements OnInit {
   dashboardMainMenus: IDashboardMenu[];
   dashboardMenus: IDashboardMenu[];
   docUrl: string;
-  graphData: ITeamViewGraphData;
   pdfSrc = '/assets/FNZSharepointcontent.pdf';
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
     this.dashboardService.get('DashboardMenus')
@@ -83,7 +79,6 @@ export class DashboardComponent implements OnInit {
         this.dashboardMenus.forEach(c => { c.Flip = 'inactive'; });
         this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === 0);
       });
-    this.getGraphData();
   }
 
   ngOnInit(): void {
@@ -165,26 +160,5 @@ export class DashboardComponent implements OnInit {
 
   onMenuRemove(dashboardMenu: IDashboardMenu) {
     // this.dashboardService.delete(dashboardMenu.id).subscribe();
-  }
-
-  getGraphData(): any {
-    let workBook = null;
-    let jsonData = null;
-    const reader = new FileReader();
-    const file = 'assets/FnzTeamView.xlsx';
-    this.dashboardService.getTeamView(file).subscribe(c => {
-      const blob = new Blob([c], { type: 'application/json' });
-      reader.readAsArrayBuffer(blob);
-      reader.onload = (e) => {
-        const data = reader.result;
-        workBook = XLSX.read(data, { type: 'array' });
-        jsonData = workBook.SheetNames.reduce((initial, name) => {
-          const sheet = workBook.Sheets[name];
-          initial[name] = XLSX.utils.sheet_to_json(sheet);
-          return initial;
-        }, {});
-        this.graphData = jsonData;
-      };
-    });
   }
 }
