@@ -11,10 +11,12 @@ import { IDocument } from 'src/app/model/document';
 export class ModalComponent {
   isDocument: boolean;
   isGraph: boolean;
+  isTeamView:boolean;
   pdfSrc = '/assets/FNZSharepointcontent.pdf';
   constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: IModalDialog) {
     this.isDocument = data.menuContentType === 'Document';
     this.isGraph = data.menuContentType === 'Graph';
+    this.isTeamView = data.header == "Team View";
   }
 
   onClose(): void {

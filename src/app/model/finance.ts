@@ -4,4 +4,9 @@ export interface IFinance {
     Month: string;
     Revenue: string;
     CustomerProfitability: string;
+    TotalOnsite: number;
+    TotalOffshore: number;
+    BilledOnsite: number;
+    BilledOffshore: number;
+    Buffer: number;
 }

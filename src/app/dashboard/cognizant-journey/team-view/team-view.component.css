@@ -1,14 +1,3 @@
-p {
-    display: inline;
-    vertical-align: top;
-    line-height: 28px;
-  }
-  
-.graph-container{
-min-width:400px;
-min-height:400px;
-} 
-
 .btn-group button {
     background-color: #9a88a0;
     color: rgb(15, 11, 11); 
