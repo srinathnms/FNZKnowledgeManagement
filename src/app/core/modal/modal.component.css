@@ -73,11 +73,11 @@
         overflow-y: auto;
     }
     
-    .embed-content {
-        min-height: 750px;
-        margin-top: -50px;
-    }
-    
     .mat-dialog-content {
-        min-height: 705px;
+        display: block;
+        margin: 0 -24px;
+        padding: 0 24px;
+        max-height: 80vh;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
     }

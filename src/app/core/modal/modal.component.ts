@@ -13,6 +13,7 @@ export class ModalComponent {
   isGraph: boolean;
   pdfSrc = '/assets/FNZSharepointcontent.pdf';
   constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: IModalDialog) {
+    debugger;
     this.isDocument = data.menuContentType === 'Document';
     this.isGraph = data.menuContentType === 'Graph';
   }

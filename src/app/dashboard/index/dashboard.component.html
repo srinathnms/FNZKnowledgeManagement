@@ -1,4 +1,4 @@
-<div [@listAnimation]="dashboardMainMenus && dashboardMainMenus.length">
+<div [@listAnimation]="dashboardMainMenus?.length">
     <mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of dashboardMainMenus">
         <div class="tp-box" [@flipState]="dashboardMenu.Flip">
             <mat-card class="mat-chip-menu tp-box__side tp-box__front" (click)="onMenuClick(dashboardMenu)">
@@ -7,26 +7,28 @@
             <div class="tp-box__side tp-box__back">
                 <mat-card class="mat-chip-menu" *ngIf="getSubMenus(dashboardMenu).length > 0">
                     <mat-card-content>
-                        <mat-list @list role="list" *ngFor="let dashboardSubMenu of getSubMenus(dashboardMenu)">
-                            <mat-list-item @items class="mat-chip-sub-menu" (click)="onSubMenuClick(dashboardSubMenu)" (mouseover)="onSubMenuHover(dashboardSubMenu)" role="listitem">
-                                <strong>{{dashboardSubMenu.MenuName}}</strong>
-                            </mat-list-item>
+                        <mat-list @list *ngFor="let dashboardSubMenu of getSubMenus(dashboardMenu)">
+                            <div class="list-content">
+                                <mat-list-item class="mat-chip-sub-menu list-text" (click)="onSubMenuClick(dashboardSubMenu)" (mouseover)="onSubMenuHover(dashboardSubMenu)">
+                                    <strong @items>{{dashboardSubMenu.MenuName}}</strong>
+                                </mat-list-item>
+                            </div>
                         </mat-list>
                     </mat-card-content>
                     <mat-card-footer (click)="toggleFlip(dashboardMenu)">
-                        Back
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
                     </mat-card-footer>
                 </mat-card>
-                <mat-card class="mat-chip-menu" *ngIf="getSubMenus(dashboardMenu).length === 0">
+                <mat-card class="mat-chip-menu" @list *ngIf="getSubMenus(dashboardMenu).length === 0">
                     <mat-card-content>
                         <mat-list role="list" *ngIf="getSubMenus(dashboardMenu).length === 0">
-                            <mat-list-item class="mat-chip-sub-menu" @items role="listitem">
-                                <strong>No list has been added</strong>
+                            <mat-list-item class="mat-chip-sub-menu" role="listitem">
+                                <strong @items>No list has been added</strong>
                             </mat-list-item>
                         </mat-list>
                     </mat-card-content>
                     <mat-card-footer (click)="toggleFlip(dashboardMenu)">
-                        Back
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
                     </mat-card-footer>
                 </mat-card>
             </div>

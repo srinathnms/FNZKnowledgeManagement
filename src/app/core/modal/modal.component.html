@@ -29,17 +29,16 @@
             </mat-card>
         </div>
     </div>
-    <embed *ngIf="data.content && data.content.ServerRelativeUrl && isDocument" class="embed-content" [src]="data.content && data.content.ServerRelativeUrl | safe" width="100%" height="600px">
+    <embed *ngIf="data.content && data.content.ServerRelativeUrl && isDocument" class="embed-content" [src]="data.content && data.content.ServerRelativeUrl | safe" width="100%" height="750px">
     <team-view *ngIf="data.content && data.menuContentType && isGraph" [graphData]="data.content"></team-view>
     <app-graph *ngIf="data.content && data.menuContentType && isGraph" [graphData]="data.content"></app-graph>
-    <!-- <ngx-doc-viewer url="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/Shared%20Documents/FnzProducts.pptx" viewer="google" style="width:100%;height:80vh;"></ngx-doc-viewer> -->
-    <!-- <pdf-viewer [src]="pdfSrc" [render-text]="true" style="display: block;"></pdf-viewer> -->
 </div>
-<div mat-dialog-actions align="center">
+<!-- <div mat-dialog-actions align="center">
     <button mat-button [mat-dialog-close]="true">{{data.footer}}</button>
     <div *ngIf="data.content && data.content.ServerRelativeUrl">
         <form method="get" action="{{data.content && data.content.ServerRelativeUrl | safe}}">
             <button type="submit" mat-button>Download</button>
+            <a href="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/Shared%20Documents/FnzProducts.pptx" target="_blank" mat-button>Download1</a>
         </form>
     </div>
-</div>
+</div> -->

@@ -77,7 +77,7 @@ export class DashboardComponent implements OnInit {
   graphData: ITeamViewGraphData;
   pdfSrc = '/assets/FNZSharepointcontent.pdf';
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
-    this.dashboardService.getFromMock('DashboardMenus')
+    this.dashboardService.get('DashboardMenus')
       .subscribe((data: IDashboardMenu[]) => {
         this.dashboardMenus = data;
         this.dashboardMenus.forEach(c => { c.Flip = 'inactive'; });
@@ -112,25 +112,18 @@ export class DashboardComponent implements OnInit {
       header: dashboardSubMenu.MenuName,
       footer: 'Close',
     } as IModalDialog;
-    this.dashboardService.getDocument('').subscribe((c) => {
-      debugger;
-      const document = c;
-      const file = new Blob([c], { type: 'application/pdf' });
-      modalDialogData.content = {
-        ServerRelativeUrl: URL.createObjectURL(file)
-      } as IDocument;
-      modalDialogData.menuContentType = 'Document';
-      this.openDialog(modalDialogData);
-    });
     if (dashboardSubMenu.MenuContentType === 'Document') {
       const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
       this.dashboardService.getAttachment('DashboardMenus', attachmentQuery)
         .subscribe((document: IDocument) => {
-          modalDialogData.content = {
-            ServerRelativeUrl: `${environment.SHARE_POINT_URL}${document.ServerRelativeUrl}?web=1`
-          } as IDocument;
-          modalDialogData.menuContentType = 'Document';
-          this.openDialog(modalDialogData);
+          const documentUrl = `${environment.SHARE_POINT_URL}${document.ServerRelativeUrl}`;
+          this.dashboardService.getDocument(documentUrl).subscribe((fileUrl: string) => {
+            modalDialogData.content = {
+              ServerRelativeUrl: fileUrl
+            } as IDocument;
+            modalDialogData.menuContentType = 'Document';
+            this.openDialog(modalDialogData);
+          });
         });
       return;
     }
@@ -155,7 +148,7 @@ export class DashboardComponent implements OnInit {
 
   openDialog(modalDialogData: IModalDialog): void {
     const dialogRef = this.dialog.open(ModalComponent, {
-      height: '90%',
+      height: '91%',
       width: '90%',
       minHeight: '600px',
       data: modalDialogData

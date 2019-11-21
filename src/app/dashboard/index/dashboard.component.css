@@ -111,3 +111,17 @@
 .mat-chip-sub-menu:hover {
     transform: scale(1.5);
 }
+
+.list-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    height: inherit;
+    justify-content: center;
+}
+
+.list-text {
+    font-size: 20px;
+}
