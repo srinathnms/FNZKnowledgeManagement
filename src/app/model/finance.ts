@@ -2,8 +2,8 @@ export interface IFinance {
     Id: number;
     Year: string;
     Month: string;
-    Revenue: string;
-    CustomerProfitability: string;
+    Revenue: number;
+    CustomerProfitability: number;
     TotalOnsite: number;
     TotalOffshore: number;
     BilledOnsite: number;

@@ -18,7 +18,8 @@ import {
   MatBadgeModule,
   MatExpansionModule,
   MatProgressBarModule,
-  MatSelectModule
+  MatSelectModule,
+  MatRadioModule
 } from '@angular/material';
 // import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -37,6 +38,7 @@ import { TeamViewComponent } from 'src/app/dashboard/cognizant-journey/team-view
 import { FaqComponent } from 'src/app/dashboard/technical-info/faq/faq.component';
 import { FormsModule } from '@angular/forms';
 import { GraphComponent } from 'src/app/core/graph/graph.component';
+import { RevenueComponent } from 'src/app/dashboard//governance/revenue/revenue.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { GraphComponent } from 'src/app/core/graph/graph.component';
     SafePipe,
     TeamViewComponent,
     FaqComponent,
-    GraphComponent
+    GraphComponent,
+    RevenueComponent
   ],
   imports: [
     // PdfViewerModule,
@@ -75,13 +78,15 @@ import { GraphComponent } from 'src/app/core/graph/graph.component';
     MatBadgeModule,
     MatExpansionModule,
     MatProgressBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [
     ModalComponent,
     TeamViewComponent,
-    GraphComponent
+    GraphComponent,
+    RevenueComponent
   ],
   providers: [
     {

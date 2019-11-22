@@ -64,8 +64,8 @@ export class DashboardService extends BaseService {
     }
 
     // Dummy data to work in local : Should be deleted once ready to deploy
-    getFromMock(listName: string): Observable<IDashboardMenu[]> {
-        return this.http.get<IDashboardMenu[]>(`http://localhost:3000/${listName}`)
+    getFromMock(listName: string): Observable<any> {
+        return this.http.get<any>(`http://localhost:3000/${listName}`)
             .pipe(
                 map((dashboardMenus: any) => dashboardMenus),
                 retry(3),

@@ -1,9 +1,4 @@
 <div>
-    <h2>{{yearOption}} - {{graphType}}</h2>
-    <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
-        style="width: 100%; height: 600px; display: block;"></highcharts-chart>
-</div>
-<div>
     <label>Current Filter Year: </label>
     <mat-form-field>
         <mat-select [(ngModel)]='yearOption' (ngModelChange)="onYearChange($event)">
@@ -11,8 +6,7 @@
         </mat-select>
     </mat-form-field>
 </div>
-<div class="btn-group">
-    <button value="Overall" (click)='onTeamViewTypeChange($event)'>Overall</button>
-    <button value="Billable roles" (click)='onTeamViewTypeChange($event)'>Billable roles</button>
-    <button value="Buffer" (click)='onTeamViewTypeChange($event)'>Buffer</button>
-</div>
+<mat-radio-group [(ngModel)]='graphType' (ngModelChange)="onTeamViewTypeChange($event)" aria-label="Select an option">
+    <mat-radio-button *ngFor="let graphType of graphTypes" [value]="graphType">{{graphType}}</mat-radio-button>
+</mat-radio-group>
+<app-graph [highCharts]="highCharts"></app-graph>

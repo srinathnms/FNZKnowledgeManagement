@@ -18,13 +18,13 @@ import {
     MatFormFieldModule,
     MatBadgeModule,
     MatExpansionModule,
+    MatRadioModule
 } from '@angular/material';
 // import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HighchartsChartModule } from 'highcharts-angular';
 
 import { DashboardComponent } from './index/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
-import { RevenueComponent } from './governance/revenue/revenue.component';
 
 const routers: Routes = [
     { path: '', component: DashboardComponent }
@@ -33,7 +33,6 @@ const routers: Routes = [
 @NgModule({
     declarations: [
         DashboardComponent,
-        RevenueComponent,
     ],
     imports: [
         HighchartsChartModule,
@@ -53,7 +52,7 @@ const routers: Routes = [
         MatFormFieldModule,
         MatBadgeModule,
         MatExpansionModule,
-        // PdfViewerModule,
+        MatRadioModule,
         RouterModule.forChild(routers)
     ],
     entryComponents: [

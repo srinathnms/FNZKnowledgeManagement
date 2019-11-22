@@ -1,1 +1,9 @@
-<app-graph [data]="graphContent"></app-graph>
+<div>
+    <label>Current Filter Year: </label>
+    <mat-form-field>
+        <mat-select [(ngModel)]='yearOption' (ngModelChange)="onYearChange($event)">
+            <mat-option *ngFor="let yearOption of yearOptions" [value]="yearOption">{{yearOption}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<app-graph [highCharts]="highCharts"></app-graph>
