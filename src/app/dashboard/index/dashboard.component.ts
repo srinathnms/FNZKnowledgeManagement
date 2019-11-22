@@ -85,13 +85,23 @@ export class DashboardComponent implements OnInit {
   }
 
   onMenuClick(dashboardMenu: IDashboardMenu): void {
+    if (this.selectedMenu) {
+      this.dashboardMenus.forEach(c => { c.Flip = 'inactive'; });
+      this.selectedMenu = dashboardMenu;
+      this.toggleFlip(dashboardMenu);
+      return;
+    }
     this.selectedMenu = dashboardMenu;
-    this.toggleFlip(dashboardMenu);
+    this.toggleFlip(this.selectedMenu);
   }
 
   toggleFlip(dashboardMenu: IDashboardMenu) {
     const selectedMenu = this.dashboardMenus.filter(c => c.Id === dashboardMenu.Id)[0];
-    selectedMenu.Flip = (dashboardMenu.Flip === 'inactive') ? 'active' : 'inactive';
+    if (selectedMenu.Flip === 'inactive') {
+      selectedMenu.Flip = 'active';
+      return;
+    }
+    selectedMenu.Flip = 'inactive';
   }
 
   onSubMenuHover(dashboardSubMenu: IDashboardMenu): void {
@@ -124,7 +134,7 @@ export class DashboardComponent implements OnInit {
     }
     if (dashboardSubMenu.MenuContentType === 'Graph') {
       // const query = `?$filter=Year eq ${2016}`;
-      this.dashboardService.get('ChartContents')
+      this.dashboardService.get('FinanceChart')
         .subscribe((data: IFinance[]) => {
           modalDialogData.content = data;
           modalDialogData.menuContentType = 'Graph';

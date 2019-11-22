@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 import { IDashboardMenu } from 'src/app/model/dashboard';
 import { BaseService } from '../services/base.service';
 import { AuthService } from '../services/auth.service';
-import { IDocument } from '../model/document';
 
 @Injectable({
     providedIn: 'root'
@@ -49,7 +48,6 @@ export class DashboardService extends BaseService {
             map((documentStream: any) => {
                 const file = new Blob([documentStream], { type: 'application/pdf' });
                 const fileUrl = URL.createObjectURL(file);
-                debugger;
                 return fileUrl;
             }),
             retry(3),
