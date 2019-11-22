@@ -1,159 +1,333 @@
 {
-    "DashboardMenus": [{
-            "Id": 1,
-            "MenuName": "Onboarding",
-            "ParentId": 0,
-            "BackgroundImage": { "Description": "FNZCognizantJourney", "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/FNZCognizantJourney.jpg" }
-        },
+    "DashboardMenus": [
         {
             "Id": 2,
-            "MenuName": "About FNZ",
+            "MenuName": "About FNZ and Cognizant journey with them",
             "ParentId": 0,
-            "BackgroundImage": { "Description": "FNZCognizantJourney", "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Onboarding.jpg" }
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/FNZCognizantJourney.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 3,
-            "MenuName": "Development Cognizant Scope and Delivery",
-            "ParentId": 0
+            "MenuName": "UK Insurance and Wealth Management",
+            "ParentId": 0,
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/WealthManagement.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 4,
-            "MenuName": "UK Insurance and Wealth Management",
-            "ParentId": 0
+            "MenuName": "Governance and Commercials",
+            "ParentId": 0,
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Governance.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 5,
-            "MenuName": "Testing Cognizant Scope and Delivery",
-            "ParentId": 0
+            "MenuName": "Onboarding",
+            "ParentId": 0,
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Onboarding.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 6,
-            "MenuName": "Governance",
-            "ParentId": 0
+            "MenuName": "Development -Cognizant Scope and Delivery",
+            "ParentId": 0,
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Onboarding.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 7,
-            "MenuName": "Technical Documents",
-            "ParentId": 0
+            "MenuName": "Testing - Cognizant Scope and Delivery",
+            "ParentId": 0,
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/TestingDelivery.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 8,
-            "MenuName": "Commercials",
-            "ParentId": 0
+            "MenuName": "Tech info",
+            "ParentId": 0,
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/TechInfo.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 9,
-            "MenuName": "Workforce Joining Formality",
-            "ParentId": 1
+            "MenuName": "Value Adds",
+            "ParentId": 0,
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/ValueAdds.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 10,
-            "MenuName": "Machine Setup",
-            "ParentId": 1
+            "MenuName": "Operations",
+            "ParentId": 0,
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Operations.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 11,
-            "MenuName": "Training plan",
-            "ParentId": 1
+            "MenuName": "Miscellaneous",
+            "ParentId": 0,
+            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Miscellaneous.jpg",
+            "MenuContentType": "NA"
         },
         {
             "Id": 12,
-            "MenuName": "Development",
-            "ParentId": 3
+            "MenuName": "FNZ Overview",
+            "ParentId": 2,
+            "MenuContentType": "Document"
         },
         {
             "Id": 13,
-            "MenuName": "Projects/Logo supported",
-            "ParentId": 3
+            "MenuName": "FNZ – Cognizant engagement",
+            "ParentId": 2,
+            "MenuContentType": "Document"
         },
         {
             "Id": 14,
-            "MenuName": "Scope",
-            "ParentId": 3
+            "MenuName": "FNZ – Cognizant Journey",
+            "ParentId": 2,
+            "MenuContentType": "Document"
         },
         {
             "Id": 15,
-            "MenuName": "UK Insurance",
-            "ParentId": 4
+            "MenuName": "Team View",
+            "ParentId": 2,
+            "MenuContentType": "Graph"
         },
         {
             "Id": 16,
-            "MenuName": "Brain shark VIdeos",
-            "ParentId": 4
+            "MenuName": "UK Insurance Overview",
+            "ParentId": 3,
+            "MenuContentType": "Document"
         },
         {
             "Id": 17,
-            "MenuName": "Delivery Model",
-            "ParentId": 6
+            "MenuName": "Wealth Management Overview",
+            "ParentId": 3,
+            "MenuContentType": "Document"
         },
         {
             "Id": 18,
-            "MenuName": "FAQ",
-            "ParentId": 7
+            "MenuName": "FNZ Products",
+            "ParentId": 3,
+            "MenuContentType": "Document"
         },
         {
             "Id": 19,
-            "MenuName": "Architecture",
-            "ParentId": 7
+            "MenuName": "Functional scope with Cognizant",
+            "ParentId": 3,
+            "MenuContentType": "Document"
         },
         {
             "Id": 20,
-            "MenuName": "Jun’16 to Dec’19 Revenue",
-            "ParentId": 8
+            "MenuName": "Governance Model",
+            "ParentId": 4,
+            "MenuContentType": "Document"
         },
         {
             "Id": 21,
-            "MenuName": "Pending Payments",
-            "ParentId": 8
+            "MenuName": "FNZ Connects and Client Visits",
+            "ParentId": 4,
+            "MenuContentType": "Document"
         },
         {
             "Id": 22,
-            "MenuName": "Team View",
-            "ParentId": 1,
+            "MenuName": "Revenue View",
+            "ParentId": 4,
             "MenuContentType": "Graph"
-        }
-    ],
-    "Work_Force_Joining_Formality_Menu": [{
-            "ID": 1,
-            "Title": "Developers and Testers Joining FNZ",
-            "ImageSource": "src/assets/Picture1.jpg"
         },
         {
-            "ID": 2,
-            "Title": "Request them to sign the FNZ IT Policy",
-            "ImageSource": "https://image.flaticon.com/icons/png/512/3/3901.png",
-            "Contents": "Check with FNZ to get the latest version of IT policy. Just sign and share the signed page alone to FNZ HR.",
-            "DocumentUrl": "https://insurance.cognizant.com/uksbu/fnz/Shared%20Documents/Training/00%20-%20Onboarding/FNZ%20Onboarding%20Reference%20Document.docx"
+            "Id": 24,
+            "MenuName": "Workforce Joining Process",
+            "ParentId": 5
         },
         {
-            "ID": 3,
-            "Title": "Initiate the request to create VM ",
-            "ImageSource": "https://image.flaticon.com/icons/png/512/3/3901.png",
-            "Contents": "Get the FNZ HR PoC and share the developers and Testers list to them. Most likely will take 2/ 3 weeks to get the VMs.",
-            "DocumentUrl": "https://insurance.cognizant.com/uksbu/fnz/Shared%20Documents/Training/00%20-%20Onboarding/FNZ%20Onboarding%20Reference%20Document.docx"
+            "Id": 25,
+            "MenuName": "Machine Setup (Dev and Testing)",
+            "ParentId": 5
         },
         {
-            "ID": 4,
-            "Title": "Verify whether all the software’s are available  in the VMs",
-            "ImageSource": "https://image.flaticon.com/icons/png/512/3/3901.png",
-            "Contents": "The VM configuration will vary between Developer and Tester.",
-            "DocumentUrl": "https://insurance.cognizant.com/uksbu/fnz/Shared%20Documents/Training/00%20-%20Onboarding/FNZ%20Onboarding%20Reference%20Document.docx"
+            "Id": 26,
+            "MenuName": "Training plan",
+            "ParentId": 5
         },
         {
-            "ID": 5,
-            "Title": "Reach the Respective Project specific PMs to get missing access",
-            "ImageSource": "https://image.flaticon.com/icons/png/512/3/3901.png",
-            "Contents": "Consolidate the missing details for every developers and Testing. FNZ PM will reach their infra team via Infra JIRA to resolve those issues",
-            "DocumentUrl": "abc.cccc"
+            "Id": 27,
+            "MenuName": "Learning Materials",
+            "ParentId": 5
         },
         {
-            "ID": 6,
-            "Title": "Now ready to commence the Great work",
-            "ImageSource": "https://image.flaticon.com/icons/png/512/3/3901.png",
+            "Id": 28,
+            "MenuName": "Delivery Model, Tech Stack",
+            "ParentId": 6,
+            "MenuContentType": "Document"
+        },
+        {
+            "Id": 29,
+            "MenuName": "Metrics",
+            "ParentId": 6
+        },
+        {
+            "Id": 30,
+            "MenuName": "Engineering Practice",
+            "ParentId": 6,
+            "MenuContentType": "Document"
+        },
+        {
+            "Id": 31,
+            "MenuName": "Projects/Logo supported",
+            "ParentId": 6
+        },
+        {
+            "Id": 32,
+            "MenuName": "Delivery Model, Tech Stack",
+            "ParentId": 7,
+            "MenuContentType": "Document"
+        },
+        {
+            "Id": 33,
+            "MenuName": "Metrics",
+            "ParentId": 7
+        },
+        {
+            "Id": 34,
+            "MenuName": "Automation framework",
+            "ParentId": 7,
+            "MenuContentType": "Document"
+        },
+        {
+            "Id": 35,
+            "MenuName": "Projects/Logo supported",
+            "ParentId": 7
+        },
+        {
+            "Id": 36,
+            "MenuName": "FAQ",
+            "ParentId": 8
+        },
+        {
+            "Id": 37,
+            "MenuName": "Technical Architecture",
+            "ParentId": 8,
+            "MenuContentType": "Document"
+        },
+        {
+            "Id": 38,
+            "MenuName": "FNZ – Application landscape",
+            "ParentId": 8,
+            "MenuContentType": "Document"
+        },
+        {
+            "Id": 39,
+            "MenuName": "Check list and other doc (eg: JIRA)",
+            "ParentId": 8
+        },
+        {
+            "Id": 40,
+            "MenuName": "Automation Tools",
+            "ParentId": 9
+        },
+        {
+            "Id": 41,
+            "MenuName": "Investments Projects",
+            "ParentId": 9
+        },
+        {
+            "Id": 42,
+            "MenuName": "Automation Training Handover",
+            "ParentId": 9
+        },
+        {
+            "Id": 43,
+            "MenuName": "Proactive Proposals",
+            "ParentId": 9
+        },
+        {
+            "Id": 44,
+            "MenuName": "Offshore Locations and ODC",
+            "ParentId": 10
+        },
+        {
+            "Id": 45,
+            "MenuName": "BCP",
+            "ParentId": 10,
+            "MenuContentType": "Document"
+        },
+        {
+            "Id": 46,
+            "MenuName": "Delivery Excellence Activity",
+            "ParentId": 10
+        },
+        {
+            "Id": 47,
+            "MenuName": "MSA and SoW",
+            "ParentId": 10
+        },
+        {
+            "Id": 48,
+            "MenuName": "Daily, Weekly and Monthly Activity",
+            "ParentId": 11,
+            "MenuContentType": "Document"
+        },
+        {
+            "Id": 49,
+            "MenuName": "Due Diligence (every 18 months)",
+            "ParentId": 11
+        },
+        {
+            "Id": 50,
+            "MenuName": "Tracker – FSE, VM, Timesheet",
+            "ParentId": 11
+        },
+        {
+            "Id": 51,
+            "MenuName": "PPT Repository  (reference)",
+            "ParentId": 11
+        },
+        {
+            "Id": 52,
+            "MenuName": "Developers and Testers Joining FNZ",
+            "ParentId": 24
+        },
+        {
+            "Id": 53,
+            "MenuName": "Request them to sign the FNZ IT Policy",
+            "ParentId": 24,
+            "Contents": "Check with FNZ to get the latest version of IT policy. Just sign and share the signed page alone to FNZ HR. Click here for Sample email"
+        },
+        {
+            "Id": 54,
+            "MenuName": "Initiate the request to create VM",
+            "ParentId": 24,
+            "Contents": "Get the FNZ HR PoC and share the developers and Testers list to them. Most likely will take 2/ 3 weeks to get the VMs. Click here for Sample email"
+        },
+        {
+            "Id": 55,
+            "MenuName": "Verify whether all the software’s are available  in the VMs",
+            "ParentId": 24,
+            "Contents": "The VM configuration will vary between Developer and Tester. Click here to know those VM details"
+        },
+        {
+            "Id": 56,
+            "MenuName": "Reach the Respective Project specific PMs to get missing access",
+            "ParentId": 24,
+            "Contents": "Consolidate the missing details for every developers and Testing. FNZ PM will reach their infra team via Infra JIRA to resolve those issues"
+        },
+        {
+            "Id": 57,
+            "MenuName": "Now ready to commence the Great work",
+            "ParentId": 24,
             "Contents": "Follow the direction from the FNZ PM and align to their delivery accordingly"
+        },
+        {
+            "Id": 58,
+            "MenuName": "Rate card and roles",
+            "ParentId": 4,
+            "MenuContentType": "Document"
         }
     ],
-    "FAQ": [{
+    "FAQ": [
+        {
             "AttachmentName": "",
             "Attachments": false,
             "Description": "Test1",
@@ -176,6 +350,536 @@
             "Id": 1,
             "Title": "Title 3",
             "Solution": "Sol 3"
+        }
+    ],
+    "FinanceChart": [
+        {
+            "Year": "2016",
+            "Month": "January",
+            "CustomerProfitability": 0,
+            "Revenue": 0,
+            "TotalOnsite": 0,
+            "TotalOffshore": 0,
+            "BilledOnsite": 0,
+            "BilledOffshore": 0,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "February",
+            "CustomerProfitability": 0,
+            "Revenue": 0,
+            "TotalOnsite": 0,
+            "TotalOffshore": 0,
+            "BilledOnsite": 0,
+            "BilledOffshore": 0,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "March",
+            "CustomerProfitability": 0,
+            "Revenue": 0,
+            "TotalOnsite": 0,
+            "TotalOffshore": 0,
+            "BilledOnsite": 0,
+            "BilledOffshore": 0,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "April",
+            "CustomerProfitability": 0,
+            "Revenue": 0,
+            "TotalOnsite": 0,
+            "TotalOffshore": 0,
+            "BilledOnsite": 0,
+            "BilledOffshore": 0,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "May",
+            "CustomerProfitability": 0,
+            "Revenue": 0,
+            "TotalOnsite": 0,
+            "TotalOffshore": 0,
+            "BilledOnsite": 0,
+            "BilledOffshore": 0,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "June",
+            "CustomerProfitability": 0,
+            "Revenue": 0,
+            "TotalOnsite": 0,
+            "TotalOffshore": 0,
+            "BilledOnsite": 0,
+            "BilledOffshore": 0,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "July",
+            "CustomerProfitability": 75.33511696,
+            "Revenue": 97954,
+            "TotalOnsite": 1,
+            "TotalOffshore": 11,
+            "BilledOnsite": 1,
+            "BilledOffshore": 11,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "August",
+            "CustomerProfitability": 59.05974947,
+            "Revenue": 88970,
+            "TotalOnsite": 1,
+            "TotalOffshore": 17,
+            "BilledOnsite": 1,
+            "BilledOffshore": 16,
+            "Buffer": 1
+        },
+        {
+            "Year": "2016",
+            "Month": "September",
+            "CustomerProfitability": 62.13020285,
+            "Revenue": 109109,
+            "TotalOnsite": 1,
+            "TotalOffshore": 21,
+            "BilledOnsite": 1,
+            "BilledOffshore": 21,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "October",
+            "CustomerProfitability": 56.1098988,
+            "Revenue": 116060,
+            "TotalOnsite": 1,
+            "TotalOffshore": 23,
+            "BilledOnsite": 1,
+            "BilledOffshore": 23,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "November",
+            "CustomerProfitability": 58.14888118,
+            "Revenue": 124470,
+            "TotalOnsite": 1,
+            "TotalOffshore": 25,
+            "BilledOnsite": 1,
+            "BilledOffshore": 25,
+            "Buffer": 0
+        },
+        {
+            "Year": "2016",
+            "Month": "December",
+            "CustomerProfitability": 39.10014228,
+            "Revenue": 101267,
+            "TotalOnsite": 1,
+            "TotalOffshore": 30,
+            "BilledOnsite": 1,
+            "BilledOffshore": 23,
+            "Buffer": 8
+        },
+        {
+            "Year": "2017",
+            "Month": "January",
+            "CustomerProfitability": 53.22248955,
+            "Revenue": 137659,
+            "TotalOnsite": 0,
+            "TotalOffshore": 33,
+            "BilledOnsite": 0,
+            "BilledOffshore": 32,
+            "Buffer": 1
+        },
+        {
+            "Year": "2017",
+            "Month": "February",
+            "CustomerProfitability": 51.6250936,
+            "Revenue": 124658,
+            "TotalOnsite": 0,
+            "TotalOffshore": 33,
+            "BilledOnsite": 0,
+            "BilledOffshore": 31,
+            "Buffer": 2
+        },
+        {
+            "Year": "2017",
+            "Month": "March",
+            "CustomerProfitability": 54.54070159,
+            "Revenue": 124872,
+            "TotalOnsite": 0,
+            "TotalOffshore": 33,
+            "BilledOnsite": 0,
+            "BilledOffshore": 27,
+            "Buffer": 6
+        },
+        {
+            "Year": "2017",
+            "Month": "April",
+            "CustomerProfitability": 51.27702332,
+            "Revenue": 113306,
+            "TotalOnsite": 0,
+            "TotalOffshore": 32,
+            "BilledOnsite": 0,
+            "BilledOffshore": 30,
+            "Buffer": 2
+        },
+        {
+            "Year": "2017",
+            "Month": "May",
+            "CustomerProfitability": 52.89259497,
+            "Revenue": 129944,
+            "TotalOnsite": 0,
+            "TotalOffshore": 32,
+            "BilledOnsite": 0,
+            "BilledOffshore": 30,
+            "Buffer": 2
+        },
+        {
+            "Year": "2017",
+            "Month": "June",
+            "CustomerProfitability": 51.06034967,
+            "Revenue": 115229,
+            "TotalOnsite": 0,
+            "TotalOffshore": 32,
+            "BilledOnsite": 0,
+            "BilledOffshore": 28,
+            "Buffer": 5
+        },
+        {
+            "Year": "2017",
+            "Month": "July",
+            "CustomerProfitability": 46.29532275,
+            "Revenue": 118528,
+            "TotalOnsite": 0,
+            "TotalOffshore": 36,
+            "BilledOnsite": 0,
+            "BilledOffshore": 28,
+            "Buffer": 8
+        },
+        {
+            "Year": "2017",
+            "Month": "August",
+            "CustomerProfitability": 39.74051786,
+            "Revenue": 97935,
+            "TotalOnsite": 0,
+            "TotalOffshore": 34,
+            "BilledOnsite": 0,
+            "BilledOffshore": 24,
+            "Buffer": 10
+        },
+        {
+            "Year": "2017",
+            "Month": "September",
+            "CustomerProfitability": 37.68990621,
+            "Revenue": 115820,
+            "TotalOnsite": "0",
+            "TotalOffshore": "41",
+            "BilledOnsite": "0",
+            "BilledOffshore": "26",
+            "Buffer": "15"
+        },
+        {
+            "Year": "2017",
+            "Month": "October",
+            "CustomerProfitability": 38.04895899,
+            "Revenue": 105529,
+            "TotalOnsite": 0,
+            "TotalOffshore": 39,
+            "BilledOnsite": 0,
+            "BilledOffshore": 26,
+            "Buffer": 14
+        },
+        {
+            "Year": "2017",
+            "Month": "November",
+            "CustomerProfitability": 43.5474463,
+            "Revenue": 126516,
+            "TotalOnsite": 0,
+            "TotalOffshore": 45,
+            "BilledOnsite": 0,
+            "BilledOffshore": 30,
+            "Buffer": 15
+        },
+        {
+            "Year": "2017",
+            "Month": "December",
+            "CustomerProfitability": 43.69804507,
+            "Revenue": 148685,
+            "TotalOnsite": 1,
+            "TotalOffshore": 45,
+            "BilledOnsite": 0,
+            "BilledOffshore": 38,
+            "Buffer": 8
+        },
+        {
+            "Year": "2018",
+            "Month": "January",
+            "CustomerProfitability": 37.1690758,
+            "Revenue": 166520,
+            "TotalOnsite": 1,
+            "TotalOffshore": 52,
+            "BilledOnsite": 0,
+            "BilledOffshore": 39,
+            "Buffer": 14
+        },
+        {
+            "Year": "2018",
+            "Month": "February",
+            "CustomerProfitability": 30.59153088,
+            "Revenue": 160311,
+            "TotalOnsite": 2,
+            "TotalOffshore": 53,
+            "BilledOnsite": 0,
+            "BilledOffshore": 37,
+            "Buffer": 18
+        },
+        {
+            "Year": "2018",
+            "Month": "March",
+            "CustomerProfitability": 35.79101132,
+            "Revenue": 169580,
+            "TotalOnsite": 1,
+            "TotalOffshore": 53,
+            "BilledOnsite": 0,
+            "BilledOffshore": 37,
+            "Buffer": 17
+        },
+        {
+            "Year": "2018",
+            "Month": "April",
+            "CustomerProfitability": 38.91269361,
+            "Revenue": 183589,
+            "TotalOnsite": 2,
+            "TotalOffshore": 64,
+            "BilledOnsite": 0,
+            "BilledOffshore": 41,
+            "Buffer": 25
+        },
+        {
+            "Year": "2018",
+            "Month": "May",
+            "CustomerProfitability": 47.31883756,
+            "Revenue": 200629,
+            "TotalOnsite": 1,
+            "TotalOffshore": 70,
+            "BilledOnsite": 0,
+            "BilledOffshore": 45,
+            "Buffer": 26
+        },
+        {
+            "Year": "2018",
+            "Month": "June",
+            "CustomerProfitability": 45.34220884,
+            "Revenue": 206100,
+            "TotalOnsite": 1,
+            "TotalOffshore": 73,
+            "BilledOnsite": 0,
+            "BilledOffshore": 52,
+            "Buffer": 22
+        },
+        {
+            "Year": "2018",
+            "Month": "July",
+            "CustomerProfitability": 62.08243344,
+            "Revenue": 270532,
+            "TotalOnsite": 1,
+            "TotalOffshore": 81,
+            "BilledOnsite": 0,
+            "BilledOffshore": 69,
+            "Buffer": 13
+        },
+        {
+            "Year": "2018",
+            "Month": "August",
+            "CustomerProfitability": 46.53836121,
+            "Revenue": 292496,
+            "TotalOnsite": 3,
+            "TotalOffshore": 98,
+            "BilledOnsite": 3,
+            "BilledOffshore": 76,
+            "Buffer": 22
+        },
+        {
+            "Year": "2018",
+            "Month": "September",
+            "CustomerProfitability": 47.2178631,
+            "Revenue": 358221,
+            "TotalOnsite": 8,
+            "TotalOffshore": 104,
+            "BilledOnsite": 5,
+            "BilledOffshore": 77,
+            "Buffer": 29
+        },
+        {
+            "Year": "2018",
+            "Month": "October",
+            "CustomerProfitability": 53.83689558,
+            "Revenue": 438615,
+            "TotalOnsite": 9,
+            "TotalOffshore": 98,
+            "BilledOnsite": 9,
+            "BilledOffshore": 84,
+            "Buffer": 14
+        },
+        {
+            "Year": "2018",
+            "Month": "November",
+            "CustomerProfitability": 50.77305152,
+            "Revenue": 435980,
+            "TotalOnsite": 10,
+            "TotalOffshore": 98,
+            "BilledOnsite": 9,
+            "BilledOffshore": 78,
+            "Buffer": 21
+        },
+        {
+            "Year": "2018",
+            "Month": "December",
+            "CustomerProfitability": 44.03068985,
+            "Revenue": 362616,
+            "TotalOnsite": 8,
+            "TotalOffshore": 102,
+            "BilledOnsite": 5,
+            "BilledOffshore": 82,
+            "Buffer": 23
+        },
+        {
+            "Year": "2019",
+            "Month": "January",
+            "CustomerProfitability": 9.396853603,
+            "Revenue": 297050,
+            "TotalOnsite": 12,
+            "TotalOffshore": 94,
+            "BilledOnsite": 6,
+            "BilledOffshore": 56,
+            "Buffer": 44
+        },
+        {
+            "Year": "2019",
+            "Month": "February",
+            "CustomerProfitability": 18.60794548,
+            "Revenue": 248442,
+            "TotalOnsite": 9,
+            "TotalOffshore": 91,
+            "BilledOnsite": 0,
+            "BilledOffshore": 65,
+            "Buffer": 35
+        },
+        {
+            "Year": "2019",
+            "Month": "March",
+            "CustomerProfitability": 43.5796451,
+            "Revenue": 289523,
+            "TotalOnsite": 4,
+            "TotalOffshore": 88,
+            "BilledOnsite": 3,
+            "BilledOffshore": 65,
+            "Buffer": 24
+        },
+        {
+            "Year": "2019",
+            "Month": "April",
+            "CustomerProfitability": 22.86311881,
+            "Revenue": 259547,
+            "TotalOnsite": 8,
+            "TotalOffshore": 76,
+            "BilledOnsite": 7,
+            "BilledOffshore": 42,
+            "Buffer": 34
+        },
+        {
+            "Year": "2019",
+            "Month": "May",
+            "CustomerProfitability": 14.0448749,
+            "Revenue": 217132,
+            "TotalOnsite": 8,
+            "TotalOffshore": 57,
+            "BilledOnsite": 4,
+            "BilledOffshore": 35,
+            "Buffer": 26
+        },
+        {
+            "Year": "2019",
+            "Month": "June",
+            "CustomerProfitability": -15.5002312,
+            "Revenue": 133930,
+            "TotalOnsite": 7,
+            "TotalOffshore": 45,
+            "BilledOnsite": 0,
+            "BilledOffshore": 38,
+            "Buffer": 14
+        },
+        {
+            "Year": "2019",
+            "Month": "July",
+            "CustomerProfitability": 14.80680559,
+            "Revenue": 155731,
+            "TotalOnsite": 5,
+            "TotalOffshore": 42,
+            "BilledOnsite": 3,
+            "BilledOffshore": 30,
+            "Buffer": 13
+        },
+        {
+            "Year": "2019",
+            "Month": "August",
+            "CustomerProfitability": 7.335930307,
+            "Revenue": 174028,
+            "TotalOnsite": 7,
+            "TotalOffshore": 47,
+            "BilledOnsite": 3,
+            "BilledOffshore": 37,
+            "Buffer": 14
+        },
+        {
+            "Year": "2019",
+            "Month": "September",
+            "CustomerProfitability": -62.8880707,
+            "Revenue": 75753,
+            "TotalOnsite": 5,
+            "TotalOffshore": 44,
+            "BilledOnsite": 4,
+            "BilledOffshore": 35,
+            "Buffer": 10
+        },
+        {
+            "Year": "2019",
+            "Month": "October",
+            "CustomerProfitability": 28.15858515,
+            "Revenue": 148442,
+            "TotalOnsite": 4,
+            "TotalOffshore": 36,
+            "BilledOnsite": 3,
+            "BilledOffshore": 30,
+            "Buffer": 7
+        },
+        {
+            "Year": "2019",
+            "Month": "November",
+            "CustomerProfitability": 0,
+            "Revenue": 0,
+            "TotalOnsite": 2,
+            "TotalOffshore": 22,
+            "BilledOnsite": 1,
+            "BilledOffshore": 17,
+            "Buffer": 6
+        },
+        {
+            "Year": "2019",
+            "Month": "December",
+            "CustomerProfitability": 0,
+            "Revenue": 0,
+            "TotalOnsite": 2,
+            "TotalOffshore": 11,
+            "BilledOnsite": 1,
+            "BilledOffshore": 11,
+            "Buffer": 1
         }
     ]
 }
