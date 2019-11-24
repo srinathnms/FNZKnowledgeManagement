@@ -1,8 +1,8 @@
 <div>
-    <label>Current Filter Year: </label>
+    <label>Current Year: </label>
     <mat-form-field>
-        <mat-select [(ngModel)]='yearOption' (ngModelChange)="onYearChange($event)">
-            <mat-option *ngFor="let yearOption of yearOptions" [value]="yearOption">{{yearOption}}</mat-option>
+        <mat-select [(ngModel)]='graphLabel' (ngModelChange)="onYearChange($event)">
+            <mat-option *ngFor="let graphLabel of yearOptions" [value]="graphLabel">{{graphLabel}}</mat-option>
         </mat-select>
     </mat-form-field>
 </div>

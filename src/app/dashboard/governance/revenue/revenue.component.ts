@@ -3,20 +3,22 @@ import { IFinance } from 'src/app/model/finance';
 import { IHighCharts } from 'src/app/model/IHighCharts';
 import * as Highcharts from 'highcharts';
 import { Month } from 'src/app/model/enum/month';
+import { YearOptions } from 'src/app/model/enum/yearOptions';
 
 @Component({
   selector: 'app-revenue',
   templateUrl: './revenue.component.html',
   styleUrls: ['./revenue.component.css']
 })
+
 export class RevenueComponent implements OnInit, OnDestroy {
   Highcharts: typeof Highcharts;
   @Input() graphData: IFinance[];
   highCharts: IHighCharts;
-  monthlyChartLabels: string[] = Object.keys(Month);
-  yearOptions = ['2016', '2017', '2018', '2019'];
-  yearOption = this.yearOptions[0];
-
+  monthlyChartLabels: string[] = Object.values(Month);
+  yearOptions: string[] = Object.values(YearOptions);
+  yearlyChartLabels: string[] = ['2016', '2017', '2018', '2019'];
+  graphLabel: YearOptions = YearOptions.Yearly;
   constructor() {
   }
 
@@ -30,7 +32,7 @@ export class RevenueComponent implements OnInit, OnDestroy {
       chartOptions: {
         zoomType: 'xy'
       },
-      xAxisOptions: this.monthlyChartLabels,
+      xAxisOptions: this.yearlyChartLabels,
       yAxisOptions: [{ // Primary yAxis
         labels: {
           format: '{value} %',
@@ -59,22 +61,36 @@ export class RevenueComponent implements OnInit, OnDestroy {
           }
         }
       }],
-      seriesOptionsTypes: this.getGraphSeries(this.yearOption)
+      seriesOptionsTypes: this.getGraphSeries(this.graphLabel)
     };
   }
 
-  onYearChange(year: string): void {
-    this.yearOption = year;
+  onYearChange(year: YearOptions): void {
+    this.graphLabel = year;
     this.highCharts.seriesOptionsTypes = this.getGraphSeries(year);
-    const series: Highcharts.Options = { series: this.getGraphSeries(year) };
+    const series: Highcharts.Options = {
+      series: this.getGraphSeries(year),
+      xAxis: { categories: this.monthlyChartLabels }
+    };
     this.Highcharts.charts[0].update(series);
   }
 
-  getGraphSeries(year: string): Highcharts.SeriesOptionsType[] {
-    const data = this.graphData && this.graphData.filter(c => c.Year === year);
-    const revenue = data && data.map((finance: IFinance) => finance.Revenue) as Highcharts.SeriesXrangeDataOptions[];
-    const customerProfitability = data && data.map(
-      (finance: IFinance) => finance.CustomerProfitability) as Highcharts.SeriesXrangeDataOptions[];
+  getGraphSeries(year: YearOptions): Highcharts.SeriesOptionsType[] {
+    let revenue: number[] = [];
+    let customerProfitability: number[] = [];
+
+    if (year === YearOptions.Yearly) {
+      this.yearlyChartLabels.forEach((yearOption: YearOptions) => {
+        revenue.push(this.getYearlyData(yearOption).revenue.reduce((prev, curr) => prev + curr));
+        const cp = this.getYearlyData(yearOption).customerProfitability;
+        const cpAverage = cp.reduce((prev, curr) => prev + curr) / cp.length;
+        customerProfitability.push(cpAverage);
+      });
+
+    } else {
+      revenue = this.getYearlyData(year).revenue;
+      customerProfitability = this.getYearlyData(year).customerProfitability;
+    }
     const graphSeries = [
       {
         name: 'Revenue ($)',
@@ -95,5 +111,13 @@ export class RevenueComponent implements OnInit, OnDestroy {
       }] as Highcharts.SeriesOptionsType[];
 
     return graphSeries;
+  }
+
+  getYearlyData(year: YearOptions) {
+    const revenue = this.graphData && this.graphData.filter((finance: IFinance) => finance.Year === year)
+      .map((finance: IFinance) => finance.Revenue);
+    const customerProfitability = this.graphData && this.graphData.filter((finance: IFinance) => finance.Year === year)
+      .map((finance: IFinance) => finance.CustomerProfitability);
+    return { revenue, customerProfitability };
   }
 }
