@@ -4,8 +4,8 @@
 }
 
 .header-logo {
-    max-width: 25%;
-    height: 64px;
+    max-height: 64px;
+    min-height: 64px;
 }
 
 .mat-toolbar {

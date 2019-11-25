@@ -1,8 +1,8 @@
 .mat-chip-menu {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 250px;
-    max-height: 250px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 300px;
     text-align: center;
     border: 1px solid #B7B8BB;
     border-radius: 0px;
@@ -21,8 +21,8 @@
 }
 
 .mat-card-image {
-    max-height: 300px;
-    min-height: 300px;
+    max-height: 372px;
+    min-height: 372px;
 }
 
 .zoom-wrapper {
@@ -43,10 +43,10 @@
 }
 
 .tp-box {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 250px;
-    max-height: 250px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 300px;
     text-align: center;
     border-radius: 0px;
     justify-content: center;
@@ -103,13 +103,15 @@
 }
 
 .mat-chip-sub-menu {
-    text-shadow: 1px 3px 2px grey;
+    /* text-shadow: 1px 3px 2px grey; */
     font-family: Garamond;
     font-style: italic;
 }
 
 .mat-chip-sub-menu:hover {
     transform: scale(1.5);
+    color: #0033a0;
+    font-weight: bold;
 }
 
 .list-content {
@@ -123,5 +125,19 @@
 }
 
 .list-text {
+    font-size: 20px;
+}
+
+.mat-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-card-header {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: center;
+    color: #0033a0;
     font-size: 20px;
 }

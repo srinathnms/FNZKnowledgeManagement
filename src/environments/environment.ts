@@ -7,7 +7,9 @@ export const environment = {
   SHARE_POINT_URL: 'https://cognizantonline.sharepoint.com',
   BASE_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ',
   API_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_api',
-  DOC_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_layouts/15/Doc.aspx'
+  DOC_URL: 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_layouts/15/Doc.aspx',
+  FNZ_URL: 'https://www.fnz.com',
+  CTS_URL: 'https://be.cognizant.com'
 };
 
 /*web/lists

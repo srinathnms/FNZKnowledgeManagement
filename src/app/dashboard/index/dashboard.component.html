@@ -6,6 +6,9 @@
             </mat-card>
             <div class="tp-box__side tp-box__back">
                 <mat-card class="mat-chip-menu" *ngIf="getSubMenus(dashboardMenu).length > 0">
+                    <mat-card-header (click)="toggleFlip(dashboardMenu)">
+                        <strong>{{dashboardMenu.MenuName}}</strong>
+                    </mat-card-header>
                     <mat-card-content>
                         <mat-list @list *ngFor="let dashboardSubMenu of getSubMenus(dashboardMenu)">
                             <div class="list-content">

@@ -20,6 +20,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'diary',
+        component: FaqComponent,
+        canActivate: [AuthGuard]
+    },
+    {
         path: '**',
         loadChildren: () => import('./dashboard/dashboard.module').then(mod => mod.DashboardModule),
         canActivate: [AuthGuard]

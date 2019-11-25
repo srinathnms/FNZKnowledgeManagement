@@ -9,4 +9,6 @@ import { environment } from 'src/environments/environment';
 export class HeaderComponent {
   title = 'Welcome to FNZ Knowledge Repository';
   baseUrl = environment.BASE_URL;
+  fnzUrl = environment.FNZ_URL;
+  ctsUrl = environment.CTS_URL;
 }
