@@ -1,19 +1,25 @@
-<mat-toolbar color="white">
-    <mat-toolbar-row>
-        <div class="header-logo">
-            <a [href]="fnzUrl" target="_blank">
-                <img class="header-logo" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/fnz_logo.png" alt="logo" />
-            </a>
-        </div>
-        <button mat-button routerLink="dashboard" routerLinkActive="active">Home</button>
-        <button mat-button routerLink="faq" routerLinkActive="active">FAQ</button>
-        <button mat-button routerLink="diary" routerLinkActive="active">Diary</button>
-        <h1 class="title"><strong> {{ title }}! </strong></h1>
-        <div class="header-logo">
-            <a [href]="ctsUrl" target="_blank">
-                <img class="header-logo" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/cts_logo.png" alt="logo" />
-            </a>
-        </div>
-    </mat-toolbar-row>
-    <mat-divider></mat-divider>
-</mat-toolbar>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" [href]="fnzUrl" target="_blank">
+        <img class="header-logo" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/fnz_logo.png" alt="logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link" mat-button mat-button-ripple mat-ripple [routerLink]="'dashboard'" [routerLinkActive]="'active'">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" mat-button mat-button-ripple mat-ripple [routerLink]="'faq'" [routerLinkActive]="'active'">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" mat-button mat-button-ripple mat-ripple [routerLink]="'diary'" [routerLinkActive]="'active'">Diary</a>
+            </li>
+        </ul>
+    </div>
+    <h1 class="title"><strong> {{ title }} </strong></h1>
+    <a [href]="ctsUrl" target="_blank">
+        <img class="header-logo" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/cts_logo.png" alt="logo" />
+    </a>
+</nav>

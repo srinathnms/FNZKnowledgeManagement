@@ -18,9 +18,9 @@ export class DashboardService extends BaseService {
     }
 
     get(listName: string, query?: string): Observable<any> {
-        let url = `${environment.API_URL}/lists/GetByTitle(\'${listName}\')/items`;
+        let url = `${environment.API_URL}/lists/GetByTitle('${listName}')/items`;
         if (query) {
-            url = `${environment.API_URL}/lists/GetByTitle(\'${listName}\')/items${query}`;
+            url = `${environment.API_URL}/lists/GetByTitle('${listName}')/items${query}`;
         }
         return this.http.get<any>(url)
             .pipe(
@@ -31,7 +31,7 @@ export class DashboardService extends BaseService {
     }
 
     getAttachment(listName: string, query?: string): Observable<any> {
-        const url = `${environment.API_URL}/lists/GetByTitle(\'${listName}\')/items${query}`;
+        const url = `${environment.API_URL}/lists/GetByTitle('${listName}')/items${query}`;
         return this.http.get<any>(url)
             .pipe(
                 map((attachments: any) => {
@@ -99,8 +99,7 @@ export class DashboardService extends BaseService {
             headers: httpHeaders,
         };
 
-        const siteUrl = 'https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/_api/lists/getbytitle(\'' +
-            listName + '\')/items';
+        const siteUrl = `${environment.API_URL}/lists/GetByTitle('${listName}')/items`;
         return this.http.post<IDashboardMenu[]>
             (siteUrl, JSON.stringify(item), options)
             .pipe(
