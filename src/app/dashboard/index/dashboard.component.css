@@ -159,7 +159,11 @@
 .text-test {
     position: absolute;
     top: 0;
-    right: 18%;
+    min-width: 250px;
+    max-width: 250px;
+    justify-content: center;
+    text-align: center;
+    right: 15%;
     color: white;
     font-size: 40px;
     font-family: Garamond;
