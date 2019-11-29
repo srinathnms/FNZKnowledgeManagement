@@ -4,7 +4,8 @@ import { IFinance } from './finance';
 
 export interface IModalDialog {
     header: string;
-    content: IDashboardMenu[] | IDocument | IFinance[];
+    content: IDashboardMenu[] | IDocument | IDocument[] | IFinance[];
     footer: string;
     menuContentType: string;
+    menuId?: number;
 }

@@ -22,7 +22,7 @@ import {
 } from '@angular/material';
 // import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HighchartsChartModule } from 'highcharts-angular';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardComponent } from './index/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -33,8 +33,9 @@ const routers: Routes = [
 @NgModule({
     declarations: [
         DashboardComponent,
-    ],
+        ],
     imports: [
+        FlexLayoutModule,
         HighchartsChartModule,
         CommonModule,
         MatTooltipModule,

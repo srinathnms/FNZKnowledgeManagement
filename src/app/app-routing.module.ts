@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'src/app/services/auth-gaurd.service';
 import { FaqComponent } from './dashboard/technical-info/faq/faq.component';
+import { DiaryComponent } from './diary/diary.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
     {
@@ -15,13 +17,13 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'faq',
-        component: FaqComponent,
+        path: 'diary',
+        component: DiaryComponent,
         canActivate: [AuthGuard]
     },
     {
-        path: 'diary',
-        component: FaqComponent,
+        path: 'contacts',
+        component: ContactsComponent,
         canActivate: [AuthGuard]
     },
     {

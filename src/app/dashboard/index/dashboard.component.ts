@@ -119,9 +119,9 @@ export class DashboardComponent implements OnInit {
     } as IModalDialog;
     if (dashboardSubMenu.MenuContentType === 'Document') {
       const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
-      this.dashboardService.getAttachment('DashboardMenus', attachmentQuery)
-        .subscribe((document: IDocument) => {
-          const documentUrl = `${environment.SHARE_POINT_URL}${document.ServerRelativeUrl}`;
+      this.dashboardService.getAttachments('DashboardMenus', attachmentQuery)
+        .subscribe((document: IDocument[]) => {
+          const documentUrl = `${environment.SHARE_POINT_URL}${document[0].ServerRelativeUrl}`;
           this.dashboardService.getDocument(documentUrl).subscribe((fileUrl: string) => {
             modalDialogData.content = {
               ServerRelativeUrl: fileUrl
@@ -142,6 +142,7 @@ export class DashboardComponent implements OnInit {
         });
       return;
     }
+    modalDialogData.menuId = dashboardSubMenu.Id;
     modalDialogData.content = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardSubMenu.Id);
     this.openDialog(modalDialogData);
   }

@@ -20,10 +20,10 @@ export class FaqComponent implements OnInit {
         this.faqList.map((faq: IFaq) => {
           const attachmentQuery = `(${faq.Id})/AttachmentFiles`;
           if (faq && faq.Attachments) {
-            this.dashboardService.getAttachment('FAQ', attachmentQuery)
-              .subscribe((document: IDocument) => {
-                faq.AttachmentName = document.FileName;
-                faq.AttachmentUrl = `${environment.SHARE_POINT_URL}${document.ServerRelativeUrl}?web=1`;
+            this.dashboardService.getAttachments('FAQ', attachmentQuery)
+              .subscribe((document: IDocument[]) => {
+                faq.AttachmentName = document[0].FileName;
+                faq.AttachmentUrl = `${environment.SHARE_POINT_URL}${document[0].ServerRelativeUrl}?web=1`;
               });
           }
         });

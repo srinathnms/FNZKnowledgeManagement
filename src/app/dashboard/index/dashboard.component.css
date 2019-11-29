@@ -1,10 +1,10 @@
 .mat-chip-menu {
-    min-width: 350px;
-    max-width: 350px;
-    min-height: 370px;
-    max-height: 370px;
+    min-width: 317px;
+    max-width: 317px;
+    min-height: 317px;
+    max-height: 317px;
     text-align: center;
-    border: 1px solid #6c98bf;
+    border: 4px solid #0033a0;
     border-radius: 30px;
     justify-content: center;
     overflow: hidden;
@@ -21,8 +21,9 @@
 }
 
 .mat-card-image {
-    max-height: 395px;
-    min-height: 395px;
+    max-height: 340px;
+    min-height: 340px;
+    margin-top: 0px !important;
 }
 
 .zoom-wrapper {
@@ -43,10 +44,10 @@
 }
 
 .tp-box {
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 300px;
-    max-height: 300px;
+    min-width: 317px;
+    max-width: 317px;
+    min-height: 317px;
+    max-height: 317px;
     text-align: center;
     border-radius: 0px;
     justify-content: center;
@@ -131,6 +132,7 @@
 .mat-card {
     display: flex;
     flex-direction: column;
+    box-shadow: 0 16px 26px -6px rgba(0, 0, 0, .2), 0 8px 12px 0 rgba(0, 0, 0, .14), 0 10px 5px 0 rgba(0, 0, 0, .12) !important;
 }
 
 .mat-card-header {
@@ -147,25 +149,44 @@
 .image-test {
     align-items: center;
     justify-content: center;
-    top: -25px;
-    margin-left: -37px;
-    max-width: 375px;
-    min-width: 381px;
-    min-height: 74px;
-    max-height: 81px;
+    top: 0;
+    margin-left: -33px;
+    max-width: 340px;
+    min-width: 340px;
+    min-height: 51px;
+    max-height: 65px;
     position: relative;
 }
 
 .text-test {
     position: absolute;
-    top: 0;
-    min-width: 250px;
-    max-width: 250px;
+    top: 0px;
+    min-width: 260px;
+    max-width: 260px;
     justify-content: center;
     text-align: center;
-    right: 15%;
+    right: 8%;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     font-family: Garamond;
     font-weight: bold;
+}
+
+.dashboard-content {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* margin: 0; */
+    padding-right: 50px;
+}
+
+.back-icon {
+    justify-content: center;
+    margin-left: 120px;
+    transition: transform .1s;
+}
+
+.back-icon:hover {
+    transform: scale(1.5);
 }

@@ -1,4 +1,4 @@
-<div [@listAnimation]="dashboardMainMenus?.length">
+<div [@listAnimation]="dashboardMainMenus?.length" class="dashboard-content">
     <mat-chip-list class="mat-chip-list-wrapper" *ngFor="let dashboardMenu of dashboardMainMenus">
         <div class="tp-box" [@flipState]="dashboardMenu.Flip">
             <mat-card class="mat-chip-menu tp-box__side tp-box__front" (click)="onMenuClick(dashboardMenu)">
@@ -17,9 +17,7 @@
                             </div>
                         </mat-list>
                     </mat-card-content>
-                    <mat-card-footer (click)="toggleFlip(dashboardMenu)">
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
-                    </mat-card-footer>
+                    <mat-icon class="back-icon" (click)="toggleFlip(dashboardMenu)" aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
                 </mat-card>
                 <mat-card class="mat-chip-menu" @list *ngIf="getSubMenus(dashboardMenu).length === 0">
                     <mat-card-content>

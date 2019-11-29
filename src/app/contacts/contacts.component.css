@@ -1,0 +1,46 @@
+.card-border mat-card::after {
+    border-left: 1px #00b140 solid;
+    display: inline-block;
+    position: absolute;
+    margin: 0 10px;
+    height: 125px;
+}
+
+.img {
+    width: 100%;
+    margin-bottom: 18%;
+}
+
+.container {
+    min-height: 100%;
+    width: 100%;
+}
+
+.user-picture {
+    border-radius: 50%;
+    border: 1px solid #fcc40f;
+    height: 150px;
+    width: 150px;
+    padding: 6px 10px 0 10px;
+}
+
+.card-border {
+    box-shadow: none!important;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.outer-card {
+    margin-top: 90px;
+    min-height: 715px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+.flip-image {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.contact-header-banner {}

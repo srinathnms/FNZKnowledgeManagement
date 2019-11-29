@@ -27,6 +27,7 @@ import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptor } from 'src/app/services/auth-interceptor.service';
 import { SafePipe } from 'src/app/core/safePipe/safe.pipe';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +40,10 @@ import { FaqComponent } from 'src/app/dashboard/technical-info/faq/faq.component
 import { FormsModule } from '@angular/forms';
 import { GraphComponent } from 'src/app/core/graph/graph.component';
 import { RevenueComponent } from 'src/app/dashboard//governance/revenue/revenue.component';
+import { OffshoreLocationsComponent } from './dashboard/operations/offshore-locations/offshore-locations.component';
+import { FileTextPipe } from './core/fileText/file-text.pipe';
+import { ContactsComponent } from './contacts/contacts.component';
+import { DiaryComponent } from './diary/diary.component';
 
 @NgModule({
   declarations: [
@@ -47,15 +52,20 @@ import { RevenueComponent } from 'src/app/dashboard//governance/revenue/revenue.
     ModalComponent,
     HeaderComponent,
     SafePipe,
+    FileTextPipe,
     TeamViewComponent,
     FaqComponent,
     GraphComponent,
-    RevenueComponent
+    RevenueComponent,
+    OffshoreLocationsComponent,
+    ContactsComponent,
+    DiaryComponent
   ],
   imports: [
     // PdfViewerModule,
     FormsModule,
     // CoreModule,
+    FlexLayoutModule,
     HighchartsChartModule,
     AppRoutingModule,
     BrowserModule,
@@ -86,7 +96,8 @@ import { RevenueComponent } from 'src/app/dashboard//governance/revenue/revenue.
     ModalComponent,
     TeamViewComponent,
     GraphComponent,
-    RevenueComponent
+    RevenueComponent,
+    OffshoreLocationsComponent
   ],
   providers: [
     {

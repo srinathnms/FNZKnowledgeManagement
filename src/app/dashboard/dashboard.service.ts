@@ -30,12 +30,12 @@ export class DashboardService extends BaseService {
             );
     }
 
-    getAttachment(listName: string, query?: string): Observable<any> {
+    getAttachments(listName: string, query?: string): Observable<any> {
         const url = `${environment.API_URL}/lists/GetByTitle('${listName}')/items${query}`;
         return this.http.get<any>(url)
             .pipe(
                 map((attachments: any) => {
-                    return attachments.value[0];
+                    return attachments.value;
                 }),
                 retry(3),
                 catchError(this.handleError)

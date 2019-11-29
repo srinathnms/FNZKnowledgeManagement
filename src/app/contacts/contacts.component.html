@@ -1,0 +1,18 @@
+<mat-card class="outer-card">
+    <img class="contact-header-banner" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/assets/contact-header-banner.jpg">
+    <mat-card-title class="card-content">Get in touch</mat-card-title>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2.5%" fxLayoutAlign="center">
+        <div *ngFor="let userProfile of userProfiles">
+            <mat-card class="card-border">
+                <img class="user-picture" mat-card-image [src]="userProfile.ProfileImageUrl" alt="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/assets/user.jpg">
+                <!-- <div class="vertical card-picture"></div> -->
+                <mat-card-content class="card-content">
+                    <p>{{userProfile.Name}}</p>
+                    <p>({{userProfile.Id}})</p>
+                    <p>{{userProfile.Designation}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <img style="float: right;" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/assets/contact-footer-banner.jpg">
+</mat-card>
