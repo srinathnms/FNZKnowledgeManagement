@@ -881,5 +881,70 @@
             "BilledOffshore": 11,
             "Buffer": 1
         }
+    ],
+    "Diary": [
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/kZGsLm/img8.jpg"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/mwsA6R/img7.jpg",
+            "ImageLabel": "Sample label 2"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/kPE1D6/clouds.jpg",
+            "ImageLabel": "Sample label 3"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/jrsA6R/img12.jpg",
+            "ImageLabel": "Sample label 4"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/kZGsLm/img8.jpg",
+            "ImageLabel": "Sample label 5"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/mwsA6R/img7.jpg",
+            "ImageLabel": "Sample label 6"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/kPE1D6/clouds.jpg",
+            "ImageLabel": "Sample label 7"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/jrsA6R/img12.jpg",
+            "ImageLabel": "Sample label 8"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/kZGsLm/img8.jpg",
+            "ImageLabel": "Sample label 9"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/mwsA6R/img7.jpg",
+            "ImageLabel": "Sample label 10"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/kPE1D6/clouds.jpg",
+            "ImageLabel": "Sample label 11"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/jrsA6R/img12.jpg",
+            "ImageLabel": "Sample label 12"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/kZGsLm/img8.jpg",
+            "ImageLabel": "Sample label 13"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/mwsA6R/img7.jpg",
+            "ImageLabel": "Sample label 14"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/kPE1D6/clouds.jpg",
+            "ImageLabel": "Sample label 15"
+        },
+        {
+            "EncodedAbsUrl": "https://preview.ibb.co/jrsA6R/img12.jpg",
+            "ImageLabel": "Sample label 16"
+        }
     ]
 }
