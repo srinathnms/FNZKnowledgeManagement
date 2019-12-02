@@ -19,7 +19,7 @@ import {
   MatExpansionModule,
   MatProgressBarModule,
   MatSelectModule,
-  MatRadioModule
+  MatRadioModule,
 } from '@angular/material';
 // import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -57,16 +57,16 @@ import { DiaryComponent } from './diary/diary.component';
     FaqComponent,
     GraphComponent,
     RevenueComponent,
-    OffshoreLocationsComponent,
     ContactsComponent,
+    OffshoreLocationsComponent,
     DiaryComponent
   ],
   imports: [
-    // PdfViewerModule,
     FormsModule,
     // CoreModule,
     FlexLayoutModule,
     HighchartsChartModule,
+    CoreModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -97,6 +97,7 @@ import { DiaryComponent } from './diary/diary.component';
     TeamViewComponent,
     GraphComponent,
     RevenueComponent,
+    ContactsComponent,
     OffshoreLocationsComponent
   ],
   providers: [

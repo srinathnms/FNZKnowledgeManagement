@@ -1,18 +1,21 @@
-<mat-card class="outer-card">
+<button mat-icon-button class="close-icon">
+    <mat-icon (click)="onClose()" aria-hidden="false" aria-label="close icon">close</mat-icon>
+</button>
+<h1 mat-dialog-title cdkFocusInitial class="title">Get in touch</h1>
+<div mat-dialog-content>
     <img class="contact-header-banner" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/assets/contact-header-banner.jpg">
-    <mat-card-title class="card-content">Get in touch</mat-card-title>
     <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2.5%" fxLayoutAlign="center">
         <div *ngFor="let userProfile of userProfiles">
             <mat-card class="card-border">
-                <img class="user-picture" mat-card-image [src]="userProfile.ProfileImageUrl" alt="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/assets/user.jpg">
-                <!-- <div class="vertical card-picture"></div> -->
+                <img mat-card-image class="user-picture" [src]="userProfile.ProfileImageUrl" alt="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/assets/user.jpg">
                 <mat-card-content class="card-content">
-                    <p>{{userProfile.Name}}</p>
-                    <p>({{userProfile.Id}})</p>
-                    <p>{{userProfile.Designation}}</p>
+                    <div>{{userProfile.Name}}</div>
+                    <div>({{userProfile.Id}})</div>
+                    <div class="designation">{{userProfile.Designation}}</div>
                 </mat-card-content>
             </mat-card>
+            <p class="vertical circle-marker"></p>
         </div>
     </div>
-    <img style="float: right;" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/assets/contact-footer-banner.jpg">
-</mat-card>
+    <img class="contact-header-banner" style="float: right;" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/assets/contact-footer-banner.jpg">
+</div>

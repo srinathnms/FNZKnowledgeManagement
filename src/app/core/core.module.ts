@@ -5,13 +5,20 @@ import { AuthInterceptor } from 'src/app/services/auth-interceptor.service';
 import { SafePipe } from './safePipe/safe.pipe';
 import { GraphComponent } from './graph/graph.component';
 import { FileTextPipe } from './fileText/file-text.pipe';
+import { ContactsComponent } from '../contacts/contacts.component';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
     imports: [
         CommonModule,
-        HttpClientModule
+        HttpClientModule,
+        MatDialogModule
     ],
-    declarations: [SafePipe, GraphComponent, FileTextPipe],
+    declarations: [
+    ],
+    entryComponents: [
+        ContactsComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  constructor(public dialog: MatDialog) {
+  }
 }
