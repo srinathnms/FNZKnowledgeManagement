@@ -44,6 +44,9 @@ import { OffshoreLocationsComponent } from './dashboard/operations/offshore-loca
 import { FileTextPipe } from './core/fileText/file-text.pipe';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DiaryComponent } from './diary/diary.component';
+import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from '@ngx-gallery/lightbox';
+import { GallerizeModule } from '@ngx-gallery/gallerize';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,9 @@ import { DiaryComponent } from './diary/diary.component';
     DiaryComponent
   ],
   imports: [
+     GalleryModule,
+     LightboxModule,
+     GallerizeModule,
     // PdfViewerModule,
     FormsModule,
     // CoreModule,
