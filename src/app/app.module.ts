@@ -65,6 +65,10 @@ import { GallerizeModule } from '@ngx-gallery/gallerize';
     DiaryComponent
   ],
   imports: [
+     GalleryModule,
+     LightboxModule,
+     GallerizeModule,
+    // PdfViewerModule,
     FormsModule,
     // CoreModule,
     FlexLayoutModule,
