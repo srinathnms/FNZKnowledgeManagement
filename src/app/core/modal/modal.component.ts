@@ -1,7 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { IModalDialog } from 'src/app/model/modal-dialog';
-import { IDocument } from 'src/app/model/document';
 
 @Component({
   selector: 'app-modal',
@@ -12,10 +11,13 @@ export class ModalComponent {
   isDocument: boolean;
   isGraph: boolean;
   isTeamView: boolean;
+  isGlossary: boolean;
+
   constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: IModalDialog) {
     this.isDocument = data.menuContentType === 'Document';
     this.isGraph = data.menuContentType === 'Graph';
     this.isTeamView = data.header === 'Team View';
+    this.isGlossary = data.menuContentType === 'Glossary';
   }
 
   onClose(): void {

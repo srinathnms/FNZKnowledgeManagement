@@ -8,9 +8,9 @@
                 <mat-card class="mat-chip-menu" *ngIf="getSubMenus(dashboardMenu).length > 0">
                     <img class="image-test" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/assets/card.jpg">
                     <span class="text-test">{{dashboardMenu.MenuName}}</span>
-                    <mat-card-content>
+                    <mat-card-content class="card-content">
                         <mat-list @list *ngFor="let dashboardSubMenu of getSubMenus(dashboardMenu)">
-                            <div class="list-content">
+                            <div fxLayout fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1.5%" fxLayoutAlign="center" class="list-content">
                                 <mat-list-item class="mat-chip-sub-menu list-text" (click)="onSubMenuClick(dashboardSubMenu)" (mouseover)="onSubMenuHover(dashboardSubMenu)">
                                     <strong @items>{{dashboardSubMenu.MenuName}}</strong>
                                 </mat-list-item>
@@ -35,3 +35,4 @@
         </div>
     </mat-chip-list>
 </div>
+<!-- <div>{{title.nativeElement}}</div> -->

@@ -21,12 +21,11 @@ import {
   MatSelectModule,
   MatRadioModule,
 } from '@angular/material';
-// import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptor } from 'src/app/services/auth-interceptor.service';
-import { SafePipe } from 'src/app/core/safePipe/safe.pipe';
+import { SafePipe } from 'src/app/core/pipe/safePipe/safe.pipe';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
@@ -41,12 +40,14 @@ import { FormsModule } from '@angular/forms';
 import { GraphComponent } from 'src/app/core/graph/graph.component';
 import { RevenueComponent } from 'src/app/dashboard//governance/revenue/revenue.component';
 import { OffshoreLocationsComponent } from './dashboard/operations/offshore-locations/offshore-locations.component';
-import { FileTextPipe } from './core/fileText/file-text.pipe';
+import { FileTextPipe } from './core/pipe/fileText/file-text.pipe';
+import { GroupByPipe } from './core/pipe/groupByPipe/group-by.pipe';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DiaryComponent } from './diary/diary.component';
 import { GalleryModule } from '@ngx-gallery/core';
 import { LightboxModule } from '@ngx-gallery/lightbox';
 import { GallerizeModule } from '@ngx-gallery/gallerize';
+import { GlossaryComponent } from './dashboard/glossary/glossary.component';
 
 @NgModule({
   declarations: [
@@ -62,13 +63,14 @@ import { GallerizeModule } from '@ngx-gallery/gallerize';
     RevenueComponent,
     ContactsComponent,
     OffshoreLocationsComponent,
-    DiaryComponent
+    DiaryComponent,
+    GroupByPipe,
+    GlossaryComponent,
   ],
   imports: [
      GalleryModule,
      LightboxModule,
      GallerizeModule,
-    // PdfViewerModule,
     FormsModule,
     // CoreModule,
     FlexLayoutModule,
@@ -113,6 +115,7 @@ import { GallerizeModule } from '@ngx-gallery/gallerize';
       useClass: AuthInterceptor,
       multi: true
     },
+    GroupByPipe
   ]
 })
 export class AppModule { }

@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 import { IDocument } from '../../model/document';
 import { ReturnStatement } from '@angular/compiler';
 import { IFinance } from 'src/app/model/finance';
+import { IGlossary } from 'src/app/model/glossary';
 
 @Component({
   selector: 'app-dashboard',
@@ -71,7 +72,6 @@ export class DashboardComponent implements OnInit {
   dashboardMainMenus: IDashboardMenu[];
   dashboardMenus: IDashboardMenu[];
   docUrl: string;
-  pdfSrc = '/assets/FNZSharepointcontent.pdf';
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
     this.dashboardService.get('DashboardMenus')
       .subscribe((data: IDashboardMenu[]) => {
@@ -133,11 +133,22 @@ export class DashboardComponent implements OnInit {
       return;
     }
     if (dashboardSubMenu.MenuContentType === 'Graph') {
-      // const query = `?$filter=Year eq ${2016}`;
       this.dashboardService.get('FinanceChart')
         .subscribe((data: IFinance[]) => {
           modalDialogData.content = data;
           modalDialogData.menuContentType = 'Graph';
+          this.openDialog(modalDialogData);
+        });
+      return;
+    }
+    if (dashboardSubMenu.MenuContentType === 'Glossary') {
+      this.dashboardService.get('Glossary')
+        .subscribe((data: IGlossary[]) => {
+          data.map((glossary: IGlossary) => {
+            glossary.ElementId = glossary.Terms.replace(/\s/g, '');
+          });
+          modalDialogData.content = data;
+          modalDialogData.menuContentType = 'Glossary';
           this.openDialog(modalDialogData);
         });
       return;
