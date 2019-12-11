@@ -4,7 +4,7 @@
 <h1 mat-dialog-title cdkFocusInitial class="title">{{data.header}}</h1>
 <mat-divider></mat-divider>
 <div mat-dialog-content>
-    <div *ngIf="data.content && data.content.length > 0 && !isGraph && !isDocument && !isGlossary">
+    <div *ngIf="data.content && data.content.length > 0 && !isGraph && !isDocument && !isGlossary && !isFAQ">
         <div class="tiles-container">
             <mat-card class="tiles-card" *ngFor="let menu of data.content">
                 <mat-card-header>
@@ -34,6 +34,7 @@
     <app-team-view *ngIf="data.content && data.menuContentType && isGraph && isTeamView" [graphData]="data.content"></app-team-view>
     <app-revenue *ngIf="data.content && data.menuContentType && isGraph && !isTeamView" [graphData]="data.content"></app-revenue>
     <app-offshore-locations *ngIf="data.header === 'Offshore Locations and ODC'" [menuId]="data.menuId"></app-offshore-locations>
+    <app-faq *ngIf="isFAQ" [faq]="data.content"></app-faq>
     <app-glossary *ngIf="isGlossary" [glossary]="data.content"></app-glossary>
 </div>
 <!-- <div mat-dialog-actions align="center">

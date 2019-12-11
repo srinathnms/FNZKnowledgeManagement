@@ -11,6 +11,7 @@ import { IDocument } from '../../model/document';
 import { ReturnStatement } from '@angular/compiler';
 import { IFinance } from 'src/app/model/finance';
 import { IGlossary } from 'src/app/model/glossary';
+import { IFaq } from 'src/app/model/faq';
 
 @Component({
   selector: 'app-dashboard',
@@ -150,6 +151,25 @@ export class DashboardComponent implements OnInit {
           });
           modalDialogData.content = data;
           modalDialogData.menuContentType = 'Glossary';
+          this.openDialog(modalDialogData);
+        });
+      return;
+    }
+    if (dashboardSubMenu.MenuContentType === 'FAQ') {
+      this.dashboardService.get('FAQ')
+        .subscribe((data: IFaq[]) => {
+          data.map((faq: IFaq) => {
+            const attachmentQuery = `(${faq.Id})/AttachmentFiles`;
+            if (faq && faq.Attachments) {
+              this.dashboardService.getAttachments('FAQ', attachmentQuery)
+                .subscribe((document: IDocument[]) => {
+                  faq.AttachmentName = document[0].FileName;
+                  faq.AttachmentUrl = `${environment.SHARE_POINT_URL}${document[0].ServerRelativeUrl}?web=1`;
+                });
+            }
+          });
+          modalDialogData.content = data;
+          modalDialogData.menuContentType = 'FAQ';
           this.openDialog(modalDialogData);
         });
       return;

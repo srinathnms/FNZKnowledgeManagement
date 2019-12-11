@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DashboardService } from '../../dashboard.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { IFaq } from 'src/app/model/faq';
-import { IDocument } from 'src/app/model/document';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-faq',
@@ -11,26 +8,14 @@ import { environment } from 'src/environments/environment';
 })
 export class FaqComponent implements OnInit {
   panelOpenState = false;
+  @Input() faq: IFaq[];
   faqList: IFaq[];
   selectedFaq: IFaq;
-  constructor(private dashboardService: DashboardService) {
-    this.dashboardService.get('FAQ')
-      .subscribe((data: IFaq[]) => {
-        this.faqList = data;
-        this.faqList.map((faq: IFaq) => {
-          const attachmentQuery = `(${faq.Id})/AttachmentFiles`;
-          if (faq && faq.Attachments) {
-            this.dashboardService.getAttachments('FAQ', attachmentQuery)
-              .subscribe((document: IDocument[]) => {
-                faq.AttachmentName = document[0].FileName;
-                faq.AttachmentUrl = `${environment.SHARE_POINT_URL}${document[0].ServerRelativeUrl}?web=1`;
-              });
-          }
-        });
-      });
+  constructor() {
   }
 
   ngOnInit() {
+    this.faqList = this.faq;
   }
 
   onFaqSelection(faq: IFaq) {

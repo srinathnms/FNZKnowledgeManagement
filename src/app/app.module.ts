@@ -20,6 +20,7 @@ import {
   MatProgressBarModule,
   MatSelectModule,
   MatRadioModule,
+  MatButtonToggleModule,
 } from '@angular/material';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
@@ -103,7 +104,8 @@ import { GlossaryComponent } from './dashboard/glossary/glossary.component';
     MatExpansionModule,
     MatProgressBarModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatButtonToggleModule,
   ],
   bootstrap: [AppComponent],
   entryComponents: [

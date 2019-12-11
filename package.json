@@ -39,7 +39,7 @@
         "ng2-pdf-viewer": "^6.0.2",
         "ngx-doc-viewer": "^0.1.22",
         "ngx-document-view": "^1.0.1",
-        "ngx-page-scroll": "^6.0.0",
+        "ngx-page-scroll": "^5.0.0",
         "ngx-page-scroll-core": "^6.0.0",
         "rxjs": "^6.2.2",
         "rxjs-compat": "^6.5.3",

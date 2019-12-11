@@ -91,9 +91,8 @@
         },
         {
             "Id": 12,
-            "MenuName": "Glossary",
-            "ParentId": 2,
-            "MenuContentType": "Glossary"
+            "MenuName": "Cognizant journey",
+            "ParentId": 2
         },
         {
             "Id": 13,
@@ -172,8 +171,9 @@
         },
         {
             "Id": 27,
-            "MenuName": "Learning Materials",
-            "ParentId": 5
+            "MenuName": "Glossary",
+            "ParentId": 5,
+            "MenuContentType": "Glossary"
         },
         {
             "Id": 28,
@@ -222,7 +222,8 @@
         {
             "Id": 36,
             "MenuName": "FAQ",
-            "ParentId": 8
+            "ParentId": 8,
+            "MenuContentType": "FAQ"
         },
         {
             "Id": 37,
