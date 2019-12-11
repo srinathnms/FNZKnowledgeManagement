@@ -1,0 +1,34 @@
+<section [id]="'section'+page.ID" *ngFor="let page of pages" ng-style="max-height:page && page.IsAccountsDescriptionPage? 100vh : 96vh">
+  <img *ngIf="page && page.Image" [src]="page?.Image.Url">
+  <div class="intro" *ngIf="page && !page.IsAccountsDescriptionPage">
+    <div class="title-text" *ngIf="page && page.Title">{{page?.Title}}</div>
+    <div class="subtitle-text" *ngIf="page && page.Subtitle">{{page?.Subtitle}}</div>
+  </div>
+  <div class="text-group" *ngIf="page && page.IsAccountsDescriptionPage">
+    <div class="account-info" [@slideState]='account?.SlidePosition' (@slideState.done)="onSlideAnimationEnd($event)"
+      *ngFor="let account of accounts">
+      <a class="account-name">
+        <p (click)="onAccountNameClick(account)">{{account?.Name}}</p>
+      </a>
+      <div class="account-description"
+        *ngIf="account && account.SlidePosition=='down' && shouldDisplayDescription && showAccountNaviagationPointer "
+        @fadeIn @fadeOut>
+        <div id="horizontal-line"></div>
+        <p class="contribution">{{getAccountSpecificContributionText(account?.Name)}}</p>
+      </div>
+      <div class="account-naviagtion" @fadeIn @fadeOut
+        *ngIf="account.SlidePosition=='up' && shouldDisplayDescription && showAccountNaviagationPointer">
+        <div class="bounce-arrow bounce"></div>
+        <a [href]="account.PageLink">Deep Dive</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="footer-text">{{page?.Footer}}</p>
+    <div class="footer-arrow" *ngIf="page && page.Footer">
+      <a pageScroll [href]="'#section' + (page.ID+1)">
+        <span></span><span></span><span></span>
+      </a>
+    </div>
+  </div>
+</section>

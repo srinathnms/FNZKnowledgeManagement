@@ -47,10 +47,13 @@ import { DiaryComponent } from './diary/diary.component';
 import { GalleryModule } from '@ngx-gallery/core';
 import { LightboxModule } from '@ngx-gallery/lightbox';
 import { GallerizeModule } from '@ngx-gallery/gallerize';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { HomeComponent } from 'src/app/home/index/home.component';
 import { GlossaryComponent } from './dashboard/glossary/glossary.component';
 
 @NgModule({
   declarations: [
+    HomeComponent,
     AppComponent,
     SpinnerComponent,
     ModalComponent,
@@ -68,9 +71,11 @@ import { GlossaryComponent } from './dashboard/glossary/glossary.component';
     GlossaryComponent,
   ],
   imports: [
-     GalleryModule,
-     LightboxModule,
-     GallerizeModule,
+    NgxPageScrollModule,
+    GalleryModule,
+    LightboxModule,
+    GallerizeModule,
+    // PdfViewerModule,
     FormsModule,
     // CoreModule,
     FlexLayoutModule,

@@ -3,70 +3,90 @@
             "Id": 2,
             "MenuName": "About FNZ and Cognizant journey with them",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/FNZCognizantJourney.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/FNZCognizantJourney.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
             "Id": 3,
             "MenuName": "UK Insurance and Wealth Management",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/WealthManagement.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/WealthManagement.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
             "Id": 4,
             "MenuName": "Governance and Commercials",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Governance.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Governance.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
             "Id": 5,
             "MenuName": "Onboarding",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Onboarding.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Onboarding.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
             "Id": 6,
             "MenuName": "Development -Cognizant Scope and Delivery",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Onboarding.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Onboarding.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
             "Id": 7,
             "MenuName": "Testing - Cognizant Scope and Delivery",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/TestingDelivery.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/TestingDelivery.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
             "Id": 8,
             "MenuName": "Tech info",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/TechInfo.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/TechInfo.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
             "Id": 9,
             "MenuName": "Value Adds",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/ValueAdds.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/ValueAdds.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
             "Id": 10,
             "MenuName": "Operations",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Operations.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Operations.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
             "Id": 11,
             "MenuName": "Miscellaneous",
             "ParentId": 0,
-            "BackgroundImage": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Miscellaneous.jpg",
+            "BackgroundImage": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Miscellaneous.jpg"
+            },
             "MenuContentType": "NA"
         },
         {
@@ -292,37 +312,75 @@
             "Id": 53,
             "MenuName": "Request them to sign the FNZ IT Policy",
             "ParentId": 24,
-            "Contents": "Check with FNZ to get the latest version of IT policy. Just sign and share the signed page alone to FNZ HR. Click here for Sample email"
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
         },
         {
             "Id": 54,
             "MenuName": "Initiate the request to create VM",
             "ParentId": 24,
-            "Contents": "Get the FNZ HR PoC and share the developers and Testers list to them. Most likely will take 2/ 3 weeks to get the VMs. Click here for Sample email"
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
         },
         {
             "Id": 55,
             "MenuName": "Verify whether all the software’s are available  in the VMs",
             "ParentId": 24,
-            "Contents": "The VM configuration will vary between Developer and Tester. Click here to know those VM details"
+            "Contents": "The VM configuration will vary between Developer and Tester",
+            "Attachments": true
         },
         {
             "Id": 56,
             "MenuName": "Reach the Respective Project specific PMs to get missing access",
             "ParentId": 24,
-            "Contents": "Consolidate the missing details for every developers and Testing. FNZ PM will reach their infra team via Infra JIRA to resolve those issues"
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option"
         },
         {
             "Id": 57,
             "MenuName": "Now ready to commence the Great work",
             "ParentId": 24,
-            "Contents": "Follow the direction from the FNZ PM and align to their delivery accordingly"
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option"
         },
         {
             "Id": 58,
             "MenuName": "Rate card and roles",
             "ParentId": 4,
             "MenuContentType": "Document"
+        },
+        {
+            "Id": 1,
+            "MenuName": "Coding standards",
+            "ParentId": 27,
+            "Contents": "Content for item 1",
+            "Attachments": true
+        },
+        {
+            "Id": 2,
+            "MenuName": "Using visual studio",
+            "ParentId": 27,
+            "Contents": "Content for item 2",
+            "Attachments": true
+        },
+        {
+            "Id": 3,
+            "MenuName": "Typescript coding reference",
+            "ParentId": 27,
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
+        },
+        {
+            "Id": 4,
+            "MenuName": "Jquery coding reference",
+            "ParentId": 27,
+            "Contents": "Content for item 4",
+            "Attachments": true
+        },
+        {
+            "Id": 5,
+            "MenuName": "React reference",
+            "ParentId": 27,
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
         }
     ],
     "FAQ": [{

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'src/app/services/auth-gaurd.service';
 import { DiaryComponent } from './diary/diary.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { HomeComponent } from 'src/app/home/index/home.component';
 
 const routes: Routes = [
     {
@@ -23,6 +24,11 @@ const routes: Routes = [
     {
         path: 'contacts',
         component: ContactsComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'home',
+        component: HomeComponent,
         canActivate: [AuthGuard]
     },
     {
