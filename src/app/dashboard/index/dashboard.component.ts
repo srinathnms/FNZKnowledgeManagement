@@ -142,7 +142,8 @@ export class DashboardComponent implements OnInit {
       return;
     }
     if (dashboardSubMenu.MenuContentType === 'Glossary') {
-      this.dashboardService.get('Glossary')
+      const glossaryQuery = '?$top=150';
+      this.dashboardService.get('Glossary', glossaryQuery)
         .subscribe((data: IGlossary[]) => {
           data.map((glossary: IGlossary) => {
             glossary.ElementId = glossary.Terms.replace(/\s/g, '');

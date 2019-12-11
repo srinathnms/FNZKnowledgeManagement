@@ -14,6 +14,7 @@ export class ModalComponent {
   isGlossary: boolean;
 
   constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: IModalDialog) {
+    dialogRef.disableClose = true;
     this.isDocument = data.menuContentType === 'Document';
     this.isGraph = data.menuContentType === 'Graph';
     this.isTeamView = data.header === 'Team View';
