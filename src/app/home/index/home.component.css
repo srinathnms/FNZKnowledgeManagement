@@ -1,12 +1,16 @@
 html,body{
   width:100%;
   height:100%;
+  margin:0;
+  padding:0;
 }
 
 section {
   position: relative;
   display:flex;
-  height: 96vh;
+  max-height: 96vh;
+  min-height:360px;
+  min-width: 938px;
   }
 
 .section a {
@@ -27,7 +31,8 @@ section {
 .intro{
   position: absolute;
   top:30%;
-  left:5%;
+  left:30px;
+  right:0;
 }
 
 section a:hover {
@@ -36,17 +41,25 @@ section a:hover {
 
 section img {
 position: relative;
-min-width: 100%;
+width: 100%;
 max-width: none;
-min-height: 100%;
+height: 100%;
 top: 0;
 left: 0;
 }
 
 .footer{
+ display: none;
+}
+
+@media screen and (min-width: 1085px) {
+.footer{
+  display: unset;
   position: absolute;
-  top:80%;
-  left:38%;
+  bottom:50px;
+  left:0;
+  right:0;
+}
 }
 
 .footer-arrow{
@@ -54,6 +67,7 @@ text-align: center;
 }
 
 .footer-text{
+text-align: center;
 color: #fff;
 font: normal 400 20px/1 'candara light', sans-serif;
 letter-spacing: .1em;
@@ -85,25 +99,21 @@ p.contribution {
 }
 
 .title-text{
-top: 20%;
-left: 5%;
 font-family: "candara light"; 
 letter-spacing: .1em;
 font-size: 50px;
-text-align: -webkit-left;
+text-align: left;
 color:yellow;
-margin-bottom:10px;
 }
 
 .subtitle-text{
-top: 40%;
-left: 5%;
+top: 10%;
 color: #fff;
 letter-spacing: .1em;
 font-family: "candara light"; 
 font-size: 25px;
 max-width:70%;
-text-align: -webkit-left;
+text-align: left;
 }
 
 a span {
@@ -195,6 +205,7 @@ animation-delay: .3s;
   }  
 
   .bounce-arrow {
+  /* position: absolute; */
   float: right;
   width: 40px;
   height: 40px;
@@ -211,23 +222,22 @@ animation-delay: .3s;
   transform:translateY(0);
   }
   40% {
-  transform:translateX(-30px);
+  transform:translateX(-50px);
   }
   60% {
-    transform:translateX(-15px);
+    transform:translateX(-40px);
   }
   }
 
-button{
+.account-naviagtion a{
+  top:10px;
   position: relative;
-  float:left;
-  border-radius: 25px;
-  left: 37%;
-  margin-top: 10px;
-  outline: none;
+  color:white;
+  font-family: "candara light";
+  left:5%;
 }
 
 .account-navigation{
+  position: absolute;
   display: inline-block;
-  text-align: center;
 }
