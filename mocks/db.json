@@ -1,6 +1,5 @@
 {
-    "DashboardMenus": [
-        {
+    "DashboardMenus": [{
             "Id": 2,
             "MenuName": "About FNZ and Cognizant journey with them",
             "ParentId": 0,
@@ -92,9 +91,9 @@
         },
         {
             "Id": 12,
-            "MenuName": "FNZ Overview",
+            "MenuName": "Glossary",
             "ParentId": 2,
-            "MenuContentType": "Document"
+            "MenuContentType": "Glossary"
         },
         {
             "Id": 13,
@@ -384,8 +383,7 @@
             "Attachments": true
         }
     ],
-    "FAQ": [
-        {
+    "FAQ": [{
             "AttachmentName": "",
             "Attachments": false,
             "Description": "Test1",
@@ -410,8 +408,7 @@
             "Solution": "Sol 3"
         }
     ],
-    "FinanceChart": [
-        {
+    "FinanceChart": [{
             "Year": "2016",
             "Month": "January",
             "CustomerProfitability": 0,
@@ -940,8 +937,7 @@
             "Buffer": 1
         }
     ],
-    "Diary": [
-        {
+    "Diary": [{
             "EncodedAbsUrl": "https://preview.ibb.co/kZGsLm/img8.jpg"
         },
         {
@@ -1005,115 +1001,582 @@
             "ImageLabel": "Sample label 16"
         }
     ],
-    "LearningMaterials": [
-        {
-            "Id": 1,
-            "MenuName": "Coding standards",
-            "ParentId": 0,
-            "BackgroundImage": {
-                "Url": "src/assets/rules.jpg"
-            },
-            "Contents": "Content for item 1"
+    "Glossary": [{
+            "Terms": "Absolute Return Funds",
+            "Description": "Funds which are managed with an objective of generating a positive return over rolling 12 month periods"
         },
         {
-            "Id": 2,
-            "MenuName": "Using visual studio",
-            "ParentId": 0,
-            "BackgroundImage": {
-                "Url": "src/assets/rules.jpg"
-            },
-            "Contents": "Content for item 2"
+            "Terms": "Absolute return strategy",
+            "Description": "An absolute return investment strategy aims to deliver positive returns whatever the market does, rather than simply aiming to outperform a benchmark index"
         },
         {
-            "Id": 3,
-            "MenuName": "Typescript coding reference",
-            "ParentId": 0,
-            "BackgroundImage": {
-                "Url": "src/assets/rules.jpg"
-            },
-            "Contents": "Content for item 3"
+            "Terms": "Accumulation units",
+            "Description": "Units in a collective investment scheme where any income is automatically reinvested into the scheme. See also income units."
         },
         {
-            "Id": 4,
-            "MenuName": "Jquery coding reference",
-            "ParentId": 0,
-            "BackgroundImage": {
-                "Url": "src/assets/rules.jpg"
-            },
-            "Contents": "Content for item 4"
+            "Terms": "Active management",
+            "Description": "An investment management approach where a manager aims to beat the market through research, analysis and their own judgement. See also Passive management"
         },
         {
-            "Id": 5,
-            "MenuName": "React reference",
-            "ParentId": 0,
-            "BackgroundImage": {
-                "Url": "src/assets/rules.jpg"
-            },
-            "Contents": "Content for item 5 Content for item 5 Content for item 5 Content for item 5 Content for item 5 Content for item 5Content for item 5Content for item 5Content for item 5Content for item 5 Content for item 5Content for item 5 Content for item 5"
+            "Terms": "Active risk",
+            "Description": "To try to beat the returns of the benchmark the active investment manager must take different investment positions to the benchmark. Where positions are different, risks are also different. The risk that the manager takes relative to the risk of the benchmark is known as active risk. The higher the level of active risk, the greater the chance that returns will deviate from the benchmark."
+        },
+        {
+            "Terms": "Alpha",
+            "Description": "A measure which can help you identify whether an actively managed portfolio has added value in relation to risk taken relative to a benchmark index. A positive Alpha indicates that a manager has added value"
+        },
+        {
+            "Terms": "Alternative investments",
+            "Description": "Investments outside of the traditional asset classes of equities, bonds and cash. Alternative investments include property, hedge funds, commodities, private equity, and infrastructure"
+        },
+        {
+            "Terms": "Annual management fee",
+            "Description": "Every year your investment management company charges an annual management fee, usually a percentage of the amount invested"
+        },
+        {
+            "Terms": "Annualised return",
+            "Description": "For a period of greater than one year, a measure of the level of return that has been achieved on average each year."
+        },
+        {
+            "Terms": "Asset allocation",
+            "Description": "The apportionment of a portfolio's assets between asset classes and/or markets. For example, a fund may hold a combination of shares, bonds and cash. The weightings given vary according to the investment objective and the investment outlook"
+        },
+        {
+            "Terms": "Asset-backed security (ABS)",
+            "Description": "An investment that derives its value and income payments from a pool of illiquid (see liquidity). This allows investors access to a diversified pool of assets that they would not otherwise be able to buy, for example loan repayments."
+        },
+        {
+            "Terms": "Asset class",
+            "Description": "Broad groups of different types of investments. The main investment asset classes are equities, bonds and commercial property."
+        },
+        {
+            "Terms": "Authorised fund",
+            "Description": "A fund that is authorised and regulated by the UK financial regulator, the FCA (Financial Conduct Authority)."
+        },
+        {
+            "Terms": "Benchmark",
+            "Description": "A standard, (usually an index or a market average) that an investment fund's performance can be measured against. Many funds are managed with reference to a stated benchmark"
+        },
+        {
+            "Terms": "Beta",
+            "Description": "Measures the average extent to which a fund moves relative to the broader market. The beta of a market is 1. A fund with a beta of more than 1 moves on average to a greater extent than the market. A fund with a beta of less than 1 moves on average to a lesser extent. If beta is a minus number, it is likely that the stock and the market move in opposite directions"
+        },
+        {
+            "Terms": "Bid price",
+            "Description": "The price a buyer is willing to pay. In the context of funds, it is the price received by the investor when redeeming a share or a unit in a dual priced fund. See also offer price."
+        },
+        {
+            "Terms": "Bonds",
+            "Description": "Provide a way for governments and companies to raise money from investors for current spending requirements. In exchange for an upfront payment from investors, a bond will typically commit the issuer to make annual interest payments and to repay the initial investment amount on maturity at a specified date in the future"
+        },
+        {
+            "Terms": "Book Cost",
+            "Description": "The original cost of an investment. While market prices may go up and down, the book cost remains the same"
+        },
+        {
+            "Terms": "Bottom up investing",
+            "Description": "Investment based on analysis of individual companies, whereby that company's history, management, and potential are considered more important than general market or sector trends (as opposed to top down investing)."
+        },
+        {
+            "Terms": "Capital protection",
+            "Description": "An investment where there is an aim to preserve a specified amount of the initial investment"
+        },
+        {
+            "Terms": "Capital discipline",
+            "Description": "Where a company exercises discipline and prudence in how much money it borrows, raises and spends, in order to deliver the best returns to its shareholders and ensure its long-term stability"
+        },
+        {
+            "Terms": "Collateral",
+            "Description": "Assets pledged as security against a loan. If the debt can't be repaid, the lender is entitled to take ownership of the collateral."
+        },
+        {
+            "Terms": "Collective Investment Scheme (CIS)",
+            "Description": "A professionally managed fund which combines the money of a broad range of investors in a single investment vehicle. This pools costs and allows access to a wider range of investments than investors would generally be able to achieve individually"
+        },
+        {
+            "Terms": "Commodities",
+            "Description": "An asset class which encompasses a broad range of physical assets including oil and gas, metals and agricultural produce"
+        },
+        {
+            "Terms": "Corporate bond",
+            "Description": "A bond issued by a company"
+        },
+        {
+            "Terms": "Correlation",
+            "Description": "Correlation is a measure of how securities or asset classes move in relation to each other. Highly correlated investments tend to move up and down together while investments with low correlation tend to perform in different ways in different market conditions, providing investors with diversification benefits. Correlation is measured between 1 (perfect correlation) and -1 (perfect opposite correlation). A correlation coefficient of 0 suggests there is no correlation"
+        },
+        {
+            "Terms": "Coupon",
+            "Description": "The regular interest payment paid on a bond. It is described as a percentage of the face value of an investment. So a bond with a face value of £100 with a 5% coupon will pay £5 a year."
+        },
+        {
+            "Terms": "Credit default swap (CDS)",
+            "Description": "A CDS is a derivative. It is a type of insurance against the default of debt. The buyer of a CDS pays a premium to a CDS seller in exchange for the insurance that if the debt defaults, the CDS seller will pay it to them. The CDS seller is speculating against the risk of default and hopes to make a profit from the premium payments. The higher the risk of default, the higher the premium"
+        },
+        {
+            "Terms": "Credit Rating",
+            "Description": "Bond issuers can pay to have their bonds rated by a number of credit ratings agencies including Standard & Poors, Moody's and Fitch. The credit rating is designed to give investors an indication of the quality of the bond, providing a professional assessment of the risk that the issuer may default on interest and capital repayments. Credit ratings are subject to regular review and can and do change."
+        },
+        {
+            "Terms": "Credit rating agency",
+            "Description": "A company that assigns credit ratings to issuers of debt - such as governments or companies. Well-known credit rating agencies include Standard & Poor's and Moody's."
+        },
+        {
+            "Terms": "Credit Risk",
+            "Description": "The risk that a bond issuer will default on their contractual obligation to make interest payment to investors"
+        },
+        {
+            "Terms": "Currency Hedging",
+            "Description": "Reducing or removing the risk of incurring losses through currency movements. This is typically achieved through the use of derivatives such as futures or options."
+        },
+        {
+            "Terms": "Currency Risk",
+            "Description": "The risk of loss through adverse currency movements where a fund invests in assets which are priced in a different currency or currencies to that which the fund is priced in"
+        },
+        {
+            "Terms": "Current Yield",
+            "Description": "The annual income from an investment, expressed as a percentage of the current price. For example, if a bond that is worth £100 gives you an annual income of £6, the current yield is 6%."
+        },
+        {
+            "Terms": "Default risk",
+            "Description": "The risk that a bond issuer will not be able to meet their debt payments and subsequently default on their contractual obligation to investors"
+        },
+        {
+            "Terms": "Derivatives",
+            "Description": "The collective name used for a broad class of financial instruments that derive their value from other underlying financial instruments. Futures, options and swaps are all types of derivative"
+        },
+        {
+            "Terms": "Developed markets",
+            "Description": "Countries that tend to be industrialised and have a high gross domestic product. Developed markets usually have high standards of living and stable economies, and are considered safer for investment than less developed markets."
+        },
+        {
+            "Terms": "Distribution Yield",
+            "Description": "Reflects the amounts that may be expected to be distributed over the next 12 months as a percentage of the mid market price of the fund as at the date shown. It is based on a snapshot of the fund on that day. It does not include any preliminary charge and investors may be subject to tax on the distribution."
+        },
+        {
+            "Terms": "Diversification",
+            "Description": "Creating a portfolio from a range of different assets. This reduces the risk of loss through exposure to any individual asset and can help to reduce overall portfolio risk where assets have a low correlation"
+        },
+        {
+            "Terms": "Dividend",
+            "Description": "A payment made by a company to its shareholders. The company decides how much the dividend will be, and when it will be paid"
+        },
+        {
+            "Terms": "Dividend yield",
+            "Description": "The annual dividend per share divided by the current share price. It is useful for comparing investments. For example, if a company's shares are trading at £100 and the annual dividend is £5, the dividend yield is 5%. However, if the company's shares are £200, the dividend yield is just 2.5%."
+        },
+        {
+            "Terms": "Downside",
+            "Description": "The potential loss for a given investment"
+        },
+        {
+            "Terms": "Draw down",
+            "Description": "A draw down is usually quoted as the percentage between the peak and trough of an investment during a specific period. It can help to compare an investment's possible reward to its risk. Alternatively, when investing in certain types of funds, particularly venture capital funds, it can also refer to when an investor commits to invest a sum of money but doesn't give it all to the fund manager immediately. The fund manager makes the investments and draws down money as required"
+        },
+        {
+            "Terms": "Duration",
+            "Description": "A measure of a bond investment's sensitivity to changes in interest rates. The longer the duration, the more sensitive it is. Calculating duration for a fixed income investment such as a bond is a complicated sum. It takes into account the current value of the bond, the coupon or interest payment, the book cost, and the number of years the bond has left to run. Put simply, the higher the duration number the higher the potential return (and the greater the risk)."
+        },
+        {
+            "Terms": "Dynamic Asset Allocation",
+            "Description": "A strategy that involves rebalancing the mix of assets in a portfolio as markets rise and fall, and according to the manager's expected outcome for different assets ahead. In other words, if the manager expects equities to outperform in the month ahead, he or she will increase exposure. This is opposite to passive asset allocation – where either a) an asset mix is set long term (e.g. 60% equities; 40% bonds), or where the portfolio's asset mix only changes in line with something else (for example the breakdown of different markets in the benchmark)."
+        },
+        {
+            "Terms": "Earnings growth",
+            "Description": "The percentage change in a company's earnings per share, generally measured over one year"
+        },
+        {
+            "Terms": "Earnings per share",
+            "Description": "The profits of a company attributed to each share, calculated by dividing profits after tax by the number of shares."
+        },
+        {
+            "Terms": "Earnings yield",
+            "Description": "The earnings per share divided by the current market price"
+        },
+        {
+            "Terms": "Effective duration of fund",
+            "Description": "Effective duration is a measure of a fund's interest-rate sensitivity. Put simply, the longer a fund's duration, the more sensitive the fund is to shifts in interest rates. So a fund with a duration of 10 years is twice as volatile as a fund with a five-year duration."
+        },
+        {
+            "Terms": "Emerging markets",
+            "Description": "Countries that have rapidly growing economies and may be going through the process of industrialisation"
+        },
+        {
+            "Terms": "Equities",
+            "Description": "A share in the ownership of a company."
+        },
+        {
+            "Terms": "Ex Ante (Tracking error)",
+            "Description": "Tracking Error is a measure of how closely an investment portfolio follows the index against which it is benchmarked. If a model is used to predict this (rather than it being measured historically) it is called ex ante or predicted. See also ex post."
+        },
+        {
+            "Terms": "Ex dividend",
+            "Description": "Applied to an equity this shows that a dividend has been recently paid and that a purchaser will not receive it"
+        },
+        {
+            "Terms": "Ex post (Tracking error)",
+            "Description": "Tracking Error is a measure of how closely an investment portfolio follows the index against which it is benchmarked. If the tracking error is measured historically it is called ex post or realised tracking error. See also ex ante. "
+        },
+        {
+            "Terms": "Fixed income",
+            "Description": "Refers to securities such as bonds which carry a predetermined and fixed rate of interest (coupon). As opposed to the variable return on equities."
+        },
+        {
+            "Terms": "Flat yield",
+            "Description": "When short-term and long-term bonds are offering equivalent yields."
+        },
+        {
+            "Terms": "Frontier markets",
+            "Description": "Less developed countries within the emerging markets. Investments in these countries may be associated with higher risks, such as increased political instability and lower liquidity, than more developed markets"
+        },
+        {
+            "Terms": "Fund of funds",
+            "Description": "Funds that invest in other funds, rather than investing directly in financial instruments"
+        },
+        {
+            "Terms": "Fund of hedge funds",
+            "Description": "A fund that invests in a basket of underlying hedge funds. Funds of hedge funds are typically diversified across a number of different strategies and underlying managers"
+        },
+        {
+            "Terms": "Futures",
+            "Description": "An agreement to buy or sell an asset such as a bond or equity, on a specific date in the future at a price agreed today"
+        },
+        {
+            "Terms": "Gearing",
+            "Description": "Borrowing money to invest, with the aim of increasing returns. For example, if you invest £100 and make a 5% return you make £5. Borrow an extra £20 to invest and you make £6 (minus the cost of borrowing the money). However, with gearing comes a higher degree of risk. Whilst the potential for growth may be greater; losses may be more substantial too. Derivatives such as futures or options can also be used to gear an investment portfolio. A small movement in the price of an underlying asset can make a large difference to the value of a derivative, and dramatically increase the returns. Also known as leverage."
+        },
+        {
+            "Terms": "Government agencies",
+            "Description": "A permanent organisation that is part of the wider structure of government and is responsible for oversight or administration of a specific function, such as national security or regulation of financial markets."
+        },
+        {
+            "Terms": "Government bonds",
+            "Description": "A bond issued by a government."
+        },
+        {
+            "Terms": "Gross redemption yield",
+            "Description": "The total return you could receive on a bond including the interest or coupon plus any capital growth"
+        },
+        {
+            "Terms": "Hedge fund",
+            "Description": "A collective name for funds targeting absolute returns through investment in financial markets and/or applying non-traditional portfolio management techniques. Hedge funds can invest using a broad array of strategies, ranging from conservative to aggressive."
+        },
+        {
+            "Terms": "High yield bond",
+            "Description": "A speculative bond with a credit rating below investment grade. Generally, the higher the risk of default by the bond issuer, the greater the interest or coupon"
+        },
+        {
+            "Terms": "Historic yield",
+            "Description": "The distributions declared over the past 12 months expressed as a percentage of the mid-market price, as at the date shown. It does not include any preliminary charge and investors may be subject to tax on the distribution. So, for example, if a bond has paid £10 over the last year, and the current price is £100, the historic yield is 10%."
+        },
+        {
+            "Terms": "Income distribution",
+            "Description": "The distribution of income to unit holders of pooled funds in proportion to the number of units held"
+        },
+        {
+            "Terms": "Income units",
+            "Description": "A holding in a pooled fund that pays out interest or dividends to investors, rather than re-investing them back into the fund. See also Accumulation units."
+        },
+        {
+            "Terms": "Index-linked bonds",
+            "Description": "Bonds where coupon and capital payments are linked to movements in inflation. The inflation measure used is specified beforehand"
+        },
+        {
+            "Terms": "Inflation",
+            "Description": "A measure of the increase in prices of goods and services over time."
+        },
+        {
+            "Terms": "Information ratio",
+            "Description": "A measure of how well a manager has performed relative to the level of risk they have taken"
+        },
+        {
+            "Terms": "Initial charge",
+            "Description": "The amount a company charges to set up your investment portfolio"
+        },
+        {
+            "Terms": "Intrest rate swap",
+            "Description": "A type of swap. The most common form of interest rate swap is where one party pays a fixed rate of interest in return for a floating rate."
+        },
+        {
+            "Terms": "Investment grade bonds",
+            "Description": "The highest quality bonds as assessed by a credit ratings agency. To be deemed investment grade, a bond must have a credit rating of at least BBB (Standard& Poor's) or Baa3 (Moody's)."
+        },
+        {
+            "Terms": "Investment trust",
+            "Description": "An investment trust is a closed ended collective investment scheme with a limited number of shares that pools together assets of a number of different investors with the aim of increasing flexibility and lowering costs. They are companies that trade in their own right which means that the price of the shares are subject to supply and demand. Unlike an open ended fund, the manager does not have to deal with fund flows and therefore never a forced seller/buyer"
+        },
+        {
+            "Terms": "Investment universe",
+            "Description": "The total range of investments from which a fund manager can pick - as defined by a fund's stated investment objective"
+        },
+        {
+            "Terms": "ISA (Individual Savings Account)",
+            "Description": "An ISA is basically a type of tax-free savings account. There are two main types, a Cash ISA and a Stocks and Shares ISA. You can put money into a Cash ISA and you don't pay tax on any interest you receive. Invest in a Stock and Shares ISA, and you don't pay tax on any further dividends or capital gains."
+        },
+        {
+            "Terms": "Key Investor Information Document (KIID)",
+            "Description": "A two-page document, required for funds that come under EU law, that has replaced the Simplified Prospectus. It should be written in plain English and is designed to allow comparability across funds and includes the investment objective, key risks, ongoing charges figure and past performance"
+        },
+        {
+            "Terms": "Leverage (gearing)",
+            "Description": "Leverage usually refers to a fund being exposed by more than 100% of its net asset value to assets or markets. The aim may be to take on more risk in order to generate higher returns, or it may actually be to reduce risk in the portfolio. It is achieved by combining derivatives with more traditional equity or bond investments. Confusingly, leverage can also be used to refer to the amount a company is funded through borrowing, i.e. how much money it owes compared to how much money or assets it owns. This is also described as gearing."
+        },
+        {
+            "Terms": "Liquidity",
+            "Description": "The ease with which an asset can be sold for cash. An asset can be described as illiquid if it takes a long time to sell, such as property, or if it is difficult to find someone willing to buy it"
+        },
+        {
+            "Terms": "Long/short strategy",
+            "Description": "A strategy, used primarily by hedge funds, that involves taking long positions (buying a holding) in stocks that are expected to increase in value and short positions (borrowing a stock you don't own and selling it in the hope of repurchasing it at a lower price to return to the stock lender) in stocks that are expected to decrease in value"
+        },
+        {
+            "Terms": "Large cap",
+            "Description": "A measure of a company's size, calculated by multiplying the total number of shares in issue by the current share price. Companies are commonly grouped according to size as small cap, mid cap or large cap. There is no consensus on the monetary boundaries of these ranges but as a rough guide in the US market: large cap is over $10 billion, mid cap is $2 billion–$10 billion and small cap is $250 million–$2 billion."
+        },
+        {
+            "Terms": "Macroeconomic",
+            "Description": "Refers to the behaviour and drivers of an economy as a whole. Factors studied include inflation, unemployment, etc. As opposed to microeconomic: the behaviour of small economic units, such as individual consumers or households"
+        },
+        {
+            "Terms": "Market capitalisation",
+            "Description": "Refer Large Cap"
+        },
+        {
+            "Terms": "Market risk",
+            "Description": "The possibility that the value of an investment will fall due to a general decline in the financial markets. Beta is the measure of how much market risk a stock faces"
+        },
+        {
+            "Terms": "Maturity",
+            "Description": "The date when the original amount invested in a bond is repaid. Maturity can also mean the end of the life of a future or option."
+        },
+        {
+            "Terms": "Mid cap",
+            "Description": "Refer Large Cap"
+        },
+        {
+            "Terms": "MiFID",
+            "Description": "Markets in Financial Instruments Directive (MiFID) is an EU Directive that came into force on 1 November 2007 across the European Economic Area. It was designed to harmonise financial markets across the EU, and create a consistent approach to their regulation."
+        },
+        {
+            "Terms": "Modified duration",
+            "Description": "A formula to determine the approximate percentage change in the value of a bond in response to a 1% change in interest rates. See also duration."
+        },
+        {
+            "Terms": "Momentum investing",
+            "Description": "An investment strategy that is based on the idea that perceived trends (such as a rising or falling share price) are more likely to continue than reverse. A momentum investor tries to make gains by buying shares that are going up in value, as they believe the share price will continue to rise."
+        },
+        {
+            "Terms": "Mortgage-backed security (MBS)",
+            "Description": "Similar to an (see) asset-backed security, this is a security that pools mortgage repayments to effectively allow investment markets to lend to homeowners or businesses through financial institutions, who may not be willing to take on the risk of issuing mortgages themselves. "
+        },
+        {
+            "Terms": "Multi-manager fund",
+            "Description": "A multi-manager fund invests in a range of different funds. This type of fund offers the investor a diversification of manager style and skill. However there are higher management costs."
+        },
+        {
+            "Terms": "Mutual fund",
+            "Description": "A professionally managed collective investment scheme that pools money from a large number of investors."
+        },
+        {
+            "Terms": "NURS",
+            "Description": "Non-UCITS Retail Schemes (NURS) are funds set up and managed in accordance with FCA regulations for such schemes. NURS rules allow funds to access additional asset classes over and above UCITS."
+        },
+        {
+            "Terms": "OEIC",
+            "Description": "An Open Ended Investment Company is a type of collective investment scheme. It is open ended, so the number of shares in the fund goes up as money is put in and goes down as it is taken out."
+        },
+        {
+            "Terms": "Offer price",
+            "Description": "The price a seller is willing to accept for the sale of a security. In the context of funds, it is the price paid by the investor when buying a share or a unit in a dual priced fund. See also bid price."
+        },
+        {
+            "Terms": "OEIC (Open-ended investment company)",
+            "Description": "A type of investment fund, structured as a company, that can create shares for new investors and which will buy shares back from an investor if they wish to sell."
+        },
+        {
+            "Terms": "Option adjusted spread of fund",
+            "Description": "A way of calculating the value of a fixed-income security, such as a bond, that contains an embedded option. For example, when the bond issuer has the option to repay a loan early, that is an embedded option and it will affect the value of the bond."
+        },
+        {
+            "Terms": "Ongoing Charges Figure (OCF)",
+            "Description": "The OCF is made up of the Annual Management Charge (AMC) and other operating costs.  The AMC is levied by the Manager and is used to pay the investment manager, financial adviser and distributor.  Other operating costs include the costs for other services paid for by the fund, such as the fees paid to the trustee (or depositary), custodian, auditor and regulator. "
+        },
+        {
+            "Terms": "Open-end",
+            "Description": "This refers to a pooled investment vehicle, such as a unit trust or OEIC that can issue unlimited numbers of units or shares. This means the number of units or shares in the fund goes up as money is put in and goes down as it is taken out."
+        },
+        {
+            "Terms": "Options",
+            "Description": "When you buy an option, you have the right (but not the obligation) to buy a particular asset at an agreed price, on or before the date when your option expires."
+        },
+        {
+            "Terms": "OTC (over the counter) contracts",
+            "Description": "Trading of equities, bonds,commodities or derivatives directly between two parties, rather than through an exchange."
+        },
+        {
+            "Terms": "Overlay",
+            "Description": "The application of a strategy, usually based on derivatives or currencies, on top of an investment portfolio management style. This can be used to hedge risk or generate additional income, for example."
+        },
+        {
+            "Terms": "Overweight",
+            "Description": "When a portfolio or fund has a greater percentage weighting in an asset class, sector, geographical region or stock than the index or benchmark against which it is measured."
+        },
+        {
+            "Terms": "Par value",
+            "Description": "This is the face value of a security as opposed to its market value. In the case of a bond it represents the principal sum due on maturity."
+        },
+        {
+            "Terms": "Passive management",
+            "Description": "A style of investment management that aims to replicate the performance of a set benchmark. See also active management."
+        },
+        {
+            "Terms": "Peer group",
+            "Description": "A group of funds that may be compared with one another, often for performance purposes. A peer group will usually be based on the funds investment scope, for example US equity funds."
+        },
+        {
+            "Terms": "PEP (Personal Equity Plan)",
+            "Description": "A PEP was a type of tax-free savings account, similar to a Stocks and Shares ISA. You can no longer open a PEP and, in April 2008, all remaining PEPs were converted into Stocks and Shares ISAs."
+        },
+        {
+            "Terms": "Physical commodity",
+            "Description": "The actual commodity, such as gold, oil or wheat. Much of the trade in commodities markets is in financial contracts that are linked to the price of the commodity, rather than the delivery of the physical product."
+        },
+        {
+            "Terms": "Predicted tracking error",
+            "Description": "Tracking Error is a measure of how closely an investment portfolio follows the index against which it is benchmarked. If a model is used to predict this (rather than it being measured historically) it is called predicted or ex ante. See also realised tracking error."
+        },
+        {
+            "Terms": "Price-to-book value",
+            "Description": "The ratio used to compare a company's share price with its book value (the book value is the actual value of the company assets minus its liabilities)."
+        },
+        {
+            "Terms": "Price-to-earnings ratio",
+            "Description": "A ratio used to value a company's shares. It is calculated by dividing the current market price by the earnings per share."
+        },
+        {
+            "Terms": "Private equity",
+            "Description": "Equity securities of companies that are not listed on a public exchange. Transfer of private equity is strictly regulated; therefore, any investor looking to sell his/her stake in a private company has to find a buyer in the absence of a marketplace."
+        },
+        {
+            "Terms": "Quartile",
+            "Description": "A measure of how an investment is performing in its peer group. For example, a Top Quartile fund would be in the top 25% of funds in its peer group."
+        },
+        {
+            "Terms": "Real Return",
+            "Description": "The return generated by an investment, having been adjusted for the effects of inflation. If an investment grew in value by 5% return over one year, and the rate of inflation was 2%, the real return would be 3%"
+        },
+        {
+            "Terms": "Real yield",
+            "Description": "The return on an investment minus the effect of inflation. Therefore, if the return on an investment is 7% with inflation at 3%, then the real yield is 4%."
+        },
+        {
+            "Terms": "Realised tracking error",
+            "Description": "Tracking Error is a measure of how closely an investment portfolio follows the index against which it is benchmarked. If the tracking error is measured historically it is called realised or ex post. See also predicted tracking error."
+        },
+        {
+            "Terms": "Redemption",
+            "Description": "The repayment of the principal sum at maturity of an investment."
+        },
+        {
+            "Terms": "Redemption yield",
+            "Description": "The yield is the return earned on a bond. The redemption yield allows for any gain or loss of the original capital, which is paid back on the date of maturity. The return on a bond if it is held to its maturity date, reflecting not only the interest payments a bondholder will receive, but also the gain/loss made when it matures. Yield calculations on bonds aim to show the return as a percentage of either its nominal value or its current price."
+        },
+        {
+            "Terms": "Return on equity",
+            "Description": "A measure of the profitability of a company. Effectively, how much profit a company generates with the money shareholders have invested. For example, if a company's equity is valued at £10 million and it makes a profit of £1 million, the return on equity or ROE is 10%."
+        },
+        {
+            "Terms": "Rights Issue",
+            "Description": "When existing shareholders are given the right to purchase new shares in a company within a given period, in proportion to their existing holding, at a given price (usually at a discount)."
+        },
+        {
+            "Terms": "Risk",
+            "Description": "The chance of incurring a loss from an investment."
+        },
+        {
+            "Terms": "Risk premium",
+            "Description": "The extra return over cash that an investor expects to earn as compensation for owning an investment that is not risk free, so its value could go down as well as up. There are some risk premia where the extra return expected is over and above the return earned from another risk premium. For example, the small company share risk premium is the extra return an investor expects to receive over and above the return from large company shares as compensation for investing in higher risk small companies."
+        },
+        {
+            "Terms": "Security",
+            "Description": "General term for an equity or debt instrument issued by a government or company."
+        },
+        {
+            "Terms": "Sharpe ratio",
+            "Description": "A measure of risk-adjusted performance. The higher the ratio, the better risk-adjusted performance has been"
+        },
+        {
+            "Terms": "Short selling (also referred to as shorting, taking a short position, going short)",
+            "Description": "Selling assets that you have borrowed from a third party, and then buying them back at a later date to return to the lender. The short seller hopes to profit from a decline in the price of the assets between the sale and the repurchase."
+        },
+        {
+            "Terms": "Small cap",
+            "Description": "Refer Large Cap"
+        },
+        {
+            "Terms": "Standard deviation",
+            "Description": "A measure of historical volatility. It is calculated by comparing the average (or mean) return with the average variance from that return."
+        },
+        {
+            "Terms": "Swaps",
+            "Description": "A derivative in which two parties exchange certain benefits of each other's financial instruments. These are traded over the counter (otc)."
+        },
+        {
+            "Terms": "Synthetic Risk and Reward Indicator (SRRI)",
+            "Description": "A number between 1 and 7 shown on all Key Investor Information Documents to allow comparability of funds risk and reward profiles. It is calculated based on the volatility of historic or simulated fund returns. 1 is the lowest risk rating and 7 is the highest."
+        },
+        {
+            "Terms": "Top-down investing",
+            "Description": "an investment strategy which finds the best sectors or industries to invest in, based on analysis of the corporate sector as a whole and general economic trends (as opposed to bottom up investing)."
+        },
+        {
+            "Terms": "Total Expense Ratio (TER)",
+            "Description": "The total fees involved in managing and operating a fund. The TER included the annual management fee and other charges, for example legal, admin, and audit costs. Following the introduction of KIIDs, TERs have been replaced with OCFs."
+        },
+        {
+            "Terms": "Total return",
+            "Description": "The total return on an investment, including any capital appreciation (or depreciation) plus any income from interest or dividends. It is measured over a set period, and is given as a percentage of the value of the investment at the start of that period."
+        },
+        {
+            "Terms": "Tracking error",
+            "Description": "A measure of how closely an investment portfolio follows the index against which it is benchmarked. See also predicted tracking error, realised tracking error, ex ante and ex post."
+        },
+        {
+            "Terms": "UCITS (Undertakings for Collective Investments in Transferable Securities)",
+            "Description": "UCITS funds are authorised funds that can be sold in any country in the EU. UCITS V regulations allow funds to invest in a wider range of financial instruments, including derivatives."
+        },
+        {
+            "Terms": "Underlying yield",
+            "Description": "Reflects the annualised income net of expenses of the fund as a percentage of the market unit price of the fund as at the day shown. It is based on a snapshot of the fund on that day. It does not include any preliminary charge and investors may be subject to tax on distributions."
+        },
+        {
+            "Terms": "Underweight",
+            "Description": "When a portfolio or fund has a lower percentage weighting in an asset class, sector, geographical region or stock than the index or benchmark against which it is measured."
+        },
+        {
+            "Terms": "Unit trust",
+            "Description": "A type of open-ended pooled investment vehicle, or fund, which is structured as a trust."
+        },
+        {
+            "Terms": "Volatility",
+            "Description": "A statistical measure of the fluctuations of a security's price. It can also be used to describe fluctuations in a particular market. High volatility is an indication of higher risk."
+        },
+        {
+            "Terms": "Warrant",
+            "Description": "A certificate, usually issued with a bond or share, that entitles the holder to buy ordinary shares at a fixed price, either over a period of time or in perpetuity. Warrants are often included as a sweetener to entice investors. A warrant is freely transferable and can be traded separately."
+        },
+        {
+            "Terms": "Yeild",
+            "Description": "A measure of the income return earned on an investment. In the case of a share, the yield is the annual dividend payment expressed as a percentage of the market price of the share. For property, it is the rental income as a percentage of the capital value. For bonds, the yield is the annual interest as a percentage of the current market price."
+        },
+        {
+            "Terms": "Yeild Spread",
+            "Description": "The difference in yield between different types of bonds (for example, between government bonds and corporate bonds)."
+        },
+        {
+            "Terms": "Yield to maturity",
+            "Description": "The rate of return anticipated on a bond if it is held until the maturity date."
         }
-    ],
-    "UkInsuranceAccounts": [
-        {
-            "ID": 1,
-            "Name": "FNZ",
-            "Logo": {
-                "Url": "https://www.fnz.com/assets/images/timeline/FNZ-Logo-Ali.jpg"
-            },
-            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/",
-            "RLG": "Suitable text will be added later for RLG from FNZ",
-            "Aegon": "Suitable text will be added later for AEGON from FNZ",
-            "SLA": "Suitable text will be added later for SLA from FNZ"
-        },
-        {
-            "ID": 2,
-            "Name": "RLG",
-            "Logo": {
-                "Url": "https://s3.eu-central-1.amazonaws.com/centaur-wp/designweek/prod/content/uploads/2014/04/logo-1002x708.jpg"
-            },
-            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/RLG",
-            "FNZ": "Suitable text will be added later for FNZ from RLG",
-            "Aegon": "Suitable text will be added later for AEGON from RLG",
-            "SLA": "Suitable text will be added later for SLA from RLG"
-        },
-        {
-            "ID": 3,
-            "Name": "SLA",
-            "Logo": {
-                "Url": "https://cdn.worldvectorlogo.com/logos/standard-life.svg"
-            },
-            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/standardlifeaberdeen/",
-            "FNZ": "Suitable text will be added later for FNZ from SLA",
-            "Aegon": "Suitable text will be added later for AEGON from SLA",
-            "RLG": "Suitable text will be added later for RLG from SLA"
-        },
-        {
-            "ID": 4,
-            "Name": "Aegon",
-            "Logo": {
-                "Url": "https://httpsak-a.akamaihd.net/1900410236/1900410236_5614837075001_5043452824001-vs.jpg?pubId=1900410236&videoId=5043452824001"
-            },
-            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/Aegon/",
-            "FNZ": "Suitable text will be added later for FNZ from Aegon",
-            "SLA": "Suitable text will be added later for SLA from Aegon",
-            "RLG": "Suitable text will be added later for RLG from Aegon"
-        }
-    ],
-    "HomePages": [
-        {
-            "ID": 1,
-            "Image": {
-                "Url": "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/HomePageBackground.png?csf=1&e=FE0Zml"
-            },
-            "Title": "Together WE Achieve More",
-            "Subtitle": "We collaborate with each team consistently to emphasis ‘one team’ mindset and mutually share our expertise and strength to grow better every day and bring values to each other. . .",
-            "Footer": "You might like our stories"
-        },
-        {
-            "ID": 2,
-            "Image": {
-                "Url": "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/SecondHomePage.png?csf=1&e=sICYx1"
-            },
-            "IsAccountsDescriptionPage": "true"
-        }
+
     ]
 }

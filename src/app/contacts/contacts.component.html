@@ -5,7 +5,7 @@
 <div mat-dialog-content>
     <img class="contact-header-banner" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/assets/contact-header-banner.jpg">
     <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2.5%" fxLayoutAlign="center">
-        <div *ngFor="let userProfile of userProfiles">
+        <div *ngFor="let userProfile of userProfiles; index as i">
             <mat-card class="card-border">
                 <img mat-card-image class="user-picture" [src]="userProfile.ProfileImageUrl" alt="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/assets/user.jpg">
                 <mat-card-content class="card-content">
@@ -14,7 +14,7 @@
                     <div class="designation">{{userProfile.Designation}}</div>
                 </mat-card-content>
             </mat-card>
-            <p class="vertical circle-marker"></p>
+            <p *ngIf="i > 0" class="vertical circle-marker"></p>
         </div>
     </div>
     <img class="contact-header-banner" style="float: right;" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/assets/contact-footer-banner.jpg">

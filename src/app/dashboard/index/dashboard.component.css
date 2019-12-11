@@ -190,3 +190,7 @@
 .back-icon:hover {
     transform: scale(1.5);
 }
+
+.card-content {
+    min-height: 223px;
+}

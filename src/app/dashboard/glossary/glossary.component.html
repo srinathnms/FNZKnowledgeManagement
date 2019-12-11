@@ -1,0 +1,30 @@
+<div class="row glossary-header">
+    <p *ngFor="let test of sortedGlossary">
+        <a (click)="getGlossary(test.key)">{{test.key}}</a>
+    </p>
+</div>
+
+<!-- <div class="toc-container">
+    <ul *ngFor="let test of currentGlossary">
+        <li [ngClass]="{'active': true}">
+            <a pageScroll [href]="'#'+test.ElementId">{{test.Terms}}</a>
+        </li>
+    </ul>
+</div> -->
+
+<!-- <div class="glossary">
+    <section *ngFor="let test of currentGlossary.glossary" [id]="test.ElementId">
+        <h1>{{test.Terms}}</h1>
+        <p>{{test.Description}}</p>
+    </section>
+</div> -->
+
+<div class="glossary-outer" fxLayout="column" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1.5%" fxLayoutAlign="center">
+    <mat-card class="glossary-card" *ngFor="let test of currentGlossary.glossary">
+        <mat-card-content fxLayout="row">
+            <div class="terms">{{test.Terms}}</div>
+            <p class="vertical circle-marker"></p>
+            <div class="description">{{test.Description}}</div>
+        </mat-card-content>
+    </mat-card>
+</div>

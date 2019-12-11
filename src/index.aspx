@@ -9,18 +9,18 @@
     <base href="#">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/fnz_logo.png">
+    <link rel="icon" href="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/fnz_logo.png">
 </head>
 
 <body>
     <app-root></app-root>
-    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/runtime.js"></script>
-    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/0.js"></script>
-    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/scripts.js"></script>
-    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/polyfills.js"></script>
-    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/styles.js"></script>
-    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/vendor.js"></script>
-    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Development_Site/fnzmanagement/main.js"></script>
+    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/runtime.js"></script>
+    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/0.js"></script>
+    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/scripts.js"></script>
+    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/polyfills.js"></script>
+    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/styles.js"></script>
+    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/vendor.js"></script>
+    <script type="text/javascript" src="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Dev_Site/fnzmanagement/main.js"></script>
 
 </body>
 

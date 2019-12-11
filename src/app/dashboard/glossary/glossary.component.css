@@ -1,0 +1,54 @@
+/* .toc-container {
+    width: 18%;
+    position: fixed;
+    top: 110px;
+    right: 0;
+    bottom: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+} */
+
+.glossary-header {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 1.03rem;
+    font-weight: 400;
+    color: #444;
+    justify-content: center;
+    left: 0;
+}
+
+.glossary-outer {
+    align-items: center!important;
+}
+
+.glossary-card {
+    max-width: 60rem;
+    min-width: 60rem;
+    margin: 5px;
+    color: white;
+    background-color: #0033a0;
+}
+
+.vertical {
+    border-left: 1px #00b140 solid !important;
+    display: inline-block;
+    height: 80px;
+    align-items: center;
+    display: flex;
+}
+
+.terms {
+    max-width: 200px;
+    min-width: 200px;
+    margin: 10px;
+    font-weight: bolder;
+    align-items: center;
+    display: flex;
+}
+
+.description {
+    margin: 10px;
+    align-items: center;
+    display: flex;
+}
