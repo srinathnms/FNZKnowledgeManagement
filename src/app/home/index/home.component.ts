@@ -62,7 +62,7 @@ const fadeOut = trigger("fadeOut", [leaveTrans]);
 export class HomeComponent implements OnInit {
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
     const verticalOffset = window.pageYOffset;
-    if (verticalOffset == 0) {
+    if (verticalOffset == 0 && this.shouldDisplayDescription && this.showAccountNaviagationPointer) {
       this.resetElementPosition();
     }
   }
@@ -103,8 +103,10 @@ export class HomeComponent implements OnInit {
   }
 
   onAccountNameClick(account: IAccount): void {
-    this.shouldDisplayDescription = !this.shouldDisplayDescription;
-    this.showAccountNaviagationPointer = !this.showAccountNaviagationPointer;
+    if (this.shouldDisplayDescription && this.showAccountNaviagationPointer) {
+      this.shouldDisplayDescription = !this.shouldDisplayDescription;
+      this.showAccountNaviagationPointer = !this.showAccountNaviagationPointer;
+    }
     this.seletedAccount = account;
     this.accounts.map(c => {
       if (c.ID !== account.ID) {
@@ -125,7 +127,7 @@ export class HomeComponent implements OnInit {
   }
 
   getAccountSpecificContributionText(name: string): string {
-    if (name) {
+    if (name && this.seletedAccount) {
       switch (name) {
         case UkInsuranceAccounts.FNZ: {
           return this.seletedAccount.FNZ;
