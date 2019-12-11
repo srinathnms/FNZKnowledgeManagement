@@ -1,13 +1,12 @@
-<section [id]="'section'+page.ID" *ngFor="let page of pages" ng-style="max-height:page && page.IsAccountsDescriptionPage? 100vh : 96vh">
+<section [id]="'section'+page.ID" *ngFor="let page of pages">
   <img *ngIf="page && page.Image" [src]="page?.Image.Url">
   <div class="intro" *ngIf="page && !page.IsAccountsDescriptionPage">
     <div class="title-text" *ngIf="page && page.Title">{{page?.Title}}</div>
     <div class="subtitle-text" *ngIf="page && page.Subtitle">{{page?.Subtitle}}</div>
   </div>
   <div class="text-group" *ngIf="page && page.IsAccountsDescriptionPage">
-    <div class="account-info" [@slideState]='account?.SlidePosition' (@slideState.done)="onSlideAnimationEnd($event)"
-      *ngFor="let account of accounts">
-      <a class="account-name">
+    <div class="account-info" *ngFor="let account of accounts">
+      <a class="account-name" [@slideState]='account?.SlidePosition' (@slideState.done)="onSlideAnimationEnd($event)">
         <p (click)="onAccountNameClick(account)">{{account?.Name}}</p>
       </a>
       <div class="account-description"

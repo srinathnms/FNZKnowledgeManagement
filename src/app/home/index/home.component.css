@@ -75,7 +75,9 @@ font-size: 25px;
 }
 
 .account-description{
-text-align:center;
+  position: relative;
+  text-align: center;
+  top: 120px;
 }
 
 p.contribution {
