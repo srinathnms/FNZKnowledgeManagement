@@ -103,10 +103,8 @@ export class HomeComponent implements OnInit {
   }
 
   onAccountNameClick(account: IAccount): void {
-    if (this.shouldDisplayDescription && this.showAccountNaviagationPointer) {
-      this.shouldDisplayDescription = !this.shouldDisplayDescription;
-      this.showAccountNaviagationPointer = !this.showAccountNaviagationPointer;
-    }
+    this.shouldDisplayDescription = this.shouldDisplayDescription && !this.shouldDisplayDescription;
+    this.showAccountNaviagationPointer = this.showAccountNaviagationPointer && !this.showAccountNaviagationPointer;
     this.seletedAccount = account;
     this.accounts.map(c => {
       if (c.ID !== account.ID) {
