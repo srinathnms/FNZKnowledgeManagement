@@ -14,7 +14,7 @@
         *ngIf="account && account.SlidePosition=='down' && shouldDisplayDescription && showAccountNaviagationPointer "
         @fadeIn @fadeOut>
         <div id="horizontal-line"></div>
-        <p class="contribution" *ngFor="let contribution of getAccountSpecificContributions(account.Name)">{{contribution.Text}}</p>
+        <p class="contribution" *ngFor="let contribution of getAccountSpecificContributions(account.Name)">{{contribution}}</p>
       </div>
       <div class="account-naviagtion" @fadeIn @fadeOut
         *ngIf="account.SlidePosition=='up' && shouldDisplayDescription && showAccountNaviagationPointer">
