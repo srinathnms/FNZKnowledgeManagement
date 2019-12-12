@@ -81,15 +81,17 @@ font-size: 25px;
 }
 
 p.contribution {
-  margin: 5px;
+  /* margin: 5px; */
   background: transparent;
   color:white;
-  min-height:100px;
-  max-height:100px;
-  text-align: center;
+  /* min-height:100px; */
+  /* max-height:100px; */
+  text-align: left;
   word-break: normal;
   white-space: normal;
   font-family: "candara light";
+  list-style:disc outside none;
+  display:list-item;
 }
 
 #horizontal-line{
@@ -105,7 +107,8 @@ font-family: "candara light";
 letter-spacing: .1em;
 font-size: 50px;
 text-align: left;
-color:yellow;
+color:white;
+margin-bottom:3vh;
 }
 
 .subtitle-text{
@@ -199,11 +202,12 @@ animation-delay: .3s;
   }
 
 .account-info{
-  width:25%;
+  width:22%;
   height: 100%;
   text-align: center;
   vertical-align: middle;
   display: inline-block;
+  margin-left:25px;
   }  
 
   .bounce-arrow {

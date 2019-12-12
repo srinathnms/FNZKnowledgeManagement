@@ -124,7 +124,7 @@ export class HomeComponent implements OnInit {
     this.showAccountNaviagationPointer = e.fromState != SlidePosition.void;
   }
 
-  getAccountSpecificContributionText(name: string): string {
+  getAccountSpecificContributions(name: string): string[] {
     if (name && this.seletedAccount) {
       switch (name) {
         case UkInsuranceAccounts.FNZ: {

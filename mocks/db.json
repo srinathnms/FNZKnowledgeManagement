@@ -1,5 +1,6 @@
 {
-    "DashboardMenus": [{
+    "DashboardMenus": [
+        {
             "Id": 2,
             "MenuName": "About FNZ and Cognizant journey with them",
             "ParentId": 0,
@@ -383,7 +384,8 @@
             "Attachments": true
         }
     ],
-    "FAQ": [{
+    "FAQ": [
+        {
             "AttachmentName": "",
             "Attachments": false,
             "Description": "Test1",
@@ -408,7 +410,8 @@
             "Solution": "Sol 3"
         }
     ],
-    "FinanceChart": [{
+    "FinanceChart": [
+        {
             "Year": "2016",
             "Month": "January",
             "CustomerProfitability": 0,
@@ -937,7 +940,8 @@
             "Buffer": 1
         }
     ],
-    "Diary": [{
+    "Diary": [
+        {
             "EncodedAbsUrl": "https://preview.ibb.co/kZGsLm/img8.jpg"
         },
         {
@@ -1001,7 +1005,8 @@
             "ImageLabel": "Sample label 16"
         }
     ],
-    "Glossary": [{
+    "Glossary": [
+        {
             "Terms": "Absolute Return Funds",
             "Description": "Funds which are managed with an objective of generating a positive return over rolling 12 month periods"
         },
@@ -1577,6 +1582,225 @@
             "Terms": "Yield to maturity",
             "Description": "The rate of return anticipated on a bond if it is held until the maturity date."
         }
-
+    ],
+    "UkInsuranceAccounts": [
+        {
+            "ID": 1,
+            "Name": "FNZ",
+            "Logo": {
+                "Url": "https://www.fnz.com/assets/images/timeline/FNZ-Logo-Ali.jpg"
+            },
+            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/",
+            "RLG": [
+                {
+                    "Text": "Suitable text will be added later for RLG from FNZ"
+                },
+                {
+                    "Text": "Suitable text will be added later for RLG from FNZ"
+                },
+                {
+                    "Text": "Suitable text will be added later for RLG from FNZ"
+                },
+                {
+                    "Text": "Suitable text will be added later for RLG from FNZ"
+                }
+            ],
+            "Aegon": [
+                {
+                    "Text": "Suitable text will be added later for AEGON from FNZ"
+                },
+                {
+                    "Text": "Suitable text will be added later for AEGON from FNZ"
+                },
+                {
+                    "Text": "Suitable text will be added later for AEGON from FNZ"
+                },
+                {
+                    "Text": "Suitable text will be added later for AEGON from FNZ"
+                }
+            ],
+            "SLA": [
+                {
+                    "Text": "Suitable text will be added later for SLA from FNZ. New line"
+                },
+                {
+                    "Text": "Suitable text will be added later for SLA from FNZ. New line"
+                },
+                {
+                    "Text": "Suitable text will be added later for SLA from FNZ. New line"
+                },
+                {
+                    "Text": "Suitable text will be added later for SLA from FNZ. New line"
+                }
+            ]
+        },
+        {
+            "ID": 2,
+            "Name": "RLG",
+            "Logo": {
+                "Url": "https://s3.eu-central-1.amazonaws.com/centaur-wp/designweek/prod/content/uploads/2014/04/logo-1002x708.jpg"
+            },
+            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/RLG",
+            "FNZ": [
+                {
+                    "Text": "Suitable text will be added later for FNZ from RLG"
+                },
+                {
+                    "Text": "Suitable text will be added later for FNZ from RLG"
+                },
+                {
+                    "Text": "Suitable text will be added later for FNZ from RLG"
+                },
+                {
+                    "Text": "Suitable text will be added later for FNZ from RLG"
+                }
+            ],
+            "Aegon": [
+                {
+                    "Text": "Suitable text will be added later for AEGON from RLG"
+                },
+                {
+                    "Text": "Suitable text will be added later for AEGON from RLG"
+                },
+                {
+                    "Text": "Suitable text will be added later for AEGON from RLG"
+                },
+                {
+                    "Text": "Suitable text will be added later for AEGON from RLG"
+                }
+            ],
+            "SLA": [
+                {
+                    "Text": "Suitable text will be added later for SLA from RLG"
+                },
+                {
+                    "Text": "Suitable text will be added later for SLA from RLG"
+                },
+                {
+                    "Text": "Suitable text will be added later for SLA from RLG"
+                },
+                {
+                    "Text": "Suitable text will be added later for SLA from RLG"
+                }
+            ]
+        },
+        {
+            "ID": 3,
+            "Name": "SLA",
+            "Logo": {
+                "Url": "https://cdn.worldvectorlogo.com/logos/standard-life.svg"
+            },
+            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/standardlifeaberdeen/",
+            "FNZ": [
+                {
+                    "Text": "Suitable text will be added later for FNZ from SLA"
+                },
+                {
+                    "Text": "Suitable text will be added later for FNZ from SLA"
+                },
+                {
+                    "Text": "Suitable text will be added later for FNZ from SLA"
+                },
+                {
+                    "Text": "Suitable text will be added later for FNZ from SLA"
+                }
+            ],
+            "Aegon": [
+                {
+                    "Text": "Suitable text will be added later for AEGON from SLA"
+                },
+                {
+                    "Text": "Suitable text will be added later for AEGON from SLA"
+                },
+                {
+                    "Text": "Suitable text will be added later for AEGON from SLA"
+                },
+                {
+                    "Text": "Suitable text will be added later for AEGON from SLA"
+                }
+            ],
+            "RLG": [
+                {
+                    "Text": "Suitable text will be added later for RLG from SLA"
+                },
+                {
+                    "Text": "Suitable text will be added later for RLG from SLA"
+                },
+                {
+                    "Text": "Suitable text will be added later for RLG from SLA"
+                },
+                {
+                    "Text": "Suitable text will be added later for RLG from SLA"
+                }
+            ]
+        },
+        {
+            "ID": 4,
+            "Name": "Aegon",
+            "Logo": {
+                "Url": "https://httpsak-a.akamaihd.net/1900410236/1900410236_5614837075001_5043452824001-vs.jpg?pubId=1900410236&videoId=5043452824001"
+            },
+            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/Aegon/",
+            "FNZ": [
+                {
+                    "Text": "Suitable text will be added later for FNZ from Aegon"
+                },
+                {
+                    "Text": "Suitable text will be added later for FNZ from Aegon"
+                },
+                {
+                    "Text": "Suitable text will be added later for FNZ from Aegon"
+                },
+                {
+                    "Text": "Suitable text will be added later for FNZ from Aegon"
+                }
+            ],
+            "SLA": [
+                {
+                    "Text": "Suitable text will be added later for SLA from Aegon"
+                },
+                {
+                    "Text": "Suitable text will be added later for SLA from Aegon"
+                },
+                {
+                    "Text": "Suitable text will be added later for SLA from Aegon"
+                },
+                {
+                    "Text": "Suitable text will be added later for SLA from Aegon"
+                }
+            ],
+            "RLG": [
+                {
+                    "Text": "Suitable text will be added later for RLG from Aegon"
+                },
+                {
+                    "Text": "Suitable text will be added later for RLG from Aegon"
+                },
+                {
+                    "Text": "Suitable text will be added later for RLG from Aegon"
+                },
+                {
+                    "Text": "Suitable text will be added later for RLG from Aegon"
+                }
+            ]
+        }
+    ],
+    "HomePages": [
+        {
+            "ID": 1,
+            "Image": {
+                "Url": "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/HomePageBackground.png?csf=1&e=FE0Zml"
+            },
+            "Title": "Together WE Achieve More",
+            "Subtitle": "We collaborate with each team consistently to emphasis ‘one team’ mindset and mutually share our expertise and strength to grow better every day and bring values to each other. . .",
+            "Footer": "You might like our stories"
+        },
+        {
+            "ID": 2,
+            "Image": {
+                "Url": "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/SecondHomePage.png?csf=1&e=sICYx1"
+            },
+            "IsAccountsDescriptionPage": "true"
+        }
     ]
 }
