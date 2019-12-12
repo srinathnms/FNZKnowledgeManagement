@@ -73,20 +73,22 @@ export class HomeComponent implements OnInit {
   shouldDisplayDescription: boolean;
   showAccountNaviagationPointer: boolean = false;
   constructor(private pageScrollService: PageScrollService, private homeService: HomeService) {
-    this.homeService.getFromMock('HomePages')
-      .subscribe((data: IHome[]) => {
-        this.pages = data;
-      });
+    // this.homeService.getFromMock('HomePages')
+    //   .subscribe((data: IHome[]) => {
+    this.pages = HomePages;
+    // });
 
-    this.homeService.getFromMock('UkInsuranceAccounts')
-      .subscribe((data: IAccount[]) => {
-        if (data && data.length > 0) {
-          data.map(c => {
-            c.SlidePosition = SlidePosition.Down;
-          });
-          this.accounts = data;
-        }
+    // this.homeService.getFromMock('UkInsuranceAccounts')
+    //   .subscribe((data: IAccount[]) => {
+    let data: IAccount[] = Accounts;
+    if (data && data.length > 0) {
+      data.map(c => {
+        c.SlidePosition = SlidePosition.Down;
       });
+      this.accounts = data;
+      //   }
+      // });
+    }
   }
 
   ngOnInit(): void {
@@ -143,3 +145,58 @@ export class HomeComponent implements OnInit {
     }
   }
 }
+
+let Accounts = [
+  {
+    ID: 1,
+    Name: "FNZ",
+    PageLink: "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/",
+    RLG: ["Fulfilled the capability gap", "Talent rotation during peak demand", "Proposed FNZ unique delivery model into their similar engagement", "Shared wealth expertise to upskill Bravura team"],
+    Aegon: ["Suitable text will be added later for AEGON from FNZ"],
+    SLA: ["Fulfilled the capability gap", "Talent rotation during peak demand"]
+  },
+  {
+    ID: 2,
+    Name: "RLG",
+    PageLink: "https://cognizantonline.sharepoint.com/sites/ukInsurance/RLG",
+    FNZ: ["Agile maturity assessment", "Upskilled the team ReactJS skillset", "Supported to build SDET capability", "Supported for proactive proposals"],
+    Aegon: ["Adopted CSI model", "Received insight for an automation framework"],
+    SLA: ["Suitable text will be added later for SLA from RLG"]
+  },
+  {
+    ID: 3,
+    Name: "SLA",
+    PageLink: "https://cognizantonline.sharepoint.com/sites/ukInsurance/standardlifeaberdeen/",
+    FNZ: ["Suitable text will be added later for FNZ from SLA"],
+    Aegon: ["Suitable text will be added later for AEGON from SLA"],
+    RLG: ["Suitable text will be added later for RLG from SLA"]
+  },
+  {
+    ID: 4,
+    Name: "Aegon",
+    PageLink: "https://cognizantonline.sharepoint.com/sites/ukInsurance/Aegon/",
+    FNZ: ["Suitable text will be added later for FNZ from Aegon"],
+    SLA: ["Suitable text will be added later for SLA from Aegon"],
+    RLG: ["Utilized the gamification idea to know more about  RLG"]
+  }
+];
+let HomePages = [
+  {
+    ID: 1,
+    Image: {
+      Url: "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/HomePageBackground.png?csf=1&e=FE0Zml",
+      Description:""
+    },
+    Title: "Together WE Achieve More",
+    Subtitle: "We collaborate with each team consistently to emphasis ‘one team’ mindset and mutually share our expertise and strength to grow better every day and bring values to each other. . .",
+    Footer: "You might like our stories"
+  },
+  {
+    ID: 2,
+    Image: {
+      Url: "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/SecondHomePage.png?csf=1&e=sICYx1",
+      Description:""
+    },
+    IsAccountsDescriptionPage: "true"
+  }
+];
