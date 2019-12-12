@@ -9,13 +9,12 @@
 } */
 
 .glossary-header {
-    font-size: 1.4rem;
-    line-height: 2.4rem;
-    letter-spacing: 1.03rem;
-    font-weight: 400;
-    color: #444;
+    display: flex;
     justify-content: center;
-    left: 0;
+    position: absolute;
+    z-index: 1;
+    left: 14%;
+    margin-top: 10px;
 }
 
 .glossary-outer {
@@ -25,6 +24,7 @@
 .glossary-card {
     max-width: 60rem;
     min-width: 60rem;
+    margin-top: 50px;
     margin: 5px;
     color: white;
     background-color: #0033a0;
@@ -68,4 +68,15 @@
 .mat-button-toggle-checked {
     background-color: #0033a0;
     color: white;
+}
+
+.app-toolbar {
+    position: sticky;
+    justify-content: center;
+    position: -webkit-sticky;
+    /* For macOS/iOS Safari */
+    top: 0;
+    /* Sets the sticky toolbar to be on top */
+    z-index: 1000;
+    /* Ensure that your app's content doesn't overlap the toolbar */
 }
