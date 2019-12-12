@@ -8,6 +8,8 @@ import { SpinnerService } from 'src/app/core/spinner/spinner.service';
 })
 export class SpinnerComponent implements OnInit {
   isLoading = false;
+  color = 'primary';
+  mode = 'indeterminate';
   constructor(private spinnerService: SpinnerService) {
   }
 

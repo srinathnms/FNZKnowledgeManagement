@@ -77,7 +77,7 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.get('DashboardMenus')
       .subscribe((data: IDashboardMenu[]) => {
         this.dashboardMenus = data;
-        this.dashboardMenus.forEach(c => { c.Flip = 'inactive'; });
+        this.dashboardMenus.map(c => { c.Flip = 'inactive'; });
         this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === 0);
       });
   }
@@ -87,7 +87,7 @@ export class DashboardComponent implements OnInit {
 
   onMenuClick(dashboardMenu: IDashboardMenu): void {
     if (this.selectedMenu) {
-      this.dashboardMenus.forEach(c => { c.Flip = 'inactive'; });
+      this.dashboardMenus.map(c => { c.Flip = 'inactive'; });
       this.selectedMenu = dashboardMenu;
       this.toggleFlip(dashboardMenu);
       return;
