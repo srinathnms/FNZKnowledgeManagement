@@ -12,6 +12,7 @@ export class ModalComponent {
   isGraph: boolean;
   isTeamView: boolean;
   isGlossary: boolean;
+  isFAQ: boolean;
 
   constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: IModalDialog) {
     dialogRef.disableClose = true;
@@ -19,6 +20,7 @@ export class ModalComponent {
     this.isGraph = data.menuContentType === 'Graph';
     this.isTeamView = data.header === 'Team View';
     this.isGlossary = data.menuContentType === 'Glossary';
+    this.isFAQ = data.menuContentType === 'FAQ';
   }
 
   onClose(): void {

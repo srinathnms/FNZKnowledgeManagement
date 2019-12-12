@@ -11,20 +11,24 @@ export class GlossaryComponent implements OnInit {
   @Input() glossary: IGlossary[];
   sortedGlossary: { key: string, glossary: IGlossary[] }[];
   currentGlossary: { key: string, glossary: IGlossary[] };
+  glossaryHeaders: { alphabet: string, canDisable: boolean }[] = [];
   constructor(private groupBy: GroupByPipe) {
   }
 
   ngOnInit() {
     this.sortedGlossary = this.groupBy.transform(this.glossary);
     this.currentGlossary = this.sortedGlossary[0];
+    this.getAlphabetsLinks();
   }
 
   getAlphabetsLinks() {
     const alphabets = [];
     for (let i = 65; i <= 90; i++) {
-      alphabets.push(String.fromCharCode(i));
+      this.glossaryHeaders.push({ alphabet: String.fromCharCode(i), canDisable: false});
     }
-    return alphabets;
+      this.glossaryHeaders.map((glossaryHeader: { alphabet: string, canDisable: boolean }) => {
+        glossaryHeader.canDisable = this.sortedGlossary.filter(c => c.key === glossaryHeader.alphabet).length === 0;
+      });
   }
 
   getGlossary(alphabet: string) {
