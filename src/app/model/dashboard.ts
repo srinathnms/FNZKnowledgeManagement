@@ -7,7 +7,7 @@ export interface IDashboardMenu {
     Attachments: boolean;
     ImageSource: string;
     Contents?: string;
-    DocumentUrl?: string;
+    DocumentUrls?: string[];
     MenuContentType?: string;
     BackgroundImage?: IBackgroundImage;
     Flip?: string;

@@ -187,6 +187,15 @@ export class DashboardComponent implements OnInit {
     }
     modalDialogData.menuId = dashboardSubMenu.Id;
     modalDialogData.content = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardSubMenu.Id);
+    if (modalDialogData.content && modalDialogData.content.length > 0) {
+      modalDialogData.content.map(x => {
+        const attachmentQuery = `(${x.Id})/AttachmentFiles`;
+        this.dashboardService.getAttachments('DashboardMenus', attachmentQuery)
+          .subscribe((documents: IDocument[]) => {
+            x.DocumentUrls = documents.map(document => { return document.ServerRelativeUrl });
+          });
+      });
+    }
     this.openDialog(modalDialogData);
   }
 
