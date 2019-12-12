@@ -17,7 +17,10 @@
                             </div>
                         </mat-list>
                     </mat-card-content>
-                    <mat-icon class="back-icon" (click)="toggleFlip(dashboardMenu)" aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+                    <button class="favorite-btn back-icon" (click)="toggleFlip(dashboardMenu)" mat-mini-fab>
+                            <mat-icon mat-mini-fab >arrow_back</mat-icon>
+                        </button>
+                    <!-- <mat-icon class="back-icon" (click)="toggleFlip(dashboardMenu)" aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon> -->
                 </mat-card>
                 <mat-card class="mat-chip-menu" @list *ngIf="getSubMenus(dashboardMenu).length === 0">
                     <mat-card-content>

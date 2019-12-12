@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { IModalDialog } from 'src/app/model/modal-dialog';
+import { MenuContentTypes } from 'src/app/model/enum/menuContentTypes';
 
 @Component({
   selector: 'app-modal',
@@ -8,19 +9,11 @@ import { IModalDialog } from 'src/app/model/modal-dialog';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
-  isDocument: boolean;
-  isGraph: boolean;
-  isTeamView: boolean;
-  isGlossary: boolean;
-  isFAQ: boolean;
+  menuContentType: MenuContentTypes;
 
   constructor(public dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: IModalDialog) {
     dialogRef.disableClose = true;
-    this.isDocument = data.menuContentType === 'Document';
-    this.isGraph = data.menuContentType === 'Graph';
-    this.isTeamView = data.header === 'Team View';
-    this.isGlossary = data.menuContentType === 'Glossary';
-    this.isFAQ = data.menuContentType === 'FAQ';
+    this.menuContentType = data.menuContentType;
   }
 
   onClose(): void {

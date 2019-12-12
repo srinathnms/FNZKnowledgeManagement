@@ -12,6 +12,9 @@ import { ReturnStatement } from '@angular/compiler';
 import { IFinance } from 'src/app/model/finance';
 import { IGlossary } from 'src/app/model/glossary';
 import { IFaq } from 'src/app/model/faq';
+import { MenuContentTypes } from 'src/app/model/enum/menuContentTypes';
+import { SharepointList } from 'src/app/model/enum/sharepointList';
+import { FlipState } from 'src/app/model/enum/flipState';
 
 @Component({
   selector: 'app-dashboard',
@@ -66,18 +69,16 @@ import { IFaq } from 'src/app/model/faq';
 
 export class DashboardComponent implements OnInit {
   finance: IFinance[];
-  flip = 'inactive';
   graphContent: Highcharts.SeriesOptionsType[];
   selectedMenu: IDashboardMenu;
   selectedSubMenuId: number;
   dashboardMainMenus: IDashboardMenu[];
   dashboardMenus: IDashboardMenu[];
-  docUrl: string;
   constructor(private dashboardService: DashboardService, public dialog: MatDialog) {
     this.dashboardService.get('DashboardMenus')
       .subscribe((data: IDashboardMenu[]) => {
         this.dashboardMenus = data;
-        this.dashboardMenus.map(c => { c.Flip = 'inactive'; });
+        this.dashboardMenus.map(c => { c.Flip = FlipState.Inactive; });
         this.dashboardMainMenus = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === 0);
       });
   }
@@ -87,7 +88,7 @@ export class DashboardComponent implements OnInit {
 
   onMenuClick(dashboardMenu: IDashboardMenu): void {
     if (this.selectedMenu) {
-      this.dashboardMenus.map(c => { c.Flip = 'inactive'; });
+      this.dashboardMenus.map(c => { c.Flip = FlipState.Inactive; });
       this.selectedMenu = dashboardMenu;
       this.toggleFlip(dashboardMenu);
       return;
@@ -98,11 +99,11 @@ export class DashboardComponent implements OnInit {
 
   toggleFlip(dashboardMenu: IDashboardMenu) {
     const selectedMenu = this.dashboardMenus.filter(c => c.Id === dashboardMenu.Id)[0];
-    if (selectedMenu.Flip === 'inactive') {
-      selectedMenu.Flip = 'active';
+    if (selectedMenu.Flip === FlipState.Inactive) {
+      selectedMenu.Flip = FlipState.Active;
       return;
     }
-    selectedMenu.Flip = 'inactive';
+    selectedMenu.Flip = FlipState.Inactive;
   }
 
   onSubMenuHover(dashboardSubMenu: IDashboardMenu): void {
@@ -118,50 +119,60 @@ export class DashboardComponent implements OnInit {
       header: dashboardSubMenu.MenuName,
       footer: 'Close',
     } as IModalDialog;
-    if (dashboardSubMenu.MenuContentType === 'Document') {
+    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Document) {
       const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
-      this.dashboardService.getAttachments('DashboardMenus', attachmentQuery)
+      this.dashboardService.getAttachments(SharepointList.DashboardMenus, attachmentQuery)
         .subscribe((document: IDocument[]) => {
           const documentUrl = `${environment.SHARE_POINT_URL}${document[0].ServerRelativeUrl}`;
           this.dashboardService.getDocument(documentUrl).subscribe((fileUrl: string) => {
             modalDialogData.content = {
               ServerRelativeUrl: fileUrl
             } as IDocument;
-            modalDialogData.menuContentType = 'Document';
+            modalDialogData.menuContentType = MenuContentTypes.Document;
             this.openDialog(modalDialogData);
           });
         });
       return;
     }
-    if (dashboardSubMenu.MenuContentType === 'Graph') {
-      this.dashboardService.get('FinanceChart')
+    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Graph) {
+      this.dashboardService.get(SharepointList.FinanceChart)
         .subscribe((data: IFinance[]) => {
           modalDialogData.content = data;
-          modalDialogData.menuContentType = 'Graph';
+          modalDialogData.menuContentType = MenuContentTypes.Graph;
           this.openDialog(modalDialogData);
         });
       return;
     }
-    if (dashboardSubMenu.MenuContentType === 'Glossary') {
+    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Location) {
+      const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
+      this.dashboardService.getAttachments('DashboardMenus', attachmentQuery)
+        .subscribe((documents: IDocument[]) => {
+          modalDialogData.content = documents;
+          modalDialogData.menuContentType = MenuContentTypes.Location;
+          this.openDialog(modalDialogData);
+        });
+      return;
+    }
+    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Glossary) {
       const glossaryQuery = '?$top=150';
-      this.dashboardService.get('Glossary', glossaryQuery)
+      this.dashboardService.get(SharepointList.Glossary, glossaryQuery)
         .subscribe((data: IGlossary[]) => {
           data.map((glossary: IGlossary) => {
             glossary.ElementId = glossary.Terms.replace(/\s/g, '');
           });
           modalDialogData.content = data;
-          modalDialogData.menuContentType = 'Glossary';
+          modalDialogData.menuContentType = MenuContentTypes.Glossary;
           this.openDialog(modalDialogData);
         });
       return;
     }
-    if (dashboardSubMenu.MenuContentType === 'FAQ') {
-      this.dashboardService.get('FAQ')
+    if (dashboardSubMenu.MenuContentType === MenuContentTypes.FAQ) {
+      this.dashboardService.get(SharepointList.FAQ)
         .subscribe((data: IFaq[]) => {
           data.map((faq: IFaq) => {
             const attachmentQuery = `(${faq.Id})/AttachmentFiles`;
             if (faq && faq.Attachments) {
-              this.dashboardService.getAttachments('FAQ', attachmentQuery)
+              this.dashboardService.getAttachments(SharepointList.FAQ, attachmentQuery)
                 .subscribe((document: IDocument[]) => {
                   faq.AttachmentName = document[0].FileName;
                   faq.AttachmentUrl = `${environment.SHARE_POINT_URL}${document[0].ServerRelativeUrl}?web=1`;
@@ -169,7 +180,7 @@ export class DashboardComponent implements OnInit {
             }
           });
           modalDialogData.content = data;
-          modalDialogData.menuContentType = 'FAQ';
+          modalDialogData.menuContentType = MenuContentTypes.FAQ;
           this.openDialog(modalDialogData);
         });
       return;
