@@ -7,22 +7,20 @@
     <div *ngIf="data.content && data.content.length > 0 && !data.menuContentType">
         <div class="tiles-container">
             <mat-card class="tiles-card" *ngFor="let menu of data.content">
-                <mat-card-title class="tiles-title">
-                    <p class="title-text">
-                        {{menu?.MenuName}}
-                    </p>
-                </mat-card-title>
+                <mat-card-header>
+                    <mat-card-title>{{menu?.MenuName}}</mat-card-title>
+                </mat-card-header>
                 <mat-card-content>
-                    <p class="tiles-content">
+                    <p>
                         {{menu?.Contents}}
                     </p>
                 </mat-card-content>
-                <div class="attachments" *ngIf="menu.Attachments">
+                <mat-card-footer>
                     <img
                         src='https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/LearnMore.png?csf=1&e=FEIKJE'>
-                    <p class="documents" (click)="displayDocument(documentUrl)"
+                    <p class="pageNumber" (click)="displayDocument(documentUrl)"
                         *ngFor="let documentUrl of menu.DocumentUrls;let i = index">{{i+1}}</p>
-                </div>
+                </mat-card-footer>
             </mat-card>
         </div>
     </div>
