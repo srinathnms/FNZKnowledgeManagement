@@ -158,7 +158,8 @@
         {
             "Id": 24,
             "MenuName": "Workforce Joining Process",
-            "ParentId": 5
+            "ParentId": 5,
+            "MenuContentType": "Document"
         },
         {
             "Id": 25,
@@ -352,35 +353,77 @@
         {
             "Id": 1,
             "MenuName": "Coding standards",
-            "ParentId": 27,
+            "ParentId": 26,
             "Contents": "Content for item 1",
             "Attachments": true
         },
         {
             "Id": 2,
             "MenuName": "Using visual studio",
-            "ParentId": 27,
+            "ParentId": 26,
             "Contents": "Content for item 2",
             "Attachments": true
         },
         {
             "Id": 3,
             "MenuName": "Typescript coding reference",
-            "ParentId": 27,
+            "ParentId": 26,
             "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
             "Attachments": true
         },
         {
             "Id": 4,
             "MenuName": "Jquery coding reference",
-            "ParentId": 27,
+            "ParentId": 26,
             "Contents": "Content for item 4",
             "Attachments": true
         },
         {
             "Id": 5,
             "MenuName": "React reference",
-            "ParentId": 27,
+            "ParentId": 26,
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
+        },
+        {
+            "Id": 6,
+            "MenuName": "Week 1",
+            "ParentId": 26,
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
+        },
+        {
+            "Id": 7,
+            "MenuName": "Week 2",
+            "ParentId": 26,
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
+        },
+        {
+            "Id": 8,
+            "MenuName": "Week 3",
+            "ParentId": 26,
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
+        },
+        {
+            "Id": 8,
+            "MenuName": "Week 4",
+            "ParentId": 26,
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
+        },
+        {
+            "Id": 8,
+            "MenuName": "Week 5",
+            "ParentId": 26,
+            "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
+            "Attachments": true
+        },
+        {
+            "Id": 8,
+            "MenuName": "Week 6",
+            "ParentId": 26,
             "Contents": "This text area has limit of 20 words that can be entered. To read more click on learn more option",
             "Attachments": true
         }
@@ -1594,16 +1637,13 @@
             "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/",
             "RLG": [
                 {
-                    "Text": "Suitable text will be added later for RLG from FNZ"
+                    "Text": "Fulfilled the capability gap during every just in time peak demand"
                 },
                 {
-                    "Text": "Suitable text will be added later for RLG from FNZ"
+                    "Text": "Proposed FNZ unique delivery model into their similar engagement"
                 },
                 {
-                    "Text": "Suitable text will be added later for RLG from FNZ"
-                },
-                {
-                    "Text": "Suitable text will be added later for RLG from FNZ"
+                    "Text": "Shared the FNZ wealth expertise to upskill the team to support Bravura product"
                 }
             ],
             "Aegon": [
@@ -1622,7 +1662,7 @@
             ],
             "SLA": [
                 {
-                    "Text": "Suitable text will be added later for SLA from FNZ. New line"
+                    "Text": "Fulfilled the capability gap during every just in time peak demand"
                 },
                 {
                     "Text": "Suitable text will be added later for SLA from FNZ. New line"
@@ -1644,16 +1684,16 @@
             "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/RLG",
             "FNZ": [
                 {
-                    "Text": "Suitable text will be added later for FNZ from RLG"
+                    "Text": "Conducted agile maturity assessment and advised a suitable delivery model"
                 },
                 {
-                    "Text": "Suitable text will be added later for FNZ from RLG"
+                    "Text": "During the project inception, upskilled the team ReactJS skillset"
                 },
                 {
-                    "Text": "Suitable text will be added later for FNZ from RLG"
+                    "Text": "Supported the team to build the SDET capability"
                 },
                 {
-                    "Text": "Suitable text will be added later for FNZ from RLG"
+                    "Text": "Collaborated to deliver key proactive proposals"
                 }
             ],
             "Aegon": [

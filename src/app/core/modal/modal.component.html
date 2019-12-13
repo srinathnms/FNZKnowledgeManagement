@@ -8,41 +8,32 @@
         <div class="tiles-container">
             <mat-card class="tiles-card" *ngFor="let menu of data.content">
                 <mat-card-header>
-                    <mat-card-title class="tiles-title">
-                        <h4>{{menu?.MenuName}}</h4>
-                    </mat-card-title>
-                    <img class="tiles-image" *ngIf="menu?.ImageSource" mat-card-avatar mat-card-md-image [src]="menu?.ImageSource" [alt]="menu?.Title">
+                    <mat-card-title>{{menu?.MenuName}}</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                    <p class="tiles-content">
+                    <p>
                         {{menu?.Contents}}
                     </p>
                 </mat-card-content>
-                <mat-card-actions>
-
-                    <div *ngIf="menu && menu.DocumentUrl">
-                        <form method="get" action="menu.DocumentUrl">
-                            <button type="submit" mat-button>Download</button>
-                        </form>
-                    </div>
-                    <i class='fas fa-print' id="download-Document" mat-button (click)="onDownloadSampleDocument(menu.DocumentUrl)" *ngIf="menu && menu.DocumentUrl" title="Download sample document"></i>
-                </mat-card-actions>
+                <mat-card-footer>
+                    <img
+                        src='https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/LearnMore.png?csf=1&e=FEIKJE'>
+                    <p class="pageNumber" (click)="displayDocument(documentUrl)"
+                        *ngFor="let documentUrl of menu.DocumentUrls;let i = index">{{i+1}}</p>
+                </mat-card-footer>
             </mat-card>
         </div>
     </div>
-    <embed *ngIf="data.content && data.content.ServerRelativeUrl && data.menuContentType === 'Document'" class="embed-content" [src]="data.content && data.content.ServerRelativeUrl | safe" width="100%" height="750px">
-    <app-team-view *ngIf="data.content && data.menuContentType && data.menuContentType === 'Graph' && data.header === 'Team View'" [graphData]="data.content"></app-team-view>
-    <app-revenue *ngIf="data.content && data.menuContentType && data.menuContentType === 'Graph' && data.header === 'Revenue View'" [graphData]="data.content"></app-revenue>
-    <app-offshore-locations *ngIf="data.menuContentType === 'Location'" [offshoreLocations]="data.content"></app-offshore-locations>
+    <embed *ngIf="data.content && data.content.ServerRelativeUrl && data.menuContentType === 'Document'"
+        class="embed-content" [src]="data.content && data.content.ServerRelativeUrl | safe" width="100%" height="750px">
+    <app-team-view
+        *ngIf="data.content && data.menuContentType && data.menuContentType === 'Graph' && data.header === 'Team View'"
+        [graphData]="data.content"></app-team-view>
+    <app-revenue
+        *ngIf="data.content && data.menuContentType && data.menuContentType === 'Graph' && data.header === 'Revenue View'"
+        [graphData]="data.content"></app-revenue>
+    <app-offshore-locations *ngIf="data.menuContentType === 'Location'" [offshoreLocations]="data.content">
+    </app-offshore-locations>
     <app-faq *ngIf="data.menuContentType === 'FAQ'" [faq]="data.content"></app-faq>
     <app-glossary *ngIf="data.menuContentType === 'Glossary'" [glossary]="data.content"></app-glossary>
 </div>
-<!-- <div mat-dialog-actions align="center">
-    <button mat-button [mat-dialog-close]="true">{{data.footer}}</button>
-    <div *ngIf="data.content && data.content.ServerRelativeUrl">
-        <form method="get" action="{{data.content && data.content.ServerRelativeUrl | safe}}">
-            <button type="submit" mat-button>Download</button>
-            <a href="https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/Shared%20Documents/FnzProducts.pptx" target="_blank" mat-button>Download1</a>
-        </form>
-    </div>
-</div> -->
