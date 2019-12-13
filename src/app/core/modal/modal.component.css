@@ -82,5 +82,9 @@ mat-card-footer{
 mat-card-footer img{
     max-width: 12vh;
     }
+
+.title-text{
+    font-size:17px;
+}
     
     
