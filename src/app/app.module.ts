@@ -51,6 +51,7 @@ import { GallerizeModule } from '@ngx-gallery/gallerize';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { HomeComponent } from 'src/app/home/index/home.component';
 import { GlossaryComponent } from './dashboard/glossary/glossary.component';
+import { DocumentComponent } from 'src/app/core/document/document.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { GlossaryComponent } from './dashboard/glossary/glossary.component';
     DiaryComponent,
     GroupByPipe,
     GlossaryComponent,
+    DocumentComponent
   ],
   imports: [
     NgxPageScrollModule,

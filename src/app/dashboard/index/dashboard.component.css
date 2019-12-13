@@ -178,12 +178,14 @@
     flex-wrap: wrap;
     justify-content: center;
     /* margin: 0; */
-    padding-right: 50px;
+    padding-right: 0px;
 }
 
 .card-content {
     margin-top: 45px;
     min-height: 223px;
+    display:grid;
+    align-items: center;
 }
 
 .back-icon {
