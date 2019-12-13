@@ -3,5 +3,6 @@ export enum MenuContentTypes {
   Document = 'Document',
   Glossary = 'Glossary',
   FAQ = 'FAQ',
-  Location = 'Location'
+  Location = 'Location',
+  MultipleDocuments ="MultipleDocuments"
 }

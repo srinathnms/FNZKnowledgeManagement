@@ -8,7 +8,6 @@ import { DashboardService } from '../dashboard.service';
 import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { environment } from 'src/environments/environment';
 import { IDocument } from '../../model/document';
-import { ReturnStatement } from '@angular/compiler';
 import { IFinance } from 'src/app/model/finance';
 import { IGlossary } from 'src/app/model/glossary';
 import { IFaq } from 'src/app/model/faq';
@@ -119,18 +118,13 @@ export class DashboardComponent implements OnInit {
       header: dashboardSubMenu.MenuName,
       footer: 'Close',
     } as IModalDialog;
-    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Document) {
+    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Document || dashboardSubMenu.MenuContentType === MenuContentTypes.MultipleDocuments) {
       const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
       this.dashboardService.getAttachments(SharepointList.DashboardMenus, attachmentQuery)
-        .subscribe((document: IDocument[]) => {
-          const documentUrl = `${environment.SHARE_POINT_URL}${document[0].ServerRelativeUrl}`;
-          this.dashboardService.getDocument(documentUrl).subscribe((fileUrl: string) => {
-            modalDialogData.content = {
-              ServerRelativeUrl: fileUrl
-            } as IDocument;
-            modalDialogData.menuContentType = MenuContentTypes.Document;
-            this.openDialog(modalDialogData);
-          });
+        .subscribe((documents: IDocument[]) => {
+          modalDialogData.content = documents;
+          modalDialogData.menuContentType = MenuContentTypes[dashboardSubMenu.MenuContentType];
+          this.openDialog(modalDialogData);
         });
       return;
     }

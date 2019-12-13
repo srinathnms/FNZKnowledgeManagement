@@ -42,7 +42,7 @@ export class HeaderComponent {
 
   onContactSelection() {
     const dialogRef = this.dialog.open(ContactsComponent, {
-      width: '40%',
+      width: '60%',
       data: this.userProfiles
     });
   }

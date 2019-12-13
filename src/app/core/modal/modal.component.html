@@ -24,8 +24,9 @@
             </mat-card>
         </div>
     </div>
-    <embed *ngIf="data.content && data.content.ServerRelativeUrl && data.menuContentType === 'Document'"
-        class="embed-content" [src]="data.content && data.content.ServerRelativeUrl | safe" width="100%" height="750px">
+    <app-document
+        *ngIf="data.content && data.menuContentType && data.menuContentType === 'Document' || data.menuContentType === 'MultipleDocuments'"
+        [data]="data"></app-document>
     <app-team-view
         *ngIf="data.content && data.menuContentType && data.menuContentType === 'Graph' && data.header === 'Team View'"
         [graphData]="data.content"></app-team-view>
