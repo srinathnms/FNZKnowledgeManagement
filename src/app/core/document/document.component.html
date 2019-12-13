@@ -2,7 +2,7 @@
     <label>Document:</label>
     <mat-radio-group [(ngModel)]='selectedDocumentName' (ngModelChange)="onDocumentTypeChange($event)"
         aria-label="Select an option">
-        <mat-radio-button *ngFor="let documentName of documentNames" [value]="documentName">{{documentName}}
+        <mat-radio-button *ngFor="let documentName of documentNames" [value]="documentName">{{documentName | fileText}}
         </mat-radio-button>
     </mat-radio-group>
 </div>
