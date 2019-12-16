@@ -194,7 +194,7 @@ let HomePages = [
   {
     ID: 2,
     Image: {
-      Url: "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/SecondHomePage.png?csf=1&e=sICYx1",
+      Url: "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/SecondHomePage2.png?csf=1&e=jRt6TX",
       Description:""
     },
     IsAccountsDescriptionPage: "true"

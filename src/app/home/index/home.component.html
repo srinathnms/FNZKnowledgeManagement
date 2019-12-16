@@ -2,7 +2,9 @@
   <img *ngIf="page && page.Image" [src]="page?.Image.Url">
   <div class="intro" *ngIf="page && !page.IsAccountsDescriptionPage">
     <!-- <div class="title-text" *ngIf="page && page.Title">{{page?.Title}}</div> -->
-    <div class="title-text" *ngIf="page && page.Title"><span style="color:Yellow">T</span>ogether W<span style="color:Yellow">E</span><span style="color:Yellow"> A</span>chieve <span style="color:Yellow">M</span>ore</div>
+    <div class="title-text" *ngIf="page && page.Title"><span style="color:Yellow">T</span>ogether W<span
+        style="color:Yellow">E</span><span style="color:Yellow"> A</span>chieve <span style="color:Yellow">M</span>ore
+    </div>
     <div class="subtitle-text" *ngIf="page && page.Subtitle">{{page?.Subtitle}}</div>
   </div>
   <div class="text-group" *ngIf="page && page.IsAccountsDescriptionPage">
@@ -14,7 +16,8 @@
         *ngIf="account && account.SlidePosition=='down' && shouldDisplayDescription && showAccountNaviagationPointer "
         @fadeIn @fadeOut>
         <div id="horizontal-line"></div>
-        <p class="contribution" *ngFor="let contribution of getAccountSpecificContributions(account.Name)">{{contribution}}</p>
+        <p class="contribution" *ngFor="let contribution of getAccountSpecificContributions(account.Name)">
+          {{contribution}}</p>
       </div>
       <div class="account-naviagtion" @fadeIn @fadeOut
         *ngIf="account.SlidePosition=='up' && shouldDisplayDescription && showAccountNaviagationPointer">
