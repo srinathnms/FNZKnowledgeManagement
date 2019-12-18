@@ -1670,7 +1670,8 @@
             },
             "Title": "Together WE Achieve More",
             "SubTitle": "We collaborate with each team consistently to emphasis ‘one team’ mindset and mutually share our expertise and strength to grow better every day and bring values to each other. . .",
-            "FooterText": "You might like our stories"
+            "FooterText": "You might like our stories",
+            "IsAccountsDescriptionPage": false
         },
         {
             "ID": 2,
@@ -1678,7 +1679,7 @@
                 "Url": "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/SecondHomePage2.png?csf=1&e=jRt6TX",
                 "Description": ""
             },
-            "IsAccountsDescriptionPage": "true"
+            "IsAccountsDescriptionPage": true
         }
     ]
 }

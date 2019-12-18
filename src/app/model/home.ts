@@ -6,4 +6,5 @@ export interface IHome {
     Title: string;
     SubTitle: string;
     FooterText: string;
+    IsAccountsDescriptionPage:boolean;
 }
