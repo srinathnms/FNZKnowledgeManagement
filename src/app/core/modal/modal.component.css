@@ -17,7 +17,7 @@
     }
     
 p {
-    font-family: "candara light";
+    font-family: "candara";
     }
     
 .tiles-card {
@@ -39,7 +39,7 @@ mat-card-header{
     }
     
 mat-card-title{
-    font-family: "candara light";
+    font-family: "candara";
     font-weight:bold;
     height:30px;
     }
@@ -71,7 +71,6 @@ mat-card-footer{
 .pageNumber{
     margin:2px;
     cursor:pointer;
-    font-weight:bold;
     }
     
 .pageNumber:hover{
@@ -82,5 +81,9 @@ mat-card-footer{
 mat-card-footer img{
     max-width: 12vh;
     }
+
+.title-text{
+    font-size:15px;
+}
     
     

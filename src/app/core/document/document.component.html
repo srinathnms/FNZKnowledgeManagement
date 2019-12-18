@@ -1,4 +1,4 @@
-<div *ngIf="data && data.menuContentType === 'MultipleDocuments'">
+<div class="options" *ngIf="data && data.menuContentType === 'MultipleDocuments'">
     <label>Document:</label>
     <mat-radio-group [(ngModel)]='selectedDocumentName' (ngModelChange)="onDocumentTypeChange($event)"
         aria-label="Select an option">

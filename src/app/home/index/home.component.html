@@ -1,31 +1,33 @@
 <section [id]="'section'+page.ID" *ngFor="let page of pages">
   <img *ngIf="page && page.Image" [src]="page?.Image.Url">
   <div class="intro" *ngIf="page && !page.IsAccountsDescriptionPage">
-    <!-- <div class="title-text" *ngIf="page && page.Title">{{page?.Title}}</div> -->
-    <div class="title-text" *ngIf="page && page.Title"><span style="color:Yellow">T</span>ogether W<span style="color:Yellow">E</span><span style="color:Yellow"> A</span>chieve <span style="color:Yellow">M</span>ore</div>
-    <div class="subtitle-text" *ngIf="page && page.Subtitle">{{page?.Subtitle}}</div>
+    <div class="title-text" *ngIf="page && page.Title"><span style="color:Yellow">T</span>ogether W<span
+        style="color:Yellow">E</span><span style="color:Yellow"> A</span>chieve <span style="color:Yellow">M</span>ore
+    </div>
+    <div class="subtitle-text" *ngIf="page && page.SubTitle">{{page?.SubTitle}}</div>
   </div>
   <div class="text-group" *ngIf="page && page.IsAccountsDescriptionPage">
     <div class="account-info" *ngFor="let account of accounts">
       <a class="account-name" [@slideState]='account?.SlidePosition' (@slideState.done)="onSlideAnimationEnd($event)">
-        <p (click)="onAccountNameClick(account)">{{account?.Name}}</p>
+        <p (click)="onAccountNameClick(account)">{{account?.Title}}</p>
       </a>
       <div class="account-description"
         *ngIf="account && account.SlidePosition=='down' && shouldDisplayDescription && showAccountNaviagationPointer "
         @fadeIn @fadeOut>
         <div id="horizontal-line"></div>
-        <p class="contribution" *ngFor="let contribution of getAccountSpecificContributions(account.Name)">{{contribution}}</p>
+        <p class="contribution" *ngFor="let contribution of getAccountSpecificContributions(account.Title)">
+          {{contribution}}</p>
       </div>
       <div class="account-naviagtion" @fadeIn @fadeOut
         *ngIf="account.SlidePosition=='up' && shouldDisplayDescription && showAccountNaviagationPointer">
         <div class="bounce-arrow bounce"></div>
-        <a [href]="account.PageLink">Deep Dive</a>
+        <a [href]="account.Link">Deep Dive</a>
       </div>
     </div>
   </div>
   <div class="footer">
-    <p class="footer-text">{{page?.Footer}}</p>
-    <div class="footer-arrow" *ngIf="page && page.Footer">
+    <p class="footer-text">{{page?.FooterText}}</p>
+    <div class="footer-arrow" *ngIf="page && page.FooterText">
       <a pageScroll [href]="'#section' + (page.ID+1)">
         <span></span><span></span><span></span>
       </a>
