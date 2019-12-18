@@ -127,9 +127,9 @@
         },
         {
             "Id": 18,
-            "MenuName": "FNZ Products",
+            "MenuName": "FNZ Products & WPP",
             "ParentId": 3,
-            "MenuContentType": "Document"
+            "MenuContentType": "MultipleDocuments"
         },
         {
             "Id": 19,
@@ -352,7 +352,7 @@
         },
         {
             "Id": 1,
-            "MenuName": "Coding standards",
+            "MenuName": "FNZ projects and database architecture",
             "ParentId": 26,
             "Contents": "Content for item 1",
             "Attachments": true
@@ -1630,216 +1630,53 @@
     "UkInsuranceAccounts": [
         {
             "ID": 1,
-            "Name": "FNZ",
-            "Logo": {
-                "Url": "https://www.fnz.com/assets/images/timeline/FNZ-Logo-Ali.jpg"
-            },
-            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/",
-            "RLG": [
-                {
-                    "Text": "Fulfilled the capability gap during every just in time peak demand"
-                },
-                {
-                    "Text": "Proposed FNZ unique delivery model into their similar engagement"
-                },
-                {
-                    "Text": "Shared the FNZ wealth expertise to upskill the team to support Bravura product"
-                }
-            ],
-            "Aegon": [
-                {
-                    "Text": "Suitable text will be added later for AEGON from FNZ"
-                },
-                {
-                    "Text": "Suitable text will be added later for AEGON from FNZ"
-                },
-                {
-                    "Text": "Suitable text will be added later for AEGON from FNZ"
-                },
-                {
-                    "Text": "Suitable text will be added later for AEGON from FNZ"
-                }
-            ],
-            "SLA": [
-                {
-                    "Text": "Fulfilled the capability gap during every just in time peak demand"
-                },
-                {
-                    "Text": "Suitable text will be added later for SLA from FNZ. New line"
-                },
-                {
-                    "Text": "Suitable text will be added later for SLA from FNZ. New line"
-                },
-                {
-                    "Text": "Suitable text will be added later for SLA from FNZ. New line"
-                }
-            ]
+            "Title": "FNZ",
+            "Link": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/",
+            "RLG": "Fulfilled the capability gap;Talent rotation during peak demand;Proposed FNZ unique delivery model into their similar engagement;Shared wealth expertise to upskill Bravura team",
+            "Aegon": "Suitable text will be added later for AEGON from FNZ",
+            "SLA": "Fulfilled the capability gap;Talent rotation during peak demand"
         },
         {
             "ID": 2,
-            "Name": "RLG",
-            "Logo": {
-                "Url": "https://s3.eu-central-1.amazonaws.com/centaur-wp/designweek/prod/content/uploads/2014/04/logo-1002x708.jpg"
-            },
-            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/RLG",
-            "FNZ": [
-                {
-                    "Text": "Conducted agile maturity assessment and advised a suitable delivery model"
-                },
-                {
-                    "Text": "During the project inception, upskilled the team ReactJS skillset"
-                },
-                {
-                    "Text": "Supported the team to build the SDET capability"
-                },
-                {
-                    "Text": "Collaborated to deliver key proactive proposals"
-                }
-            ],
-            "Aegon": [
-                {
-                    "Text": "Suitable text will be added later for AEGON from RLG"
-                },
-                {
-                    "Text": "Suitable text will be added later for AEGON from RLG"
-                },
-                {
-                    "Text": "Suitable text will be added later for AEGON from RLG"
-                },
-                {
-                    "Text": "Suitable text will be added later for AEGON from RLG"
-                }
-            ],
-            "SLA": [
-                {
-                    "Text": "Suitable text will be added later for SLA from RLG"
-                },
-                {
-                    "Text": "Suitable text will be added later for SLA from RLG"
-                },
-                {
-                    "Text": "Suitable text will be added later for SLA from RLG"
-                },
-                {
-                    "Text": "Suitable text will be added later for SLA from RLG"
-                }
-            ]
+            "Title": "RLG",
+            "Link": "https://cognizantonline.sharepoint.com/sites/ukInsurance/RLG",
+            "FNZ": "Agile maturity assessment;Upskilled the team ReactJS skillset;Supported to build SDET capability;Supported for proactive proposals",
+            "Aegon": "Adopted CSI model;Received insight for an automation framework",
+            "SLA": "Suitable text will be added later for SLA from RLG"
         },
         {
             "ID": 3,
-            "Name": "SLA",
-            "Logo": {
-                "Url": "https://cdn.worldvectorlogo.com/logos/standard-life.svg"
-            },
-            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/standardlifeaberdeen/",
-            "FNZ": [
-                {
-                    "Text": "Suitable text will be added later for FNZ from SLA"
-                },
-                {
-                    "Text": "Suitable text will be added later for FNZ from SLA"
-                },
-                {
-                    "Text": "Suitable text will be added later for FNZ from SLA"
-                },
-                {
-                    "Text": "Suitable text will be added later for FNZ from SLA"
-                }
-            ],
-            "Aegon": [
-                {
-                    "Text": "Suitable text will be added later for AEGON from SLA"
-                },
-                {
-                    "Text": "Suitable text will be added later for AEGON from SLA"
-                },
-                {
-                    "Text": "Suitable text will be added later for AEGON from SLA"
-                },
-                {
-                    "Text": "Suitable text will be added later for AEGON from SLA"
-                }
-            ],
-            "RLG": [
-                {
-                    "Text": "Suitable text will be added later for RLG from SLA"
-                },
-                {
-                    "Text": "Suitable text will be added later for RLG from SLA"
-                },
-                {
-                    "Text": "Suitable text will be added later for RLG from SLA"
-                },
-                {
-                    "Text": "Suitable text will be added later for RLG from SLA"
-                }
-            ]
+            "Title": "SLA",
+            "Link": "https://cognizantonline.sharepoint.com/sites/ukInsurance/standardlifeaberdeen/",
+            "FNZ": "Suitable text will be added later for FNZ from SLA",
+            "Aegon": "Suitable text will be added later for AEGON from SLA",
+            "RLG": "Suitable text will be added later for RLG from SLA"
         },
         {
             "ID": 4,
-            "Name": "Aegon",
-            "Logo": {
-                "Url": "https://httpsak-a.akamaihd.net/1900410236/1900410236_5614837075001_5043452824001-vs.jpg?pubId=1900410236&videoId=5043452824001"
-            },
-            "PageLink": "https://cognizantonline.sharepoint.com/sites/ukInsurance/Aegon/",
-            "FNZ": [
-                {
-                    "Text": "Suitable text will be added later for FNZ from Aegon"
-                },
-                {
-                    "Text": "Suitable text will be added later for FNZ from Aegon"
-                },
-                {
-                    "Text": "Suitable text will be added later for FNZ from Aegon"
-                },
-                {
-                    "Text": "Suitable text will be added later for FNZ from Aegon"
-                }
-            ],
-            "SLA": [
-                {
-                    "Text": "Suitable text will be added later for SLA from Aegon"
-                },
-                {
-                    "Text": "Suitable text will be added later for SLA from Aegon"
-                },
-                {
-                    "Text": "Suitable text will be added later for SLA from Aegon"
-                },
-                {
-                    "Text": "Suitable text will be added later for SLA from Aegon"
-                }
-            ],
-            "RLG": [
-                {
-                    "Text": "Suitable text will be added later for RLG from Aegon"
-                },
-                {
-                    "Text": "Suitable text will be added later for RLG from Aegon"
-                },
-                {
-                    "Text": "Suitable text will be added later for RLG from Aegon"
-                },
-                {
-                    "Text": "Suitable text will be added later for RLG from Aegon"
-                }
-            ]
+            "Title": "Aegon",
+            "Link": "https://cognizantonline.sharepoint.com/sites/ukInsurance/Aegon/",
+            "FNZ": "Suitable text will be added later for FNZ from Aegon",
+            "SLA": "Suitable text will be added later for SLA from Aegon",
+            "RLG": "Utilized the gamification idea to know more about  RLG"
         }
     ],
     "HomePages": [
         {
             "ID": 1,
             "Image": {
-                "Url": "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/HomePageBackground.png?csf=1&e=FE0Zml"
+                "Url": "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/HomePageBackground.png?csf=1&e=FE0Zml",
+                "Description": ""
             },
             "Title": "Together WE Achieve More",
-            "Subtitle": "We collaborate with each team consistently to emphasis ‘one team’ mindset and mutually share our expertise and strength to grow better every day and bring values to each other. . .",
-            "Footer": "You might like our stories"
+            "SubTitle": "We collaborate with each team consistently to emphasis ‘one team’ mindset and mutually share our expertise and strength to grow better every day and bring values to each other. . .",
+            "FooterText": "You might like our stories"
         },
         {
             "ID": 2,
             "Image": {
-                "Url": "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/SecondHomePage.png?csf=1&e=sICYx1"
+                "Url": "https://cognizantonline.sharepoint.com/:i:/r/sites/ukInsurance/FNZ/SiteAssets/Images/SecondHomePage2.png?csf=1&e=jRt6TX",
+                "Description": ""
             },
             "IsAccountsDescriptionPage": "true"
         }
