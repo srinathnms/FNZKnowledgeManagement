@@ -8,4 +8,9 @@
     width: 40%;
     margin-bottom: 1%;
     margin-top: 10%;
+    max-width:300px;
+}
+
+.gallery{
+    flex-wrap: wrap;
 }
