@@ -1,8 +1,8 @@
-import { IBackgroundImage } from "./backgroundImage";
+import { ILink } from "./link";
 
 export interface IHome {
     ID: number;
-    Image: IBackgroundImage;
+    Image: ILink;
     Title: string;
     SubTitle: string;
     FooterText: string;

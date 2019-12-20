@@ -12,7 +12,7 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <p *ngIf="faq === selectedFaq">{{faq.Solution}}</p>
-            <a *ngIf="faq && faq.Attachments" [href]="faq && faq.AttachmentUrl">{{faq && faq.AttachmentName}}</a>
+            <a *ngIf="faq && faq.Attachments" [href]="faq && faq.AttachmentUrl" target="_blank">{{faq && faq.AttachmentName}}</a>
         </mat-expansion-panel>
     </mat-accordion>
 </div>

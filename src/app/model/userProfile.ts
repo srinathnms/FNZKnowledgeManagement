@@ -1,5 +1,6 @@
 export interface IUserProfile {
-    Id: number;
+    ID: number;
+    EmployeeId:number;
     Name: string;
     Designation: string;
     Email: string;

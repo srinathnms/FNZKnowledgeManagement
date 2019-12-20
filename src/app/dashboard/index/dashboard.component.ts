@@ -118,77 +118,90 @@ export class DashboardComponent implements OnInit {
       header: dashboardSubMenu.MenuName,
       footer: 'Close',
     } as IModalDialog;
-    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Document || dashboardSubMenu.MenuContentType === MenuContentTypes.MultipleDocuments) {
-      const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
-      this.dashboardService.getAttachments(SharepointList.DashboardMenus, attachmentQuery)
-        .subscribe((documents: IDocument[]) => {
-          modalDialogData.content = documents;
-          modalDialogData.menuContentType = MenuContentTypes[dashboardSubMenu.MenuContentType];
-          this.openDialog(modalDialogData);
-        });
-      return;
-    }
-    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Graph) {
-      this.dashboardService.get(SharepointList.FinanceChart)
-        .subscribe((data: IFinance[]) => {
-          modalDialogData.content = data;
-          modalDialogData.menuContentType = MenuContentTypes.Graph;
-          this.openDialog(modalDialogData);
-        });
-      return;
-    }
-    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Location) {
-      const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
-      this.dashboardService.getAttachments('DashboardMenus', attachmentQuery)
-        .subscribe((documents: IDocument[]) => {
-          modalDialogData.content = documents;
-          modalDialogData.menuContentType = MenuContentTypes.Location;
-          this.openDialog(modalDialogData);
-        });
-      return;
-    }
-    if (dashboardSubMenu.MenuContentType === MenuContentTypes.Glossary) {
-      const glossaryQuery = '?$top=150';
-      this.dashboardService.get(SharepointList.Glossary, glossaryQuery)
-        .subscribe((data: IGlossary[]) => {
-          data.map((glossary: IGlossary) => {
-            glossary.ElementId = glossary.Terms.replace(/\s/g, '');
-          });
-          modalDialogData.content = data;
-          modalDialogData.menuContentType = MenuContentTypes.Glossary;
-          this.openDialog(modalDialogData);
-        });
-      return;
-    }
-    if (dashboardSubMenu.MenuContentType === MenuContentTypes.FAQ) {
-      this.dashboardService.get(SharepointList.FAQ)
-        .subscribe((data: IFaq[]) => {
-          data.map((faq: IFaq) => {
-            const attachmentQuery = `(${faq.Id})/AttachmentFiles`;
-            if (faq && faq.Attachments) {
-              this.dashboardService.getAttachments(SharepointList.FAQ, attachmentQuery)
-                .subscribe((document: IDocument[]) => {
-                  faq.AttachmentName = document[0].FileName;
-                  faq.AttachmentUrl = `${environment.SHARE_POINT_URL}${document[0].ServerRelativeUrl}?web=1`;
+    switch (dashboardSubMenu.MenuContentType) {
+      case MenuContentTypes.NavigationLink: {
+        if (dashboardSubMenu.Link && dashboardSubMenu.Link.Url) {
+          window.open(dashboardSubMenu.Link.Url, '_blank');
+        }
+        return;
+      }
+      case MenuContentTypes.Document:
+      case MenuContentTypes.MultipleDocuments:
+        {
+          const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
+          this.dashboardService.getAttachments(SharepointList.DashboardMenus, attachmentQuery)
+            .subscribe((documents: IDocument[]) => {
+              modalDialogData.content = documents;
+              modalDialogData.menuContentType = MenuContentTypes[dashboardSubMenu.MenuContentType];
+            });
+        }
+        break;
+      case MenuContentTypes.Graph:
+        {
+          this.dashboardService.get(SharepointList.FinanceChart)
+            .subscribe((data: IFinance[]) => {
+              modalDialogData.content = data;
+              modalDialogData.menuContentType = MenuContentTypes.Graph;
+            });
+        }
+        break;
+      case MenuContentTypes.Location:
+        {
+          const attachmentQuery = `(${dashboardSubMenu.Id})/AttachmentFiles`;
+          this.dashboardService.getAttachments('DashboardMenus', attachmentQuery)
+            .subscribe((documents: IDocument[]) => {
+              modalDialogData.content = documents;
+              modalDialogData.menuContentType = MenuContentTypes.Location;
+            });
+        }
+        break;
+      case MenuContentTypes.Glossary:
+        {
+          const glossaryQuery = '?$top=150';
+          this.dashboardService.get(SharepointList.Glossary, glossaryQuery)
+            .subscribe((data: IGlossary[]) => {
+              data.map((glossary: IGlossary) => {
+                glossary.ElementId = glossary.Terms.replace(/\s/g, '');
+              });
+              modalDialogData.content = data;
+              modalDialogData.menuContentType = MenuContentTypes.Glossary;
+            });
+        }
+        break;
+      case MenuContentTypes.FAQ:
+        {
+          this.dashboardService.get(SharepointList.FAQ)
+            .subscribe((data: IFaq[]) => {
+              data.map((faq: IFaq) => {
+                const attachmentQuery = `(${faq.Id})/AttachmentFiles`;
+                if (faq && faq.Attachments) {
+                  this.dashboardService.getAttachments(SharepointList.FAQ, attachmentQuery)
+                    .subscribe((document: IDocument[]) => {
+                      faq.AttachmentName = document[0].FileName;
+                      faq.AttachmentUrl = `${environment.SHARE_POINT_URL}${document[0].ServerRelativeUrl}?web=1`;
+                    });
+                }
+              });
+              modalDialogData.content = data;
+              modalDialogData.menuContentType = MenuContentTypes.FAQ;
+            });
+        }
+        break;
+      default:
+        {
+          modalDialogData.menuId = dashboardSubMenu.Id;
+          modalDialogData.content = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardSubMenu.Id);
+          if (modalDialogData.content && modalDialogData.content.length > 0) {
+            modalDialogData.content.map(x => {
+              const attachmentQuery = `(${x.Id})/AttachmentFiles`;
+              this.dashboardService.getAttachments('DashboardMenus', attachmentQuery)
+                .subscribe((documents: IDocument[]) => {
+                  x.DocumentUrls = documents.map(document => { return document.ServerRelativeUrl });
                 });
-            }
-          });
-          modalDialogData.content = data;
-          modalDialogData.menuContentType = MenuContentTypes.FAQ;
-          this.openDialog(modalDialogData);
-        });
-      return;
-    }
-    modalDialogData.menuId = dashboardSubMenu.Id;
-    modalDialogData.content = this.dashboardMenus && this.dashboardMenus.filter(c => c.ParentId === dashboardSubMenu.Id);
-    if (modalDialogData.content && modalDialogData.content.length > 0) {
-      modalDialogData.content.map(x => {
-        const attachmentQuery = `(${x.Id})/AttachmentFiles`;
-        this.dashboardService.getAttachments('DashboardMenus', attachmentQuery)
-          .subscribe((documents: IDocument[]) => {
-            x.DocumentUrls = documents.map(document => { return document.ServerRelativeUrl });
-          });
-      });
+            });
+          }
+        }
+        break;
     }
     this.openDialog(modalDialogData);
   }

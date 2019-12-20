@@ -1,4 +1,4 @@
-import { IBackgroundImage } from './backgroundImage';
+import { ILink } from './link';
 
 export interface IDashboardMenu {
     Id: number;
@@ -9,6 +9,7 @@ export interface IDashboardMenu {
     Contents?: string;
     DocumentUrls?: string[];
     MenuContentType?: string;
-    BackgroundImage?: IBackgroundImage;
+    BackgroundImage?: ILink;
     Flip?: string;
+    Link:ILink;
 }
