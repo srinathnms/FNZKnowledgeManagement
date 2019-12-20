@@ -83,7 +83,7 @@
         },
         {
             "Id": 11,
-            "MenuName": "Miscellaneous",
+            "MenuName": "Know more",
             "ParentId": 0,
             "BackgroundImage": {
                 "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/SiteAssets/Images/Miscellaneous.jpg"
@@ -303,8 +303,12 @@
         },
         {
             "Id": 51,
-            "MenuName": "PPT Repository  (reference)",
-            "ParentId": 11
+            "MenuName": "Reference",
+            "ParentId": 11,
+            "Link": {
+                "Url": "https://cognizantonline.sharepoint.com/sites/ukInsurance/FNZ/Shared%20Documents/Forms/AllItems.aspx"
+            },
+            "MenuContentType": "NavigationLink"
         },
         {
             "Id": 52,

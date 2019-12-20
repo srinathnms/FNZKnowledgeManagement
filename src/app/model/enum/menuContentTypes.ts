@@ -4,5 +4,6 @@ export enum MenuContentTypes {
   Glossary = 'Glossary',
   FAQ = 'FAQ',
   Location = 'Location',
-  MultipleDocuments ="MultipleDocuments"
+  MultipleDocuments ="MultipleDocuments",
+  NavigationLink="NavigationLink"
 }

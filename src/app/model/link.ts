@@ -1,4 +1,4 @@
-export interface IBackgroundImage {
+export interface ILink {
     Url: string;
     Description: string;
 }
